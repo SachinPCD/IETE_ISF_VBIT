@@ -1,0 +1,237 @@
+body {
+  /* Replace 'path/to/your/background-image.jpg' with the actual path to your image */
+  /*background-image: url('contact_bg.jpg');*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1.5s ease-out; /* Increased animation time */
+}
+
+.logo {
+  margin: 0;
+  font-family: mySamarkanFont;
+  padding-right: 460px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out; /* Increased animation time */
+}
+
+.logo-container {
+  text-align: right;
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  max-width: 70px;
+  margin-right: 10px; /* Adjust as needed */
+  margin-left: 10px;
+}
+
+.logo-img {
+  max-width: 70px;
+  margin-right: 10px; /* Adjust as needed */
+  margin-left: 10px;
+}
+
+p {
+  color: white;
+}
+
+footer {
+  background-color: rgb(18, 97, 194);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+header {
+  background-color: rgb(6, 49, 101);
+  font-family: mySamarkanFont;
+  color: white;
+  padding: 20px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  animation: fadeIn 1.5s ease-out; /* Increased animation time */
+}
+
+a {
+  text-align: right;
+  float: right;
+  justify-content: right;
+  color: rgb(255, 255, 255);
+}
+
+.right {
+  text-align: right;
+  justify-content: right;
+  color: rgba(255, 250, 250, 0.689);
+}
+
+nav {
+  display: flex;
+  background-color: rgba(18, 97, 194, 0.678);
+  padding: 10px;
+  color: snow;
+  justify-content: right;
+}
+
+nav ul {
+  text-align: right;
+  justify-content: right;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+main {
+  display: inline;
+  padding: 20px;
+}
+
+.container1 {
+  color: snow;
+  display: flex;
+  flex-direction: row;
+  max-width: 98%;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 20px;
+  justify-content: center;
+  background-color: rgba(255, 250, 250, 0.612);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  animation: slideUp 1.5s ease-out; /* Increased animation time */
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(9, 46, 78);
+  animation: slideUp 1.5s ease-out; /* Increased animation time */
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: rgb(9, 46, 78);
+  width: 30px;
+}
+
+.contact-info p img {
+  width: 30px;
+  height: auto;
+  margin-right: 5px;
+  text-align: center;
+  transition: transform 2.5s ease-in-out; /* Add transition for smooth effect */
+}
+
+.contact-info a {
+  color: rgb(9, 46, 78);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: rgb(9, 46, 78);
+  text-decoration: underline;
+}
+
+.contact-info span {
+  display: inline-block;
+  margin-right: 6px;
+  color: rgb(9, 46, 78);
+}
+
+.insta,
+.gmail,
+.fb,
+.phone {
+  transition: transform 1.5s ease-in-out; /* Add transition for smooth effect */
+}
+
+.insta:hover,
+.gmail:hover,
+.fb:hover,
+.phone:hover {
+  transform: rotateX(0deg) rotateY(360deg); /* Apply 3D rotation on hover */
+}
+
+.insta {
+  width: 50px;
+  height: auto;
+}
+
+.gmail {
+  width: 50px;
+  height: auto;
+}
+
+.phone {
+  width: 50px;
+  height: auto;
+  text-align: center;
+}
+
+.fb {
+  width: 50px;
+  height: auto;
+  text-align: center;
+
+}
+
+.ph.no {
+  text-align: center;
+}
+
+.col-md-4 {
+  margin-top: 50px;
+  margin-right: 90px;
+  margin-left: 90px;
+}
+
+.cnt1 {
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  /*color: rgb(24, 85, 139);*/
+  font-size: 50px;
+}
+
+.contact {
+  background-color: snow;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+      transform: translateY(100%);
+  }
+
+  to {
+      transform: translateY(0);
+  }
+}

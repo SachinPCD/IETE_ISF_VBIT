@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonial Slider</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #000;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .testimonial {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 5rem;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    .line {
+      height: 2px;
+      width: 6rem;
+      background-color: #e26c4f;
+      margin-bottom: calc(3rem + 2vmin);
+    }
+
+    .arrow-wrapper {
+      position: relative;
+      width: 70%;
+      border-radius: 2rem;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      overflow: hidden;
+      place-items: center;
+    }
+
+    .review-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: calc(2rem + 1vmin);
+      width: 30%;
+    }
+
+    #imgBox {
+      border-radius: 50%;
+      width: calc(6rem + 4vmin);
+      height: calc(6rem + 4vmin);
+      position: relative;
+      box-shadow: 5px -3px #e26c4f;
+      background-size: cover;
+      margin-bottom: calc(0.7rem + 0.5vmin);
+    }
+
+    #name {
+      margin-bottom: calc(0.7rem + 0.5vmin);
+      font-size: calc(1rem + 0.5vmin);
+      letter-spacing: calc(0.1rem + 0.1vmin);
+      font-weight: bold;
+    }
+
+    #profession {
+      font-size: calc(0.8rem + 0.3vmin);
+      margin-bottom: calc(0.7rem + 0.5vmin);
+      color: black;
+    }
+
+    #description {
+      font-size: calc(0.8rem + 0.3vmin);
+      width: 70%;
+      max-width: 40rem;
+      text-align: center;
+      margin-bottom: calc(1.4rem + 1vmin);
+      color: black;
+      line-height: 2rem;
+    }
+
+    .arrow {
+      width: calc(1.4rem + 0.6vmin);
+      height: calc(1.4rem + 0.6vmin);
+      border: solid #e26c4f;
+      border-width: 0 calc(0.5rem + 0.2vmin) calc(0.5rem + 0.2vmin) 0;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .arrow:hover {
+      transition: 0.3s;
+      transform: scale(1.15);
+    }
+
+    .left-arrow-wrap {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: rotate(135deg);
+    }
+
+    .right-arrow-wrap {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: rotate(-45deg);
+    }
+
+    @media screen and (max-width: 900px) {
+      .testimonial {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="testimonial">
+    <h1>Our Reviews</h1>
+    <div class="line"></div>
+    <!-- arrow wrapper contains the review and the arrows -->
+    <div class="arrow-wrapper">
+      <!-- review section -->
+      <div id="reviewWrap" class="review-wrap">
+        <div id="imgBox"></div>
+        <div id="name"></div>
+        <div id="profession"></div>
+        <div id="description"></div>
+      </div>
+      <!-- left arrow -->
+      <div class="left-arrow-wrap">
+        <div class="arrow"></div>
+      </div>
+      <!-- right arrow -->
+      <div class="right-arrow-wrap">
+        <div class="arrow"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const reviewWrap = document.getElementById("reviewWrap");
+    const leftArrow = document.querySelector(".left-arrow-wrap .arrow");
+    const rightArrow = document.querySelector(".right-arrow-wrap .arrow");
+    const imgBox = document.getElementById("imgBox");
+    const name = document.getElementById("name");
+    const profession = document.getElementById("profession");
+    const description = document.getElementById("description");
+
+    let people = [{
+        photo: '13.png',
+        name: "K SATHWIK REDDY",
+        profession: "TECHNICAL TEAM",
+        description: "I got the chance to improve a number of abilities at the Sowparnika event that are essential for both professional and personal growth. Through communication-focused activities, I developed my ability to express myself clearly. The occasion helped me polish my presentation abilities by giving me a stage on which to boldly share my thoughts. By choosing to participate in the Prototype subject instead of just the quiz or poster, I was able to show off my skills and engage in creative thinking. All things considered, Sowparnika expanded my skill set and offered a vast and varied:",
+      },
+      {
+        photo: '12.png',
+        name: "SAI DEEKSHITH",
+        profession:"TECHNICAL TEAM",
+        description: "I, along with my 4-member team, developed a prototype for the event Sowparnika 2K23. Our experience was enriching as we established connections, refined the prototype, and created a detailed chart for presentation. Overcoming the challenge of explaining our prototype to judges, addressing their queries, and receiving positive feedback created a lasting and rewarding experience. This event provided a valuable platform to showcase our skills:",
+      },
+      {
+        photo: "2.png",
+        name: "K SADHANA",
+        profession:"IDEOLOGY TEAM",
+        description: "Participating in Sowparnika 2k23 Poster making proved to be a wonderful experience. Initially uncertain about my ability to collaborate and think creatively, this event became a platform for practical exploration. It was a fantastic opportunity to learn by doing. Building memorable moments with friends added to the honor of being part of this remarkable event. I feel grateful for the invaluable lessons that unfolded during the entire experience:",
+      },
+      {
+        photo: "3.png",
+        name: "K NAVANEETH REDDY",
+        profession:"MARKETING",
+        description: "Participating in the Sowparnika Prototype Display was an immensely gratifying experience, marking my inaugural engagement in such an event. This platform not only offered insights into science and technology but also served as a canvas for imbibing the essence of teamwork. The crowning achievement of securing a gold medal added to the joyous fervor of the occasion, affirming the dedication and collaborative spirit invested in the project. Moreover, the event served as a catalyst for augmenting our technical acumen, equipping us with invaluable knowledge in the realms of innovation and problem-solving. Overall, this enriching experience encompassed learning through practical application, teamwork, and the acquisition of substantial technical expertise:"
+      },
+      {
+        photo: "4.png",
+        name: "R HARSHITH KUMAR",
+        profession:"TECHNICAL TEAM",
+        description: "Participating in Sowparnika 2K23, with my team of 4 members successfully developed the first working prototype. Our experience involved establishing connections, refining the prototype, and creating a comprehensive chart for presentation. Overcoming the challenge of explaining our prototype to judges and addressing their inquiries, the event left us with a lasting and rewarding experience. As a Technical Team member , it provided an excellent platform to showcase our skills and foster growth.",
+      },
+      {
+        photo: "5.png",
+        name: "ROHAN MARAPALY",
+        profession:"REPRESENTATIVE SST",
+        description: "During the Sowparnika event, I had the opportunity to enhance various skills that are crucial in both personal and professional development. Engaging in activities focused on communication, I learned to articulate my thoughts effectively. The event also honed my presentation skills, providing a platform to express ideas confidently. Participating in the theme Prototype amidst options like poster and quiz, allowed me to delve into creative thinking and showcasing abilities. Overall, Sowparnika not only broadened my skill set but also provided a diverse and enriching experience.",
+
+      },
+      {
+        photo: "6.png",
+        name: "OMKAR TAVVA",
+        profession:"IDEOLOGY TEAM",
+        description: "Participating in Sowparnika 2k23 marked the highlight of my first year in BTech. The event provided a rich learning experience, allowing us to not only gain knowledge but also enjoy various aspects. Sowparnika is an excellent platform for students to showcase their passion and creativity, presenting their ideas in unique ways. Every participant exudes enthusiasm, contributing to a vibrant and innovative atmosphere. I encourage everyone to seize the opportunity offered by Sowparnika for nurturing their ideas.",
+      },
+      {
+        photo: "7.png",
+        name: "K ADITHYA REDDY",
+        profession:"DESIGNING",
+        description: "Participating in Sowparnika 2K23, with my team of 4 members successfully developed the first working prototype. Our experience involved establishing connections, refining the prototype, and creating a comprehensive chart for presentation. Overcoming the challenge of explaining our prototype to judges and addressing their inquiries, the event left us with a lasting and rewarding experience. As a Technical Team member , it provided an excellent platform to showcase our skills and foster growth.",
+
+      },
+      {
+        photo:"8.png", 
+        name: "K LAKSHANYA",
+        profession:"TECHNICAL TEAM",
+        description: "Participating in sowparnika 2k23 was a exciting memorable experience. Taking part poster was a  such a fun and rewarding experience.It was a great way to showcase our creativity and knowledge on a specific topic. It was a great platform to overcome my fear and to develop my communication skills. It was a wonderful experience. It was a great opportunity to gain self confidence.", 
+
+      },
+      {
+        photo:"9.png", 
+        name: "K MEGHANA",
+        profession:"TECHNICAL TEAM",
+        description:"Making poster  for Sowparnika 2k23 turned out to be a fantastic experience. Although I was first unsure of my capacity for teamwork and creative thought,Instead this became an excellent opportunity for me to present my work and make vital contacts with many people in the field thanks to this event.Creating treasured memories is also the privilege of taking part in this extraordinary occasion.",
+
+      },
+      {
+        photo:"10.png", 
+        name: "E V SATHVIKA",
+        profession:"HOSPITALITY",
+        description: "Participating in Sowparnika  2k23 is really a very great experience and This event is a very Great  platform . from being a participate to being a co-ordinator this is really a great thing .this event made me learn new things in this journey and this one of the interactive sessions to interact with many people  and I am feel privileged for being a part of this amazing event.",
+
+      },
+      {
+        photo: "11.png",
+        name: "M SUMANTH",
+        profession:"TECHNICAL TEAM",
+        description: "Participating in sowparnika 2k23 was a wonderful experience and so inspiring. Sowparnika prototype was an enriching experience that got me elevated in my academic journey.I'm grateful for the platform which helped me to share and celebrate the pursuit of my knowledge. By participating in the event I got more confident about my abilities of thinking. It was a great way to learn and do things creative. It  was great experience to be the part of the event. The event not only offered a platform to present the innovation but also facilitated meaningful interactive session with many people. I consider myself privileged to be the part of such significant event in my filed.",
+      },
+      {
+        photo: "14.png",
+        name: "M VEDA SHREE",
+        profession:"IDEOLOGY TEAM",
+        description: "Participating in sowparnika 2k23 was so inspiring .l used to think that poster making was just for art students. But then i had made poster for the event and I realized how important it is to be able to communicate complex information in a visually appealing way. i actually enjoyed poster making.Creating posters has helped me to think outside the box and to come up with new ideas. It has also helped me to improve my communication skills.I now use poster making skills to create presentations for my classes and to promote my extracurricular activities. As an engineering student, I am always looking for ways to improve my presentation skills.",
+
+      },
+      {
+        photo: "15.png",
+        name: "K HIMA BINDHU",
+        profession:"DOCUMENTATION",
+        description: "I had a great experience taking part in Sowparnika2k23 last year. The exciting setting offered fascinating learning that has advanced my growth both personally and professionally.All of it's had a big impact because of Sowparnika's commitment to nurturing communication and collaboration. It took me an hour to be a part of such an active event, and I am thankful for the platform it offered to celebrate and share the pursuit of knowledge.",
+
+      },
+      {
+        photo: "16.png",
+        name: "K RAVI KUMAR",
+        profession:"TECHNICAL TEAM",
+        description: "Participating in the Sowparnika prototype  was an enriching experience that elevated my academic journey.I'm grateful for the platform it provided to share and celebrate the pursuit of knowledge.Moreover, the event served as a catalyst for augmenting our technical acumen, equipping us with invaluable knowledge in the realms of innovation and problem-solving.Overall, this enriching experience encompassed learning through practical application, teamwork, and the acquisition of substantial technical expertise.",
+
+
+      },
+      {
+        photo: "17.png",
+        name: "K NAVITHA",
+        profession:"MARKETING",
+        description: "I had an incredible experience participating in last year's Sowparnika2k23. The dynamic atmosphere  provided valuable insights that have positively impacted both my personal and professional growth .As  I participated in the poster presentation,I seized the opportunity to showcase my creativity and enhance my team work abilities with various skills.I'm grateful for the chance to be part of such a well-organized and impactful event.",
+      },
+      {
+        photo: '18.png',
+        name: "VAMSHI",
+        profession:"HOSPITALITY",
+        description: "Participating in the renowned Tech Summit was a truly transformative experience that greatly bolstered my professional growth. This event provided a valuable platform for showcasing my work and fostering meaningful connections with numerous individuals in the industry. Interacting with a diverse audience and receiving constructive feedback not only elevated the quality of my work but also deepened my comprehension of the subject matter. I consider myself privileged to have been a part of such a significant event in my field.",
+
+      },
+      {
+        photo: "19.png",
+        name: "HANISHA",
+        profession:"HOSPITALITY",
+        description: "Taking part in this ospcious event Sowparnika was a transformative experience that significantly enhanced my professional development. The event not only offered a platform to present my work but also facilitated meaningful interactions with many people. Engaging with a diverse audience and receiving constructive feedback further enriched my understanding of the subject matter. I feel privileged to be a part of this event.",
+
+      },
+      {
+        photo: "20.png",
+        name: "K VAIBHAV SAI",
+        profession:"DESIGNING",
+        description: "Participating in the Sowparnika poster presentation was an enriching experience that elevated my academic journey. The platform not only allowed me to showcase my research but also provided a unique opportunity to engage with a diverse audience and receive valuable insights. This invaluable opportunity not only strengthened my research presentation skills but also contributed improved my speaking skills. It was an honor to be part of such an esteemed event, and I'm grateful for the platform it provided to share and celebrate the pursuit of knowledge.",
+      },
+      {
+        photo: "21.png",
+        name: "ABHINAYA",
+        profession:"DOCUMENTATION",
+        description: "Being a part of Sowparnika 2k23 was a great experience. I was doubtful about my abilities to co-operate and think beyond the box. But sowparnika provided a platform to explore the pratical world.It was a great way to learn and do. I created remarkable memories with my friends in this event. It was an honour to be part of this amazing event.I am grateful to the invaluable lessons I learnt thoroughout the event.",
+
+      },
+      
+      
+      
+    ];
+
+    // set the first person
+    imgBox.style.backgroundImage = people[0].photo;
+    name.innerText = people[0].name;
+    profession.innerText = people[0].profession;
+    description.innerText = people[0].description;
+    let i = 0;
+    imgBox.style.backgroundImage = people[1].photo;
+    name.innerText = people[1].name;
+    profession.innerText = people[1].profession;
+    description.innerText = people[1].description;
+    let j = 0;
+    imgBox.style.backgroundImage = people[2].photo;
+    name.innerText = people[2].name;
+    profession.innerText = people[2].profession;
+    description.innerText = people[2].description;
+    let k = 0;
+
+    //Select the side where you want to slide
+    function slide(side, personNumber) {
+      let reviewWrapWidth = reviewWrap.offsetWidth + "px";
+      let descriptionHeight = description.offsetHeight + "px";
+      //(+ or -)
+      let side1symbol = side === "left" ? "" : "-";
+      let side2symbol = side === "left" ? "-" : "";
+
+      setTimeout(() => {
+        imgBox.style.backgroundImage = people[personNumber].photo;
+      }, 0);
+      setTimeout(() => {
+        description.style.height = descriptionHeight;
+      }, 100);
+      setTimeout(() => {
+        name.innerText = people[personNumber].name;
+      }, 200);
+      setTimeout(() => {
+        profession.innerText = people[personNumber].profession;
+      }, 300);
+      setTimeout(() => {
+        description.innerText = people[personNumber].description;
+      }, 400);
+    }
+
+    function setNextCardLeft() {
+      if (k == 20| j==20| k==20) {
+        i=0;
+        j=0;
+        k=0;
+        slide("left", currentPerson);
+      } else {
+        i++;
+        j++;
+        k++;
+      }
+
+      slide("left", currentPerson);
+    }
+
+    function setNextCardRight() {
+      if (i === 0) {
+        i = 20;
+        slide("right", i);
+      } else {
+        i--;
+      }
+
+      slide("right", i);
+    }
+
+    leftArrow.addEventListener("click", setNextCardLeft);
+    rightArrow.addEventListener("click", setNextCardRight);
+  </script>
+</body>
+
+</html>
