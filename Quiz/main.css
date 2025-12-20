@@ -30,7 +30,7 @@ body {
 
 /* Header */
 .header {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: #0880e8;
   color: white;
   padding: 18px 30px;
   display: flex;
@@ -361,8 +361,8 @@ body {
 }
 
 .question-dot.current {
-  background: #4f46e5;
-  border-color: #4f46e5;
+  background: #0880e8;
+  border-color: #0880e8;
   color: white;
   transform: scale(1.1);
 }
@@ -374,7 +374,7 @@ body {
 }
 
 .btn-submit {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: #0880e8;
   color: white;
   padding: 12px 30px;
   font-weight: 600;
@@ -453,7 +453,7 @@ body {
 }
 
 .modal-header {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background:#0880e8;
   color: white;
   padding: 24px 30px;
   border-radius: 20px 20px 0 0;
@@ -694,7 +694,7 @@ body {
 }
 
 .btn-restart {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: #0880e8;
   color: white;
   padding: 14px 40px;
   font-size: 1.1rem;
@@ -949,7 +949,7 @@ body {
 .popup-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: #0880e8;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1061,7 +1061,7 @@ body {
 }
 
 .btn-yes {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: #0880e8;
   color: white;
   box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
 }
