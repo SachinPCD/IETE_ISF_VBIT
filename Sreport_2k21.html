@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sowparnika 2K21 Reports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="report.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-right" style="background-color:#0e589b; padding:12px 20px;">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- Logos -->
+            <div class="header-left d-flex align-items-center" data-aos="fade-right" data-aos-duration="800">
+                <div class="logos d-flex align-items-center">
+                    <a href="index.html" class="d-inline-block me-3">
+                        <img src="Logo.png" alt="IETE Logo" class="iete-logo" />
+                    </a>
+                    <a href="index.html" class="d-inline-block me-3">
+                        <img src="SST LOGO.png" alt="SST Logo" class="sst-logo" />
+                    </a>
+                    <a href="index.html" class="d-inline-block">
+                        <img src="iet_logo1.png" alt="IET Logo" class="iet-logo" />
+                    </a>
+                </div>
+            </div>
+            <!-- Center: Title -->
+            <div class="header-center" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+                <h1>SOWPARNIKA</h1>
+            </div>
+            <!-- Navbar -->
+            <nav id="navbar" class="navbar">
+                <!-- New Close Button -->
+                <button 
+                    class="close-button-nav"
+                    onclick="window.location.href='index.html'"
+                    aria-label="Close"
+                    data-aos="fade-left" 
+                    data-aos-duration="800"
+                    data-aos-delay="300"
+                >
+                    <span class="material-icons">close</span>
+                </button>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Report HEADER -->
+    <section class="reports-header" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+        <h1 data-aos="zoom-in" data-aos-delay="500">SOWPARNIKA 2K21</h1>
+        <p data-aos="fade-up" data-aos-delay="600">
+            <span><strong>The flagship event of IETE-ISF VBIT </strong></span> that aims to bridge the gap between academic learning and real-world 
+            applications by nurturing innovation at the foundational level of engineering education. By providing students with an opportunity to present
+            their ideas and projects, SOWPARNIKA motivates freshers to develop confidence, technical competence, and a spirit of innovation aligned with 
+            current industry expectations.
+        </p>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section class="reports-container">
+        <div class="report-card" 
+             style="background:url('assets/img/s1.jpg'); background-position: center; background-size: cover;"
+             data-aos="zoom-in" 
+             data-aos-duration="800"
+             data-aos-delay="200">
+            <div class="icon">
+                <i class="fa-solid fa-file-pdf"></i>
+            </div>
+            <h3>Event Report</h3>
+            <p>The report covers the event proceedings and key highlights.</p><br><br>
+            <a href="docs/2k24/event_report.pdf" target="_blank">View</a>
+        </div>
+
+        <div class="report-card"
+             style="background:url('assets/img/s1.jpg'); background-position: center; background-size: cover;"
+             data-aos="zoom-in" 
+             data-aos-duration="800"
+             data-aos-delay="300">
+            <div class="icon">
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+            <h3>Enrollment Count</h3>
+            <p>The enrolment count indicates good participation.</p><br><br>
+            <a href="docs/2k24/schedule.pdf" target="_blank">View</a>
+        </div>
+
+        <div class="report-card"
+             style="background:url('assets/img/s1.jpg'); background-position: center; background-size: cover;"
+             data-aos="zoom-in" 
+             data-aos-duration="800"
+             data-aos-delay="400">
+            <div class="icon">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+            <h3>Participant Count</h3>
+            <p>The programme recorded a satisfactory participant count.</p><br><br>
+            <a href="docs/2k24/winners.pdf" target="_blank">View</a>
+        </div>
+
+        <div class="report-card"
+             style="background:url('assets/img/s1.jpg'); background-position: center; background-size: cover;"
+             data-aos="zoom-in" 
+             data-aos-duration="800"
+             data-aos-delay="500">
+            <div class="icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h3>Awardees</h3>
+            <p>The report includes the list of awardees</p><br><br>
+            <a href="gallery_2k24.html">View</a>
+        </div>
+    </section>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            mirror: false,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  padding-top: 100px;
+}
+.header-center h1 {
+  font-size: 42px;
+  font-weight: 900;
+  font-family:"Barlow", sans-serif !important;
+  letter-spacing: 2px;
+  margin: 0;
+  background: linear-gradient(
+    120deg,
+    #ffffff 30%,
+    #00d4ff 45%,
+    #ffffff 60%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.header-center {
+  position: static; /* Remove absolute positioning */
+  transform: none; /* Remove centering transform */
+  left: auto; /* Remove left positioning */
+  margin-left: 30px; /* Add space after logos */
+  flex: 1; /* Allow it to grow and take available space */
+  text-align: left; /* Align text to left */
+}
+.header-center h1 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+  display: inline-block; /* Keep the gradient effect */
+}
+
+/* BACKGROUND */
+body {
+    background: linear-gradient(to bottom, #E0FFFF, #E0FFFF);
+    color: #0c0c0c;
+}
+
+/* HEADER */
+.reports-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.reports-header h1 {
+    font-size: 42px;
+    color: #072e53;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.reports-header p {
+    font-size: 18px;
+    max-width: 900px;
+    margin: auto;
+    color: #292929;
+}
+
+/* CARD CONTAINER */
+.reports-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 25px 80px;
+
+}
+
+/* CARD */
+.report-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(215, 213, 213, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+     width: 280px;   /* wider */
+  height:320px ;  /* shorter */
+}
+
+.report-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 45px rgba(225, 221, 221, 0.2);
+}
+
+
+
+/* TITLE */
+.report-card h3 {
+    font-size: 22px;
+    color: #072e53;
+    margin-bottom: 15px;
+}
+
+
+
+/* BUTTON */
+.report-card a {
+    display: inline-block;
+    padding: 12px 26px;
+    background: #064580;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.report-card a:hover {
+    background: #08345e;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .reports-container {
+        padding: 30px 20px;
+    }
+
+    .reports-header h1 {
+        font-size: 32px;
+    }
+}
+.back-container {
+    text-align: center;
+    margin: 0px 0;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #0e589b;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px rgb(14, 88, 155);
+    transition: all 0.3s ease;
+}
+.back-btn .arrow {
+    font-size: 45px;
+    transition: transform 0.3s ease;
+}
+
+.back-container {
+    text-align: center;
+    margin: 0;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: #0e589b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(14, 88, 155, 0.35);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #083e6e;
+    box-shadow: 0 10px 25px rgba(14, 88, 155, 0.55);
+    transform: scale(1.05);
+}
+
+.back-btn .arrow {
+    font-size: 26px;
+    line-height: 1;
+    transition: transform 0.4s ease;
+}
+
+.back-btn:hover .arrow {
+    transform: rotate(180deg);
+}
+.close-button-nav {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.close-button-nav .material-icons {
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect as requested */
+.close-button-nav:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.close-button-nav:hover .material-icons {
+    transform: scale(1.2);
+    color: #00d4ff; /* Using your accent color */
+}
+
+/* Optional: Add a subtle pulse animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.close-button-nav {
+    animation: pulse 2s infinite;
+}
+
+/* Remove the old back-container styling if it exists */
+.back-container {
+    display: none;
+}
+
+/* Responsive adjustments for the close button */
+@media (max-width: 768px) {
+    .close-button-nav {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .close-button-nav .material-icons {
+        font-size: 24px;
+    }
+}
+.header-left {
+    margin-left: -4rem; /* Adjust this value as needed */
+    margin-right: -1rem; /* Adjust this value as needed */
+}
