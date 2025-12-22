@@ -722,3 +722,133 @@ setTimeout(() => {
       this.style.boxShadow = 'none';
     });
   });
+
+  // ========== INTERACTIVE GALLERY CAROUSEL ==========
+  
+  // Gallery data - images for each event category
+  const galleryData = {
+    sowparnika: {
+      title: 'SOWPARNIKA',
+      images: [
+        'assets/img/sowparnika5.jpg',
+        'assets/img/sowparnika2.jpg',
+        'assets/img/sowparnika33.jpg',
+        'sowp-2k23-1.jpg',
+        'sowp-2k23-2.jpg',
+        'sowp-2k23-3.jpg',
+        'sowp-2k23-4.jpg',
+        'sowparnika-2k21_1.jpg',
+        'sowparnika-2k21_2.jpg',
+        'sowparnika-2k21_3.jpg'
+      ]
+    },
+    avyanna: {
+      title: 'AVYANNA',
+      images: [
+        'assets/img/avyanna.jpg',
+        'assets/img/AVYANA2.jpg',
+        'assets/img/avyanna5.jpg'
+      ]
+    },
+    cyberelite: {
+      title: 'CYBER-ELITE',
+      images: [
+        'eventpic1.JPG',
+        'eventpic2.JPG',
+        'eventpic4.JPG'
+      ]
+    },
+    genai: {
+      title: 'GEN AI Spark',
+      images: [
+        'assets/img/ga.jpg',
+        'assets/img/gen.jpg',
+        'assets/img/genai 1 .jpg'
+      ]
+    }
+  };
+
+  // Open gallery carousel
+  function openGalleryCarousel(category) {
+    const modal = document.getElementById('galleryCarouselModal');
+    const track = document.getElementById('galleryCarouselTrack');
+    const title = document.getElementById('galleryCarouselTitle');
+    
+    if (!modal || !track || !galleryData[category]) return;
+    
+    // Set title
+    title.textContent = galleryData[category].title;
+    
+    // Clear existing images
+    track.innerHTML = '';
+    
+    // Get images for this category
+    const images = galleryData[category].images;
+    
+    // Create images (duplicate for infinite scroll effect)
+    const allImages = [...images, ...images]; // Duplicate for seamless loop
+    
+    allImages.forEach((src, index) => {
+      const item = document.createElement('div');
+      item.className = 'gallery-carousel-item';
+      
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `${galleryData[category].title} - Photo ${(index % images.length) + 1}`;
+      img.loading = 'lazy';
+      
+      item.appendChild(img);
+      track.appendChild(item);
+    });
+    
+    // Calculate animation duration based on number of images
+    const duration = images.length * 5; // 5 seconds per image
+    track.style.animationDuration = `${duration}s`;
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+    
+    // Trigger animation after a small delay for smooth transition
+    setTimeout(() => {
+      modal.style.opacity = '1';
+    }, 10);
+  }
+
+  // Close gallery carousel
+  function closeGalleryCarousel() {
+    const modal = document.getElementById('galleryCarouselModal');
+    
+    if (!modal) return;
+    
+    modal.style.opacity = '0';
+    
+    setTimeout(() => {
+      modal.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scroll
+      
+      // Clear images to free memory
+      const track = document.getElementById('galleryCarouselTrack');
+      if (track) track.innerHTML = '';
+    }, 400);
+  }
+
+  // Close on ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('galleryCarouselModal');
+      if (modal && modal.classList.contains('active')) {
+        closeGalleryCarousel();
+      }
+    }
+  });
+
+  // Close on clicking outside the carousel
+  document.addEventListener('click', function(e) {
+    const modal = document.getElementById('galleryCarouselModal');
+    if (modal && e.target === modal) {
+      closeGalleryCarousel();
+    }
+  });
+
+  console.log("Interactive Gallery Carousel Loaded Successfully!");
