@@ -869,8 +869,8 @@
  /* Gallery Thumbnails Container */
  .gallery-thumbnails {
    display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 25px;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 30px;
    padding: 20px 0;
  }
 
@@ -890,7 +890,7 @@
  /* Thumbnail Card */
  .gallery-thumb-card {
    position: relative;
-   height: 280px;
+   height: 380px;
    border-radius: 20px;
    overflow: hidden;
    cursor: pointer;
