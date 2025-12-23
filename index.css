@@ -1220,3 +1220,167 @@
      display: none;
    }
  }
+
+/* ========== PORTFOLIO YEAR CARDS STYLES ========== */
+
+/* Portfolio Thumbnails Container */
+.portfolio-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .portfolio-thumbnails {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-thumbnails {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Portfolio Year Card */
+.portfolio-year-card {
+  position: relative;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(8, 128, 232, 0.2);
+}
+
+.portfolio-year-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(8, 128, 232, 0.1), rgba(0, 212, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-year-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(8, 128, 232, 0.4), 0 0 0 3px rgba(8, 128, 232, 0.5);
+  border-color: rgba(8, 128, 232, 0.6);
+}
+
+.portfolio-year-card:hover::before {
+  opacity: 1;
+}
+
+.portfolio-year-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  z-index: 2;
+  position: relative;
+  background: linear-gradient(135deg, #0880e8, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.portfolio-year-card:hover .portfolio-year-title {
+  transform: scale(1.1);
+}
+
+.portfolio-member-count {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.portfolio-member-count i {
+  font-size: 20px;
+  color: #0880e8;
+}
+
+.portfolio-view-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(8, 128, 232, 0.2);
+  color: #00d4ff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid rgba(8, 128, 232, 0.4);
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.portfolio-year-card:hover .portfolio-view-btn {
+  background: #0880e8;
+  color: #fff;
+  border-color: #0880e8;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(8, 128, 232, 0.4);
+}
+
+.portfolio-view-btn i {
+  transition: transform 0.3s ease;
+}
+
+.portfolio-year-card:hover .portfolio-view-btn i {
+  transform: translateX(5px);
+}
+
+.portfolio-year-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(8, 128, 232, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.portfolio-year-card:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .portfolio-year-card {
+    height: 280px;
+  }
+  .portfolio-year-title {
+    font-size: 36px;
+  }
+  .portfolio-member-count {
+    font-size: 14px;
+  }
+  .portfolio-view-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}

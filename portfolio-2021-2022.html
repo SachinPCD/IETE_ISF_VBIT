@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>TEAM 2k21-2k22 | IETE-ISF VBIT</title>
+    <meta content="TEAM 2k21-2k22 Portfolio - IETE-ISF VBIT" name="description">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Vendor CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Barlow', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* Header */
+        .portfolio-header {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-btn:hover {
+            background: #0880e8;
+            color: #fff;
+            transform: translateX(-5px);
+        }
+
+        .portfolio-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #0880e8, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .member-count {
+            background: rgba(8, 128, 232, 0.2);
+            color: #00d4ff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid rgba(8, 128, 232, 0.3);
+        }
+
+        /* Main Content */
+        .portfolio-content {
+            padding: 120px 40px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-subtitle {
+            text-align: center;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: 60px;
+        }
+
+        .team-section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #0880e8;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #0880e8;
+            padding-bottom: 15px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        th {
+            background: linear-gradient(135deg, #0880e8, #00d4ff);
+            color: #fff;
+            padding: 18px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(8, 128, 232, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .portfolio-header {
+                padding: 15px 20px;
+            }
+
+            .portfolio-title {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            .member-count {
+                display: none;
+            }
+
+            .portfolio-content {
+                padding: 100px 20px 40px;
+            }
+
+            .team-section-title {
+                font-size: 28px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            th,
+            td {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .back-btn span {
+                display: none;
+            }
+
+            .back-btn {
+                padding: 12px;
+            }
+
+            .portfolio-title {
+                font-size: 16px;
+            }
+
+            .team-section-title {
+                font-size: 22px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="portfolio-header">
+        <a href="index.html#team" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Portfolio</span>
+        </a>
+        <h1 class="portfolio-title">TEAM 2k21-2k22</h1>
+        <span class="member-count"><i class="fas fa-users"></i> 46 Members</span>
+    </header>
+
+    <!-- Main Content -->
+    <main class="portfolio-content">
+        <p class="portfolio-subtitle">Meet our dedicated team members for the year 2021-2022</p>
+
+        <!-- CORE TEAM -->
+        <div class="team-section" data-aos="fade-up">
+            <h2 class="team-section-title">Core Team</h2>
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>DESIGNATION</th>
+                    <th>Year & Branch</th>
+                </tr>
+                <tr>
+                    <td>KRITHIKA ENDRALA</td>
+                    <td>CHAIR-PERSON</td>
+                    <td>IV CSE</td>
+                </tr>
+                <tr>
+                    <td>NIKITHA PEDDI</td>
+                    <td>VICE CHAIR PERSON</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>SAI SUSMITHA</td>
+                    <td>DIRECTOR SST</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>VAISHNAVI</td>
+                    <td>DEPUTY DIRECTOR SST</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>SRINIVAS</td>
+                    <td>SECRETARY</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>M.B.BHANU TEJA</td>
+                    <td>IETE REPRESENTATIVE</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>MOKSHAGNA TEJA</td>
+                    <td>TREASURER</td>
+                    <td>IV CSE</td>
+                </tr>
+                <tr>
+                    <td>NIKHITHA TALLURI</td>
+                    <td>DESIGN LEAD</td>
+                    <td>III EEE</td>
+                </tr>
+                <tr>
+                    <td>MEGHANA AVVARI</td>
+                    <td>DOCUMENTATION LEAD</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>INDHUJA KOTHAPALLY</td>
+                    <td>OPERATIONS LEAD</td>
+                    <td>IV CSE</td>
+                </tr>
+                <tr>
+                    <td>POOJITHA REDDY</td>
+                    <td>MARKETING LEAD</td>
+                    <td>IV ECE</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXE-COM TEAM -->
+        <div class="team-section" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="team-section-title">Exe-Com Team</h2>
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>DESIGNATION</th>
+                    <th>Year & Branch</th>
+                </tr>
+                <tr>
+                    <td>VINISHA</td>
+                    <td>JOINT SECRETARY</td>
+                    <td>III EEE</td>
+                </tr>
+                <tr>
+                    <td>VEGESANA SANJANA</td>
+                    <td>REPRESENTATIVE</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>TARUN REDDY</td>
+                    <td>TREASURY</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>MOHAMMAD SAJID</td>
+                    <td>TREASURY</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>NAVYA TIRUMANADHAM</td>
+                    <td>DESIGN (CO-ORDINATOR)</td>
+                    <td>III EEE</td>
+                </tr>
+                <tr>
+                    <td>UDAY KUMAR</td>
+                    <td>DESIGN</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>HARSHA VARDHAN</td>
+                    <td>DESIGN</td>
+                    <td>III MECH</td>
+                </tr>
+                <tr>
+                    <td>POLASANI JAYARAM</td>
+                    <td>DESIGN</td>
+                    <td>II ECE</td>
+                </tr>
+                <tr>
+                    <td>AKASH RAMAGIRI</td>
+                    <td>DESIGN</td>
+                    <td>II MECH</td>
+                </tr>
+                <tr>
+                    <td>SONALI SANKESHI</td>
+                    <td>DOCUMENTATION (CO-ORDINATOR)</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>NEERAJA PITLA</td>
+                    <td>DOCUMENTATION</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>BADDAM BHARGAVI</td>
+                    <td>DOCUMENTATION</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>ANUSHA ALAVALA</td>
+                    <td>DOCUMENTATION</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>D. KUMAR VARUN</td>
+                    <td>DOCUMENTATION</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>P V B JANAKI</td>
+                    <td>DOCUMENTATION</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>SUNEETH MANIKANTA</td>
+                    <td>OPERATIONS (CO-ORDINATOR)</td>
+                    <td>III EEE</td>
+                </tr>
+                <tr>
+                    <td>JAHNAVI MAHADASI</td>
+                    <td>OPERATIONS</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>KOTHA SUMA REDDY</td>
+                    <td>OPERATIONS</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>JUGAL KISHORE</td>
+                    <td>OPERATIONS</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>SUPRIYA LOKURTHY</td>
+                    <td>MARKETING (CO-ORDINATOR)</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>SUNNY KRISHNA</td>
+                    <td>MARKETING</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>SHYNI ANNAVARAPU</td>
+                    <td>MARKETING</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>PRIYANSHI SINGH</td>
+                    <td>MARKETING</td>
+                    <td>II CSE</td>
+                </tr>
+                <tr>
+                    <td>MUSKAN SINGH</td>
+                    <td>MARKETING</td>
+                    <td>II CSE</td>
+                </tr>
+                <tr>
+                    <td>SIRIPOTHULA RAHUL</td>
+                    <td>MARKETING</td>
+                    <td>II CSE</td>
+                </tr>
+                <tr>
+                    <td>PARAMESHWARI</td>
+                    <td>SOCIAL MEDIA PROMOTIONS (CO-ORDINATOR)</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>GADEM SAI RAM</td>
+                    <td>SOCIAL MEDIA PROMOTIONS</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>RUSHIKA MADIPEDDI</td>
+                    <td>MEDIA AND PUBLIC RELATIONS (CO-ORDINATOR)</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>CHARITHA</td>
+                    <td>MEDIA AND PUBLIC RELATIONS</td>
+                    <td>II IT</td>
+                </tr>
+                <tr>
+                    <td>BHANU PRAKASH</td>
+                    <td>SST (REPRESENTATIVE)</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>MANEESH BANKA</td>
+                    <td>SST (CO-ORDINATOR)</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>ANMISHA NANDURI</td>
+                    <td>SST</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>NAONIT KUMAR GOUTAM</td>
+                    <td>SST</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>PRUDHVI TEJA</td>
+                    <td>SST</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>LONKA SAMBA RAJU</td>
+                    <td>SST</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>ZUHA SIDDIQUI</td>
+                    <td>SST</td>
+                    <td>II CSE</td>
+                </tr>
+                <tr>
+                    <td>HEMANTH MANDRA</td>
+                    <td>SST</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>MADHAVAN RAO</td>
+                    <td>SST</td>
+                    <td>II MECH</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <!-- AOS Animation -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 600, once: true });
+        });
+    </script>
+</body>
+
+</html>
