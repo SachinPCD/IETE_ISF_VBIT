@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>TEAM 2k25-2k26 | IETE-ISF VBIT</title>
+    <meta content="TEAM 2k25-2k26 Portfolio - IETE-ISF VBIT" name="description">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg,
+                    rgba(5, 74, 133, 0.95) 0%,
+                    rgba(5, 74, 133, 0.8) 50%,
+                    rgba(5, 74, 133, 0.95) 100%);
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(224, 255, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(224, 255, 255, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        /* Header/Navbar like the example */
+        #header {
+            background: #054a85;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(224, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(5, 74, 133, 0.4);
+            max-height: 5rem;
+        }
+
+        .iete-logo {
+            height: 80px;
+        }
+
+        .sst-logo {
+            width: 65px !important;
+            height: 65px !important;
+        }
+
+        .iet-logo {
+            width: 155px !important;
+            height: 155px !important;
+            margin-left: -22px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-top: -2rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logos img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logos img:hover {
+            transform: scale(1.05);
+        }
+
+        .header-center h1 {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .close-button-nav {
+            background: rgba(224, 255, 255, 0.1);
+            border: 2px solid rgba(224, 255, 255, 0.2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .close-button-nav:hover {
+            background: rgba(224, 255, 255, 0.2);
+            transform: rotate(90deg);
+            box-shadow: 0 0 15px rgba(224, 255, 255, 0.3);
+        }
+
+        /* Main Content */
+        .portfolio-content {
+            padding: 120px 20px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Team Header */
+        .team-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .team-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .team-header p {
+            color: #e0ffff;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .team-year {
+            display: inline-block;
+            background: rgba(224, 255, 255, 0.1);
+            color: #e0ffff;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 15px;
+            border: 1px solid rgba(224, 255, 255, 0.2);
+        }
+
+        /* Team Cards Grid */
+        .team-categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: rgba(224, 255, 255, 0.1);
+            color: #e0ffff;
+            border: 2px solid rgba(224, 255, 255, 0.2);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: #054a85;
+            color: white;
+            border-color: rgba(224, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(5, 74, 133, 0.4);
+        }
+
+        .team-cards-container {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .team-cards-container.active {
+            display: grid;
+            opacity: 1;
+        }
+
+        /* Team Members Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        /* Team Member Card */
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(224, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(5, 74, 133, 0.3);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(5, 74, 133, 0.5);
+            border-color: rgba(224, 255, 255, 0.3);
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #054a85, #e0ffff, #054a85);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-card:hover::before {
+            opacity: 1;
+        }
+
+        .member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(224, 255, 255, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .member-image {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 25px;
+        }
+
+        .member-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .member-role {
+            color: #e0ffff;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(5, 74, 133, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(224, 255, 255, 0.1);
+        }
+
+        .member-details {
+            color: rgba(224, 255, 255, 0.8);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .member-details i {
+            color: #e0ffff;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .portfolio-footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #e0ffff;
+            font-size: 14px;
+            border-top: 1px solid rgba(224, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .logos {
+                order: 1;
+            }
+
+            .header-center {
+                order: 2;
+                width: 100%;
+                text-align: center;
+            }
+
+            .close-button-nav {
+                order: 3;
+            }
+
+            .team-header h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-content {
+                padding: 100px 15px 40px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .team-header h1 {
+                font-size: 32px;
+            }
+
+            .team-header p {
+                font-size: 16px;
+            }
+
+            .category-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .member-info {
+                padding: 20px;
+            }
+
+            .member-name {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .team-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .category-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .team-header h1 {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+
+            #header {
+                padding: 10px 15px;
+            }
+
+            .logos img {
+                height: 32px;
+            }
+
+            .header-center h1 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .team-header h1 {
+                font-size: 24px;
+            }
+
+            .member-image {
+                height: 220px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .team-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #054a85;
+            }
+
+            .member-image {
+                filter: grayscale(100%);
+            }
+        }
+
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header like the example -->
+    <header id="header" class="fixed-top" style="background-color:#054a85;">
+        <div class="container">
+            <div class="header-content" style="display: flex;">
+
+                <div class="logos" data-aos="fade-right" data-aos-duration="800">
+                    <a href="index.html" class="d-inline-block">
+                        <img src="Logo.png" alt="IETE Logo" class="iete-logo" />
+                    </a>
+                    <a href="index.html" class="d-inline-block">
+                        <img src="SST LOGO.png" alt="SST Logo" class="sst-logo" />
+                    </a>
+                    <a href="index.html" class="d-inline-block">
+                        <img src="iet_logo1.png" alt="IET Logo" class="iet-logo" />
+                    </a>
+                </div>
+
+                <div class="header-center" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+                    <h1>TEAM 2k25-2k26</h1>
+                </div>
+
+                <button class="close-button-nav" onclick="window.location.href='index.html'" aria-label="Close"
+                    data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="portfolio-content">
+        <!-- Team Header -->
+        <div class="team-header" data-aos="fade-up" data-aos-delay="400">
+            <h1>Our Team Members</h1>
+            <p>Meet the dedicated individuals who make our community thrive. Each member brings unique skills and
+                passion to create an exceptional team experience.</p>
+            <div class="team-year" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-calendar-alt"></i> Tenure: 2025-2026
+            </div>
+        </div>
+
+        <!-- Team Categories -->
+        <div class="team-categories" data-aos="fade-up" data-aos-delay="600">
+            <button class="category-btn active" onclick="showCategory('core')">Core Team</button>
+            <button class="category-btn" onclick="showCategory('execom')">Exe-Com Team</button>
+            <button class="category-btn" onclick="showCategory('all')">All Members</button>
+        </div>
+
+        <!-- Core Team -->
+        <div id="core-team" class="team-cards-container active">
+            <div class="team-grid">
+                <!-- Chair Person -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="2k25-2k26_team_images/Rohan.jpg" alt="Marapally Rohan Gupta" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">MARAPALLY ROHAN GUPTA</h3>
+                        <div class="member-role">CHAIR-PERSON</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vice Chair Person -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://drive.google.com/uc?export=view&id=1SPbQql3Mb79TSnY2E1alWq21M2hvXsfF"
+                        alt="Neelam Sreeja" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">NEELAM SREEJA</h3>
+                        <div class="member-role">VICE CHAIR PERSON</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Director -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=G.VARSHITH" alt="G. Varshith"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">G. VARSHITH</h3>
+                        <div class="member-role">DIRECTOR</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deputy Director -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="250">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=U.SAI+CHARAN" alt="U. Sai Charan"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">U. SAI CHARAN</h3>
+                        <div class="member-role">DEPUTY DIRECTOR</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secretary -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=SAI+TEJA+JINDE"
+                        alt="Sai Teja Jinde" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">SAI TEJA JINDE</h3>
+                        <div class="member-role">SECRETARY</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV IT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IETE Representative & Treasury Lead -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="350">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MANGA+SUMANTH" alt="Manga Sumanth"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">MANGA SUMANTH</h3>
+                        <div class="member-role">IETE REPRESENTATIVE & TREASURY LEAD</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation Lead -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=A+THRIBHUVANAASHRITHA"
+                        alt="A Thribhuvanaashritha" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">A THRIBHUVANAASHRITHA</h3>
+                        <div class="member-role">DOCUMENTATION LEAD</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic Designing Lead -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="450">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=GAYATHRI+JEEGURU"
+                        alt="Gayathri Jeeguru" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">GAYATHRI JEEGURU</h3>
+                        <div class="member-role">GRAPHIC DESIGNING LEAD</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing & IETE Membership Lead -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MANTHENA+DEEPAK"
+                        alt="Manthena Deepak" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">MANTHENA DEEPAK</h3>
+                        <div class="member-role">MARKETING, IETE MEMBERSHIP AND PUBLIC RELATIONS LEAD</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Promotions Lead -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="550">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=T.NAMRUTHA" alt="T. Namrutha"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">T. NAMRUTHA</h3>
+                        <div class="member-role">SOCIAL MEDIA PROMOTIONS LEAD</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operations Lead -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAVYA" alt="Navya"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">NAVYA</h3>
+                        <div class="member-role">OPERATIONS LEAD</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV CSC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development Lead -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="650">
+                    <img src="https://drive.google.com/thumbnail?id=" alt="Gandu Sachin" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">GANDU SACHIN</h3>
+                        <div class="member-role">WEB DEVELOPMENT LEAD</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV CSD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IET Lead -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=RAJ+MEHATHA" alt="Raj Mehatha"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">RAJ MEHATHA</h3>
+                        <div class="member-role">IET LEAD</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>IV CSD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more core team members as needed -->
+            </div>
+        </div>
+
+        <!-- Exe-Com Team -->
+        <div id="execom-team" class="team-cards-container">
+            <div class="team-grid">
+                <!-- Joint Secretary -->
+                <!-- Joint Secretary -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=KRISHNA+TEJA" alt="Krishna Teja"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">KRISHNA TEJA</h3>
+                        <div class="member-role">JOINT SECRETARY</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IETE Representative -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=B.+ROHINI" alt="B. Rohini"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">B. ROHINI</h3>
+                        <div class="member-role">IETE REPRESENTATIVE</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Treasury -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=ADNAN+ULLAH+KARAMALI"
+                        alt="Adnan Ullah Karamali" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">ADNAN ULLAH KARAMALI</h3>
+                        <div class="member-role">TREASURY</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II CSD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Treasury -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="250">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=KOTHA+MANI+KUMAR"
+                        alt="Kotha Mani Kumar" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">KOTHA MANI KUMAR</h3>
+                        <div class="member-role">TREASURY</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II EEE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=G+NEHASRI" alt="G Nehasri"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">G NEHASRI</h3>
+                        <div class="member-role">DOCUMENTATION</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="350">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=KAMMARI+SAIKIRAN"
+                        alt="Kammari Saikiran" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">KAMMARI SAIKIRAN</h3>
+                        <div class="member-role">DOCUMENTATION</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAGA+MANASWINI"
+                        alt="Naga Manaswini" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">NAGA MANASWINI</h3>
+                        <div class="member-role">DOCUMENTATION</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="450">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=VISHNUPRIYA" alt="Vishnupriya"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">VISHNUPRIYA</h3>
+                        <div class="member-role">DOCUMENTATION</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAMPALLY+VIGNESH"
+                        alt="Nampally Vignesh" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">NAMPALLY VIGNESH</h3>
+                        <div class="member-role">DESIGN</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="550">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=ROHINI+MUPPALA"
+                        alt="Rohini Muppala" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">ROHINI MUPPALA</h3>
+                        <div class="member-role">DESIGN</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III IT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=VARUN+KUMAR" alt="Varun Kumar"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">VARUN KUMAR</h3>
+                        <div class="member-role">DESIGN</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="650">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=DEEPAK+SANGALA"
+                        alt="Deepak Sangala" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">DEEPAK SANGALA</h3>
+                        <div class="member-role">DESIGN</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II CSE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operations -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=SPOORTHY+RAO" alt="Spoorthy Rao"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">SPOORTHY RAO</h3>
+                        <div class="member-role">OPERATIONS</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operations -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="750">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=VANGALA+MANASA+REDDY"
+                        alt="Vangala Manasa Reddy" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">VANGALA MANASA REDDY</h3>
+                        <div class="member-role">OPERATIONS</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="800">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=ERUKU+KAVYA" alt="Eruku Kavya"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">ERUKU KAVYA</h3>
+                        <div class="member-role">MARKETING</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="850">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=JAHNAVI+P" alt="Jahnavi P"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">JAHNAVI P</h3>
+                        <div class="member-role">MARKETING</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSBS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="900">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=N+SANDEEP+GOUD"
+                        alt="N Sandeep Goud" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">N SANDEEP GOUD</h3>
+                        <div class="member-role">MARKETING</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="950">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=SREENIDHI+ANANTHULA"
+                        alt="Sreenidhi Ananthula" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">SREENIDHI ANANTHULA</h3>
+                        <div class="member-role">MARKETING</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II EEE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Promotions -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1000">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=G+SRAVYA" alt="G Sravya"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">G SRAVYA</h3>
+                        <div class="member-role">SOCIAL MEDIA PROMOTIONS</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Promotions -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1050">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAVYA+SRIRAMULA"
+                        alt="Navya Sriramula" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">NAVYA SRIRAMULA</h3>
+                        <div class="member-role">SOCIAL MEDIA PROMOTIONS</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IETE Representative -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1100">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=P+KALPANA+GOUD"
+                        alt="P Kalpana Goud" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">P KALPANA GOUD</h3>
+                        <div class="member-role">IETE REPRESENTATIVE</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IETE Representative -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1150">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=S+JYOSTHSNA" alt="S Jyosthsna"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">S JYOSTHSNA</h3>
+                        <div class="member-role">IETE REPRESENTATIVE</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SST Representative -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1200">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=DEEPTHI+AMUDALA"
+                        alt="Deepthi Amudala" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">DEEPTHI AMUDALA</h3>
+                        <div class="member-role">SST REPRESENTATIVE</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Crew -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1250">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=R+VENKATESHWARI"
+                        alt="R Venkateshwari" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">R VENKATESHWARI</h3>
+                        <div class="member-role">RESEARCH CREW</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Crew -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1300">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=B+MANOJ+KUMAR" alt="B Manoj Kumar"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">B MANOJ KUMAR</h3>
+                        <div class="member-role">RESEARCH CREW</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II CSD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Crew -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1350">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=LAKSH+BHUTADA" alt="Laksh Bhutada"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">LAKSH BHUTADA</h3>
+                        <div class="member-role">RESEARCH CREW</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Crew -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1400">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=VENUDHAR+REDDY"
+                        alt="Venudhar Reddy" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">VENUDHAR REDDY</h3>
+                        <div class="member-role">RESEARCH CREW</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IET Representative -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1450">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MOGULLA+MOSES" alt="Mogulla Moses"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">MOGULLA MOSES</h3>
+                        <div class="member-role">IET REPRESENTATIVE</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Crafters -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1500">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAVYA+ANGALA" alt="Navya Angala"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">NAVYA ANGALA</h3>
+                        <div class="member-role">DATA CRAFTERS</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Apprentice -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1550">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MANOOR+LAXMI+PRAGNITHA"
+                        alt="Manoor Laxmi Pragnitha" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">MANOOR LAXMI PRAGNITHA</h3>
+                        <div class="member-role">DATA APPRENTICE</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II CSD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Apprentice -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1600">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=REVANTH+KUMAR+ADIMULAM"
+                        alt="Revanth Kumar Adimulam" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">REVANTH KUMAR ADIMULAM</h3>
+                        <div class="member-role">DATA APPRENTICE</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II ECE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ML Engineer -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1650">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=THADUKA+AKSHITH"
+                        alt="Thaduka Akshith" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">THADUKA AKSHITH</h3>
+                        <div class="member-role">ML ENGINEER</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1700">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=PUJITHA" alt="Pujitha"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">PUJITHA</h3>
+                        <div class="member-role">WEB DEVELOPMENT</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>III CSBS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1750">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MANIKANTH+REDDY+VANGETI"
+                        alt="Manikanth Reddy Vangeti" class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">MANIKANTH REDDY VANGETI</h3>
+                        <div class="member-role">WEB DEVELOPMENT</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II CSE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="1800">
+                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=SAMSON+MATHE" alt="Samson Mathe"
+                        class="member-image">
+                    <div class="member-info">
+                        <h3 class="member-name">SAMSON MATHE</h3>
+                        <div class="member-role">WEB DEVELOPMENT</div>
+                        <div class="member-details">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>II CSE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more execom team members as needed -->
+            </div>
+        </div>
+
+        <!-- All Members (Combined) -->
+        <div id="all-team" class="team-cards-container">
+            <div class="team-grid">
+                <!-- Combined cards from both categories -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="portfolio-footer" data-aos="fade-up" data-aos-delay="800">
+            <p>© 2025 IETE-ISF VBIT | Team 2025-2026</p>
+            <p>All Rights Reserved | 45 Dedicated Members</p>
+        </footer>
+    </main>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: false,
+            offset: 100,
+            delay: 0,
+            easing: 'ease-out-cubic',
+            anchorPlacement: 'top-bottom'
+        });
+
+        // Category Switching Function
+        function showCategory(category) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Hide all containers
+            document.querySelectorAll('.team-cards-container').forEach(container => {
+                container.classList.remove('active');
+                container.style.opacity = '0';
+            });
+
+            // Show selected container
+            const selectedContainer = document.getElementById(category + '-team');
+            selectedContainer.classList.add('active');
+            setTimeout(() => {
+                selectedContainer.style.opacity = '1';
+            }, 50);
+
+            // Reinitialize AOS for new content
+            AOS.refresh();
+        }
+
+        // Combine all cards for "All Members" view
+        document.addEventListener('DOMContentLoaded', function () {
+            const coreCards = document.querySelectorAll('#core-team .team-card');
+            const execomCards = document.querySelectorAll('#execom-team .team-card');
+            const allTeamGrid = document.querySelector('#all-team .team-grid');
+
+            // Clone and append core team cards
+            coreCards.forEach(card => {
+                allTeamGrid.appendChild(card.cloneNode(true));
+            });
+
+            // Clone and append execom team cards
+            execomCards.forEach(card => {
+                allTeamGrid.appendChild(card.cloneNode(true));
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 8px 30px rgba(5, 74, 133, 0.6)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(5, 74, 133, 0.4)';
+            }
+        });
+    </script>
+</body>
+
+</html>

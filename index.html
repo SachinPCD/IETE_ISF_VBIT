@@ -45,7 +45,7 @@
   <!-- Consolidated Styles -->
   <style>
     /* Hero background uses a pseudo-element so filter/brightness doesn't affect text */
-
+     
     .navbar .dropdown ul {
       display: none;
       position: absolute;
@@ -85,6 +85,7 @@
       background: #072e53;
       color: #dee0e2;
     }
+    
   </style>
 
   <!-- =======================================================
@@ -137,7 +138,7 @@
           <li><a class="nav-link scrollto" href="#about"><b><strong>ABOUT</strong></b></a></li>
           <li><a class="nav-link scrollto" href="#events"><b><strong>EVENTS</strong></b></a></li>
           <li><a class="nav-link scrollto " href="#gallery"><b><strong>GALLERY</strong></b></a></li>
-          <li><a class="nav-link scrollto" href="#team"><b><strong>PORTFOLIO</strong></b></a></li>
+          <li><a class="nav-link scrollto" href="#portfolio"><b><strong>PORTFOLIO</strong></b></a></li>
           <li><a class="nav-link" href="Quiz/main.html"><b><strong>QUIZ</strong></b></a></li>
           <li><a class="nav-link scrollto" href="#CONTACT"><b><strong>CONTACT</strong></b></a></li>
         </ul>
@@ -227,10 +228,10 @@
     </div>
   </section><!-- End Hero -->
 
-  <main id="main" style="background:url('assets/img/bg4.jpg'); top-center;background-size: cover;">
+  <main id="main" style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
 
     <!-- ======= Icon Boxes Section ======= -->
-    <section id="icon-boxes" class="icon-boxes">
+    <section id="icon-boxes" class="icon-boxes" style="background-color: #0b1c48;top-center;background-size: cover;">
       <div class="container">
 
         <div class="row">
@@ -334,7 +335,7 @@
       </div>
     </section>
 
-    <section id="about" class="about" tyle="margin-top:20px;"
+    <section id="about-sst" class="about" tyle="margin-top:20px;"
       style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
       <div class="container" data-aos="fade-up">
 
@@ -374,8 +375,9 @@
             <img src="assets/img/SST LOGO.png" alt="" height="250" width="300">
           </div>
         </div>
-
-        <section id="about" class="about"
+      </div>
+      </section>
+        <section id="about-iet" class="about"
           style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
           <div class="container" data-aos="fade-up">
 
@@ -420,7 +422,7 @@
           </div>
         </section>
 
-        <section id="about" class="about" tyle="margin-top:20px;"
+        <section id="about-sowparnika" class="about" tyle="margin-top:20px;"
           style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
           <div class="container" data-aos="fade-up">
 
@@ -438,7 +440,7 @@
             <p>
 
             </p>
-            <section id="icon-boxes" class="icon-boxes">
+            <div id="icon-boxes" class="icon-boxes">
               <div class="container">
 
                 <div class="row">
@@ -488,11 +490,11 @@
                 </div>
 
               </div>
-            </section>
+            </div>
 
           </div>
         </section>
-        <section id="about" class="about" tyle="margin-top:20px;"
+        <section id="about-space-fest" class="about" tyle="margin-top:20px;"
           style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
           <div class="container" data-aos="fade-up">
 
@@ -510,12 +512,9 @@
             <p>
 
             </p>
-            <section id="icon-boxes" class="icon-boxes">
+             <div  id="icon-boxes" class="icon-boxes">
+          
               <div class="container">
-
-
-
-
                 <div class="row">
                   <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
                     <div class="icon-box"
@@ -543,16 +542,16 @@
                 </div>
 
               </div>
-            </section>
+             </div>
 
           </div>
         </section>
 
 
-        </p><!-- End About Us Section -->
+        <!-- End About Us Section -->
 
         <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients">
+        <!-- <section id="clients" class="clients"> -->
           <!--<div class="container" data-aos="zoom-in">
 
         <div class="clients-slider swiper">
@@ -570,10 +569,10 @@
         </div>
 
       </div>-->
-        </section><!-- End Clients Section -->
+        <!-- </section> -->
 
         <!-- ======= Why Us Section ======= -->
-        <section id="why-us" class="why-us">
+        <section id="why-us" class="why-us" style="width: 80%; margin: 0 auto; display: block;">
           <div class="container-fluid">
 
             <div class="row" style="background:url('assets/img/videopic.jpg'); top-center;background-size: cover;">
@@ -631,9 +630,9 @@
                     </p>
                   </div>
                 </li>
-
-              </ul>
-            </div>-->
+              -->
+                </ul>
+              </div> 
 
                 </div>
 
@@ -644,7 +643,7 @@
 
         <!-- ======= Services Section ======= -->
         <section id="events" class="services"
-          style="background:url('assets/img/bgg.jpg'); top-center;background-size: cover;">
+          style="background:url('assets/img/bgg.jpg'); top-center;background-size: cover; margin-top: 25px;">
           <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -750,7 +749,7 @@
         </div>
 
       </div> -->
-    </section><!-- End Cta Section -->
+    <!-- </section> -->
 
     <!-- ======= Portfoio Section ======= -->
     <section id="gallery" class="portfoio"
@@ -760,18 +759,6 @@
           <h2 font-size: 52px>Gallery</h2>
 
         </div>
-
-        <!--<div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>-->
-
         <!-- Interactive Gallery Thumbnails -->
         <div class="gallery-thumbnails">
 
@@ -858,16 +845,12 @@
               <i class="fas fa-arrow-right"></i>
             </div>
           </a>
-
         </div>
-
-
-
       </div>
     </section><!-- End Portfoio Section -->
     <!-- ======= Team Section ======= -->
-    <section id="team" style="background:url('assets/img/bgg.jpg'); top-center;background-size: cover;">
-      <div class="container" data-aos="fade-up">
+    <section  style="background:url('assets/img/bgg.jpg'); top-center;background-size: cover; ">
+      <div class="container" data-aos="fade-up" style="padding: 60px 0px;">
 
         <div class="section-title">
           <h2 style="font-size:52px; margin-top: -30px;">Faculty CO-ORDINATOR</h2>
@@ -1035,2428 +1018,536 @@
         </div>
 
       </div>-->
-    </section><!-- End Pricing Section -->
+          </section>
 
-    <section id="team" class="team section-bg"
-      style="background:url('assets/img/picc.jpg'); top-center ; background-size: cover;">
+          <!-- ======= Team portfolio Section ======= -->
+       <section id="portfolio" class="portfoio" style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;margin-top: 50px;">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
-          <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k25-2k26</h2><br>
-          <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-            <h3>CORE-TEAM:</h3><br>
-          </div>
-          <table>
-            <tr>
-              <th>NAME</th>
-              <th>DESIGNATION</th>
-              <th>Year & Branch</th>
-            </tr>
-            <tr>
-              <td>MARAPALLY ROHAN GUPTA</td>
-              <td>CHAIR-PERSON</td>
-              <td>IV CSM</td>
-            </tr>
-            <tr>
-              <td>NEELAM SREEJA</td>
-              <td>VICE CHAIR PERSON</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>G. VARSHITH</td>
-              <td>DIRECTOR</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>U.SAI CHARAN</td>
-              <td>DEPUTY DIRECTOR</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>SAI TEJA JINDE</td>
-              <td>SECRETARY </td>
-              <td>IV IT</td>
-            </tr>
+          <h2 style="font-size:52px">Portfolio</h2>
+          <p style="color: rgba(5, 74, 133, 0.9); font-size: 1.2rem;">Explore our team members by year - Click on any year card to view detailed team information</p>
+        </div>
 
-            <td>MANGA SUMANTH</td>
-            <td>IETE RESPRESNTATIVE & TREASURY LEAD</td>
-            <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>A THRIBHUVANAASHRITHA</td>
-              <td>DOCUMENTATION LEAD</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>GAYATHRI JEEGURU</td>
-              <td>GRAPHIC DESIGNING LEAD</td>
-              <td>III CSE</td>
-            </tr>
+        <!-- Portfolio Year Cards -->
+        <div class="portfolio-thumbnails">
+          
+          <!-- 2025-2026 Card -->
+          <a href="portfolio-2025-2026.html" class="portfolio-year-card" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="portfolio-year-title">2025-2026</h3>
+            <div class="portfolio-member-count">
+              <i class="fas fa-users"></i>
+              <span>45 Members</span>
+            </div>
+            <div class="portfolio-view-btn">
+              <span>View Team</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </a>
 
-            <tr>
-              <td>MANTHENA DEEPAK</td>
-              <td>MARKETING,IETE MEMBERSHIP AND PUBLIC RELATIONS LEAD</td>
-              <td>IV CSM</td>
-            </tr>
-            <tr>
-              <td>T.NAMRUTHA</td>
-              <td>SOCIAL MEDA PROMOTIONS LEAD</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>NAVYA</td>
-              <td>OPERATIONS LEAD</td>
-              <td>IV CSC</td>
-            </tr>
+          <!-- 2023-2024 Card -->
+          <a href="portfolio-2023-2024.html" class="portfolio-year-card" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="portfolio-year-title">2023-2024</h3>
+            <div class="portfolio-member-count">
+              <i class="fas fa-users"></i>
+              <span>29 Members</span>
+            </div>
+            <div class="portfolio-view-btn">
+              <span>View Team</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </a>
 
-            <tr>
-              <td>GANDU SACHIN</td>
-              <td>WEB DEVELOPMENT LEAD</td>
-              <td>IV CSD</td>
-            </tr>
-            <tr>
-              <td>RAJ MEHATHA</td>
-              <td>IET LEAD</td>
-              <td>IV CSD</td>
-            </tr>
-          </table>
-          <br><br>
-          <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ">
-            EXE-COM TEAM:
-          </H3><br>
-          <table>
-            <tr>
-              <th>NAME</th>
-              <th>DESIGNATION</th>
-              <th>Year & Branch</th>
-            </tr>
-            <tr>
-              <td>KRISHNA TEJA</td>
-              <td>JOINT SECRETARY </td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>B. ROHINI</td>
-              <td>IETE REPRESENTATIVE </td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>ADNAN ULLAH KARAMALI</td>
-              <td>TREASURY</td>
-              <td>II CSD</td>
-            </tr>
-            <tr>
-              <td>KOTHA MANI KUMAR</td>
-              <td>TREASURY</td>
-              <td>II EEE</td>
-            </tr>
+          <!-- 2022-2023 Card -->
+          <a href="portfolio-2022-2023.html" class="portfolio-year-card" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="portfolio-year-title">2022-2023</h3>
+            <div class="portfolio-member-count">
+              <i class="fas fa-users"></i>
+              <span>32 Members</span>
+            </div>
+            <div class="portfolio-view-btn">
+              <span>View Team</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </a>
 
-            <tr>
-              <td>G NEHASRI</td>
-              <td>DOCUMENTATION</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>KAMMARI SAIKIRAN</td>
-              <td>DOCUMENTATION</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>NAGA MANASWINI</td>
-              <td>DOCUMENTATION</td>
-              <td>II ECE</td>
-            </tr>
-            <tr>
-              <td>VISHNUPRIYA</td>
-              <td>DOCUMENTATION</td>
-              <td>II ECE</td>
-            </tr>
-            <tr>
-              <td>NAMPALLY VIGNESH</td>
-              <td>DESIGN</td>
-              <td>III ECE</td>
-            </tr>
-            <tr>
-              <td>ROHINI MUPPALA</td>
-              <td>DESIGN</td>
-              <td>III IT</td>
-            </tr>
-            <tr>
-              <td>VARUN KUMAR</td>
-              <td>DESIGN</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>DEEPAK SANGALA</td>
-              <td>DESIGN</td>
-              <td>II CSE</td>
-            </tr>
+          <!-- 2021-2022 Card -->
+          <a href="portfolio-2021-2022.html" class="portfolio-year-card" data-aos="fade-up" data-aos-delay="400">
+            <h3 class="portfolio-year-title">2021-2022</h3>
+            <div class="portfolio-member-count">
+              <i class="fas fa-users"></i>
+              <span>46 Members</span>
+            </div>
+            <div class="portfolio-view-btn">
+              <span>View Team</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </a>
 
-            <tr>
-              <td>SPOORTHY RAO</td>
-              <td>OPERATIONS</td>
-              <td>III ECE</td>
-            </tr>
-            <tr>
-              <td>VANGALA MANASA REDDY</td>
-              <td>OPERATIONS</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>ERUKU KAVYA</td>
-              <td>MARKETING</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>JAHNAVI P</td>
-              <td>MARKETING</td>
-              <td>III CSBS</td>
-            </tr>
-            <tr>
-              <td>N SANDEEP GOUD</td>
-              <td>MARKETING</td>
-              <td>II ECE</td>
-            </tr>
-            <tr>
-              <td>SREENIDHI ANANTHULA</td>
-              <td>MARKETING</td>
-              <td>II EEE</td>
-            </tr>
-            <tr>
-              <td>G SRAVYA</td>
-              <td>SOCIAL MEDIA PROMOTIONS</td>
-              <td>III CSD</td>
-            </tr>
-            <tr>
-              <td>NAVYA SRIRAMULA</td>
-              <td>SOCIAL MEDIA PROMOTIONS</td>
-              <td>III CSM</td>
-            </tr>
-
-            <tr>
-              <td>P KALPANA GOUD</td>
-              <td>IETE REPRESENTATIVE</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>S JYOSTHSNA</td>
-              <td>IETE REPRESENTATIVE</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>DEEPTHI AMUDALA</td>
-              <td>SST REPRESENTATIVE</td>
-              <td>II ECE</td>
-            </tr>
-            <tr>
-              <td>R VENKATESHWARI</td>
-              <td>RESEARCH CREW</td>
-              <td>III CSM</td>
-            </tr>
-
-            <tr>
-              <td>B MANOJ KUMAR</td>
-              <td>RESEARCH CREW</td>
-              <td>II CSD</td>
-            </tr>
-
-            <tr>
-              <td>LAKSH BHUTADA</td>
-              <td>RESEARCH CREW</td>
-              <td>II CSM</td>
-            </tr>
-            <tr>
-              <td>VENUDHAR REDDY</td>
-              <td>RESEARCH CREW</td>
-              <td>II ECE</td>
-            </tr>
-            <tr>
-              <td>MOGULLA MOSES</td>
-              <td>IET REPRESENTATIVE</td>
-              <td>III CSD</td>
-            </tr>
-            <tr>
-              <td>NAVYA ANGALA</td>
-              <td>DATA CRAFTERS</td>
-              <td>III ECE</td>
-            </tr>
-            <tr>
-              <td>MANOOR LAXMI PRAGNITHA</td>
-              <td>DATA APPERENTICE</td>
-              <td>II CSD</td>
-            </tr>
-            <tr>
-              <td>REVANTH KUMAR ADIMULAM</td>
-              <td>DATA APPERENTICE</td>
-              <td>II ECE</td>
-            </tr>
-            <tr>
-              <td>THADUKA AKSHITH</td>
-              <td>ML ENGINEER</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>PUJITHA</td>
-              <td>WEB DEVELOPMENT</td>
-              <td>III CSBS</td>
-            </tr>
-            <tr>
-              <td>MANIKANTH REDDY VANGETI</td>
-              <td>WEB DEVELOPMENT </td>
-              <td>II CSE</td>
-            </tr>
-            <tr>
-              <td>SAMSON MATHE</td>
-              <td>WEB DEVELOPMENT</td>
-              <td>II CSE</td>
-            </tr>
-          </table><br>
-    </section><!-- End Pricing Section -->
+        </div>
+      </div>
+    </section>
+          <!-- End Team portfolio Section -->
 
 
-    <section id="team" class="team section-bg"
-      style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
-      <div class="container" data-aos="fade-up">
+          <!-- ======= Frequently Asked Questions Section ======= --><br><br>
 
-        <div class="section-title">
-          <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k24-2k25</h2><br>
-          <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-            <h3>CORE-TEAM:</h3><br>
-          </div>
-          <table>
-            <tr>
-              <th>NAME</th>
-              <th>DESIGNATION</th>
-              <th>Year & Branch</th>
-            </tr>
-            <tr>
-              <td>CHARITHA GUNDAMPATI</td>
-              <td>CHAIR-PERSON</td>
-              <td>IV IT</td>
-            </tr>
-            <tr>
-              <td>ARIGE SAI YASHWANTH</td>
-              <td>VICE CHAIR PERSON & DESIGN LEAD</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>BALARAMA KRISHNA GOPARAJU</td>
-              <td>DIRECTOR SST</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>KEERTHI UTTANOORU</td>
-              <td>DEPUTY DIRECTOR SST</td>
-              <td>IV CSE</td>
-            </tr>
-            <tr>
-              <td>CHARAN BOLLAPALLY</td>
-              <td>SECRETARY</td>
-              <td>IV IT</td>
-            </tr>
-            <tr>
-              <td>SIRIPURAM RAHUL</td>
-              <td>IETE REPRESENTATIVE</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>MANIDEEP CHOWDARY</td>
-              <td>TREASURER</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>GANDU SACHIN</td>
-              <td>WEBDEVELOPMENT LEAD</td>
-              <td>IV CSD</td>
-            </tr>
-            <tr>
-              <td>DYAGA HARSHA VARDHAN</td>
-              <td>OPERATIONS & SMP LEAD</td>
-              <td>IV EEE</td>
-            </tr>
-            <tr>
-              <td>MARREPALLY VINAY SAI</td>
-              <td>MARKETING LEAD</td>
-              <td>IV ECE</td>
-            </tr>
-          </table>
-          <br><br>
-          <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ;">
-            EXE-COM TEAM:
-          </H3><br>
-          <table>
-            <tr>
-              <th>NAME</th>
-              <th>DESIGNATION</th>
-              <th>Year & Branch</th>
-            </tr>
-            <tr>
-              <td>KALYAN RAM</td>
-              <td>JOINT SECRETARY</td>
-              <td>III CSE</td>
-            </tr>
-            <tr>
-              <td>P. V. S. D. D. MALLIKARJUNA</td>
-              <td>REPRESENTATIVE IETE</td>
-              <td>III ECE</td>
-            </tr>
-            <tr>
-              <td>KARTHIK REDDY KARAKALA</td>
-              <td>TREASURY</td>
-              <td>III CSD</td>
-            </tr>
-            <tr>
-              <td>R. MEGHANA</td>
-              <td>DOCUMENTATION (CO-ORDINATOR)</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>AFREEN</td>
-              <td>DOCUMENTATION</td>
-              <td>III CSD</td>
-            </tr>
-            <tr>
-              <td>DHANUSHYM</td>
-              <td>DOCUMENTATION</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>AKHIL SAMPATH VINAY</td>
-              <td>DESIGN</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>VYSHNAVI</td>
-              <td>DESIGN</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>RAMYA KOPUROTU</td>
-              <td>DESIGN</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>N. SRI ABHINAV</td>
-              <td>OPERATIONS (CO-ORDINATOR)</td>
-              <td>II CSE</td>
-            </tr>
-            <tr>
-              <td>ANANYA NAYINI</td>
-              <td>OPERATIONS</td>
-              <td>III CSD</td>
-            </tr>
-            <tr>
-              <td>SAHITHI PAKALA</td>
-              <td>OPERATIONS</td>
-              <td>III IT</td>
-            </tr>
-            <tr>
-              <td>UDAY JALLAPURAM</td>
-              <td>OPERATIONS</td>
-              <td>II CSE</td>
-            </tr>
-            <tr>
-              <td>B. REVANTH</td>
-              <td>MARKETING (CO-ORDINATOR)</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>VIDHITHA REDDY PAISA</td>
-              <td>MARKETING</td>
-              <td>II CSD</td>
-            </tr>
-            <tr>
-              <td>SNEHITH REDDY KONUGANTI</td>
-              <td>SOCIAL MEDIA PROMOTIONS & MEDIA AND PUBLIC RELATIONS</td>
-              <td>III CSE</td>
-            </tr>
-            <tr>
-              <td>MARAPALLY ROHAN GUPTA</td>
-              <td>SST REPRESENTATIVE</td>
-              <td>II CSM</td>
-            </tr>
-            <tr>
-              <td>NITHYA SRI</td>
-              <td>RESEARCH CREW (CO-ORDINATOR)</td>
-              <td>II CSE</td>
-            </tr>
-            <tr>
-              <td>NIKHITHA GATTOGI</td>
-              <td>RESEARCH CREW</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>VISHNU PREETHI</td>
-              <td>RESEARCH CREW</td>
-              <td>III CSB</td>
-            </tr>
-            <tr>
-              <td>JETHIN JENGITI</td>
-              <td>RESEARCH CREW</td>
-              <td>III CSM</td>
-            </tr>
-          </table><br>
-    </section><!-- End Pricing Section -->
-    <section id="team" class="team section-bg"
-      style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k23-2k24</h2><br>
-          <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-            <h3>CORE-TEAM:</h3><br>
-          </div>
-          <table>
-            <tr>
-              <th>NAME</th>
-              <th>DESIGNATION</th>
-              <th>Year & Branch</th>
-            </tr>
-            <tr>
-              <td>CHARITHA GUNDAMPATI</td>
-              <td>CHAIR-PERSON</td>
-              <td>IV IT</td>
-            </tr>
-            <tr>
-              <td>ARIGE SAI YASHWANTH</td>
-              <td>VICE CHAIR PERSON & DESIGN LEAD</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>BALARAMA KRISHNA GOPARAJU</td>
-              <td>DIRECTOR SST</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>KEERTHI UTTANOORU</td>
-              <td>DEPUTY DIRECTOR SST</td>
-              <td>IV CSE</td>
-            </tr>
-            <tr>
-              <td>CHARAN BOLLAPALLY</td>
-              <td>SECRETARY</td>
-              <td>IV IT</td>
-            </tr>
-            <tr>
-              <td>SIRIPURAM RAHUL</td>
-              <td>IETE REPRESENTATIVE</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>MANIDEEP CHOWDARY</td>
-              <td>TREASURER</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>SAHITHI NUKA</td>
-              <td>DOCUMENTATION LEAD</td>
-              <td>IV ECE</td>
-            </tr>
-            <tr>
-              <td>DYAGA HARSHA VARDHAN</td>
-              <td>OPERATIONS & SMP LEAD</td>
-              <td>IV EEE</td>
-            </tr>
-            <tr>
-              <td>MARREPALLY VINAY SAI</td>
-              <td>MARKETING LEAD</td>
-              <td>IV ECE</td>
-            </tr>
-          </table>
-          <br><br>
-          <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ;">
-            EXE-COM TEAM:
-          </H3><br>
-          <table>
-            <tr>
-              <th>NAME</th>
-              <th>DESIGNATION</th>
-              <th>Year & Branch</th>
-            </tr>
-            <tr>
-              <td>KALYAN RAM</td>
-              <td>JOINT SECRETARY</td>
-              <td>III CSE</td>
-            </tr>
-            <tr>
-              <td>P. V. S. D. D. MALLIKARJUNA</td>
-              <td>REPRESENTATIVE IETE</td>
-              <td>III ECE</td>
-            </tr>
-            <tr>
-              <td>KARTHIK REDDY KARAKALA</td>
-              <td>TREASURY</td>
-              <td>III CSD</td>
-            </tr>
-            <tr>
-              <td>R. MEGHANA</td>
-              <td>DOCUMENTATION (CO-ORDINATOR)</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>AFREEN</td>
-              <td>DOCUMENTATION</td>
-              <td>III CSD</td>
-            </tr>
-            <tr>
-              <td>DHANUSHYM</td>
-              <td>DOCUMENTATION</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>AKHIL SAMPATH VINAY</td>
-              <td>DESIGN</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>VYSHNAVI</td>
-              <td>DESIGN</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>RAMYA KOPUROTU</td>
-              <td>DESIGN</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>N. SRI ABHINAV</td>
-              <td>OPERATIONS (CO-ORDINATOR)</td>
-              <td>II CSE</td>
-            </tr>
-            <tr>
-              <td>ANANYA NAYINI</td>
-              <td>OPERATIONS</td>
-              <td>III CSD</td>
-            </tr>
-            <tr>
-              <td>SAHITHI PAKALA</td>
-              <td>OPERATIONS</td>
-              <td>III IT</td>
-            </tr>
-            <tr>
-              <td>UDAY JALLAPURAM</td>
-              <td>OPERATIONS</td>
-              <td>II CSE</td>
-            </tr>
-            <tr>
-              <td>B. REVANTH</td>
-              <td>MARKETING (CO-ORDINATOR)</td>
-              <td>III CSC</td>
-            </tr>
-            <tr>
-              <td>VIDHITHA REDDY PAISA</td>
-              <td>MARKETING</td>
-              <td>II CSD</td>
-            </tr>
-            <tr>
-              <td>SNEHITH REDDY KONUGANTI</td>
-              <td>SOCIAL MEDIA PROMOTIONS & MEDIA AND PUBLIC RELATIONS</td>
-              <td>III CSE</td>
-            </tr>
-            <tr>
-              <td>MARAPALLY ROHAN GUPTA</td>
-              <td>SST REPRESENTATIVE</td>
-              <td>II CSM</td>
-            </tr>
-            <tr>
-              <td>NITHYA SRI</td>
-              <td>RESEARCH CREW (CO-ORDINATOR)</td>
-              <td>II CSE</td>
-            </tr>
-            <tr>
-              <td>NIKHITHA GATTOGI</td>
-              <td>RESEARCH CREW</td>
-              <td>III CSM</td>
-            </tr>
-            <tr>
-              <td>VISHNU PREETHI</td>
-              <td>RESEARCH CREW</td>
-              <td>III CSB</td>
-            </tr>
-            <tr>
-              <td>JETHIN JENGITI</td>
-              <td>RESEARCH CREW</td>
-              <td>III CSM</td>
-            </tr>
-          </table><br>
-
-          <section id="team" class="team section-bg"
-            style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
+          <!-- ======= Technical Documents Section ======= -->
+          <section id="documents" class="resources section-bg"
+            style="background:url('assets/img/picc.jpg'); top-center;background-size: cover; padding: 60px 0;margin-top: 25px;">
             <div class="container" data-aos="fade-up">
 
               <div class="section-title">
-                <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k22-2k23</h2><br>
-                <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-                  <h3>CORE-TEAM:</h3><br>
-                </div>
-                <table>
-                  <tr>
-                    <th>NAME</th>
-                    <th>DESIGNATION</th>
-                    <th>Year & Branch</th>
-                  </tr>
-                  <tr>
-                    <td>VINISHA KASANAGOTTU</td>
-                    <td>CHAIR-PERSON</td>
-                    <td>IV EEE</td>
-                  </tr>
-                  <tr>
-                    <td>JAHNAVI MAHADASI</td>
-                    <td>VICE CHAIR PERSON</td>
-                    <td>IV ECE</td>
-                  </tr>
-                  <tr>
-                    <td>MANEESH BANKA</td>
-                    <td>DIRECTOR SST</td>
-                    <td>IV ECE</td>
-                  </tr>
-                  <tr>
-                    <td>SUNNY KRISHNA</td>
-                    <td>DEPUTY DIRECTOR SST</td>
-                    <td>IV ECE</td>
-                  </tr>
-                  <tr>
-                    <td>SUPRIYA LOKURTHY</td>
-                    <td>SECRETARY</td>
-                    <td>IV ECE</td>
-                  </tr>
-                  <tr>
-                    <td>SAIRAM GADDEM</td>
-                    <td>IETE REPRESENTATIVE</td>
-                    <td>IV ECE</td>
-                  </tr>
-                  <tr>
-                    <td>JUGAL KISHORE</td>
-                    <td>TREASURER</td>
-                    <td>IV ECE</td>
-                  </tr>
-                  <tr>
-                    <td>NAVYA TIRUMANADHAM</td>
-                    <td>DESIGN LEAD</td>
-                    <td>IV EEE</td>
-                  </tr>
-                  <tr>
-                    <td>P. V. B. JANAKI</td>
-                    <td>DOCUMENTATION LEAD</td>
-                    <td>IV ECE</td>
-                  </tr>
-                  <tr>
-                    <td>PALLUPU PARAMESHWARI</td>
-                    <td>OPERATIONS LEAD</td>
-                    <td>IV ECE</td>
-                  </tr>
-                  <tr>
-                    <td>V. HARSHA VARDHAN</td>
-                    <td>MARKETING & SMP LEAD</td>
-                    <td>IV MECH</td>
-                  </tr>
-                  <tr>
-                    <td>KOTHA SUMA REDDY</td>
-                    <td>WEB DESIGNING LEAD</td>
-                    <td>IV CSE</td>
-                  </tr>
-                </table>
-                <br><br>
-                <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ;">
-                  EXE-COM TEAM:
-                </H3><br>
-                <table>
-                  <tr>
-                    <th>NAME</th>
-                    <th>DESIGNATION</th>
-                    <th>Year & Branch</th>
-                  </tr>
-                  <tr>
-                    <td>CHARITHA GUNDAMPATI</td>
-                    <td>JOINT SECRETARY</td>
-                    <td>III IT</td>
-                  </tr>
-                  <tr>
-                    <td>DHARAHAS SUDDALA</td>
-                    <td>REPRESENTATIVE</td>
-                    <td>III IT</td>
-                  </tr>
-                  <tr>
-                    <td>MANIDEEP CHOWDARY</td>
-                    <td>TREASURY</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>SAHITHI NUKA</td>
-                    <td>DOCUMENTATION (CO-ORDINATOR)</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>SHIVADHAR GODUMALA</td>
-                    <td>DOCUMENTATION</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>E. ANJAN KUMAR</td>
-                    <td>DOCUMENTATION</td>
-                    <td>III IT</td>
-                  </tr>
-                  <tr>
-                    <td>P. SIVA TEJA</td>
-                    <td>DESIGN</td>
-                    <td>II CSM</td>
-                  </tr>
-                  <tr>
-                    <td>RUKMINI</td>
-                    <td>DESIGN</td>
-                    <td>III CSD</td>
-                  </tr>
-                  <tr>
-                    <td>CHARAN BOLLAPALLY</td>
-                    <td>OPERATIONS</td>
-                    <td>III IT</td>
-                  </tr>
-                  <tr>
-                    <td>D. HARSHA VARDHAN</td>
-                    <td>OPERATIONS</td>
-                    <td>III EEE</td>
-                  </tr>
-                  <tr>
-                    <td>AKHILA CHOWDARY</td>
-                    <td>OPERATIONS</td>
-                    <td>III CSD</td>
-                  </tr>
-                  <tr>
-                    <td>HANSIKA GONE</td>
-                    <td>OPERATIONS</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>SRINIVASA CHARY</td>
-                    <td>MARKETING (CO-ORDINATOR)</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>SIRIPURAM RAHUL</td>
-                    <td>MARKETING</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>MARREPALLY VINAY SAI</td>
-                    <td>MARKETING</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>ARIGE SAI YASHWANTH</td>
-                    <td>SOCIAL MEDIA PROMOTIONS</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>P. AMRUTH VARSH</td>
-                    <td>MEDIA AND PUBLIC RELATIONS & RESEARCH CREW</td>
-                    <td>II CSM</td>
-                  </tr>
-                  <tr>
-                    <td>B. REVANTH</td>
-                    <td>WEB DESIGNING</td>
-                    <td>III CSC</td>
-                  </tr>
-                  <tr>
-                    <td>KOLKURI SINDHUJA</td>
-                    <td>SST (REPRESENTATIVE)</td>
-                    <td>III ECE</td>
-                  </tr>
-                  <tr>
-                    <td>BALARAMA KRISHNA GOPARAJU</td>
-                    <td>SST (CO-ORDINATOR)</td>
-                    <td>II CSM</td>
-                  </tr>
-                  <tr>
-                    <td>UTTANOORU KEERTHI REDDY</td>
-                    <td>SST</td>
-                    <td>III CSE</td>
-                  </tr>
-                  <tr>
-                    <td>CHITRA</td>
-                    <td>SST</td>
-                    <td>III CSE</td>
-                  </tr>
-                </table><br>
+                <h2 style="font-size:52px; color: #054a85;">TECHNICAL DOCUMENTS</h2>
+                <p style="color: rgba(5, 74, 133, 0.9); font-size: 1.2rem;">Download event reports
+                  and technical documentation</p>
+              </div>
 
-                <div class="section-title">
-                  <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k21-2k22</h2><br>
-                  <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-                    <h3>CORE-TEAM:</h3><br>
+              <div class="row"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                <!-- Sowparnika Document -->
+                <div class="document-card" data-aos="fade-up" data-aos-delay="100"
+                  style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; ">
+                  <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">Sowparnika 2k24
+                  </h3>
+                  <p style="color: #666; margin-bottom: 15px; font-size: 1rem; ">Complete report
+                    of Sowparnika 2k24 - flagship technical event with working models,
+                    presentations, and competitions.</p>
+                  <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
+                    <i class="bi bi-calendar"></i> August 2024
                   </div>
-                  <table>
-                    <tr>
-                      <th>NAME</th>
-                      <th>DESIGNATION</th>
-                      <th>Year & Branch</th>
-                    </tr>
-                    <tr>
-                      <td>KRITHIKA ENDRALA</td>
-                      <td>CHAIR-PERSON</td>
-                      <td>IV CSE</td>
-                    </tr>
-                    <tr>
-                      <td>NIKITHA PEDDI</td>
-                      <td>VICE CHAIR PERSON</td>
-                      <td>IV ECE</td>
-                    </tr>
-                    <tr>
-                      <td>SAI SUSMITHA</td>
-                      <td>DIRECTOR SST</td>
-                      <td>IV ECE</td>
-                    </tr>
-                    <tr>
-                      <td>VAISHNAVI</td>
-                      <td>DEPUTY DIRECTOR SST</td>
-                      <td>IV ECE</td>
-                    </tr>
-                    <tr>
-                      <td>SRINIVAS</td>
-                      <td>SECRETARY</td>
-                      <td>IV ECE</td>
-                    </tr>
-                    <tr>
-                      <td>M.B.BHANU TEJA</td>
-                      <td>IETE REPRESENTATIVE</td>
-                      <td>IV ECE</td>
-                    </tr>
-                    <tr>
-                      <td>MOKSHAGNA TEJA</td>
-                      <td>TREASURER</td>
-                      <td>IV CSE</td>
-                    </tr>
-                    <tr>
-                      <td>NIKHITHA TALLURI</td>
-                      <td>DESIGN LEAD</td>
-                      <td>III EEE</td>
-                    </tr>
-                    <tr>
-                      <td>MEGHANA AVVARI</td>
-                      <td>DOCUMENTATION LEAD</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>INDHUJA KOTHAPALLY</td>
-                      <td>OPERATIONS LEAD</td>
-                      <td>IV CSE</td>
-                    </tr>
-                    <tr>
-                      <td>POOJITHA REDDY</td>
-                      <td>MARKETING LEAD</td>
-                      <td>IV ECE</td>
-                    </tr>
-                  </table>
-                  <br><br>
-                  <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ;">
-                    EXE-COM TEAM:
-                  </H3><br>
-                  <table>
-                    <tr>
-                      <th>NAME</th>
-                      <th>DESIGNATION</th>
-                      <th>Year & Branch</th>
-                    </tr>
-                    <tr>
-                      <td>VINISHA</td>
-                      <td>JOINT SECRETARY</td>
-                      <td>III EEE</td>
-                    </tr>
-                    <tr>
-                      <td>VEGESANA SANJANA</td>
-                      <td>REPRESENTATIVE</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>TARUN REDDY</td>
-                      <td>TREASURY</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>MOHAMMAD SAJID</td>
-                      <td>TREASURY</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>NAVYA TIRUMANADHAM</td>
-                      <td>DESIGN (CO-ORDINATOR)</td>
-                      <td>III EEE</td>
-                    </tr>
-                    <tr>
-                      <td>UDAY KUMAR</td>
-                      <td>DESIGN</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>HARSHA VARDHAN</td>
-                      <td>DESIGN</td>
-                      <td>III MECH</td>
-                    </tr>
-                    <tr>
-                      <td>POLASANI JAYARAM</td>
-                      <td>DESIGN</td>
-                      <td>II ECE</td>
-                    </tr>
-                    <tr>
-                      <td>AKASH RAMAGIRI</td>
-                      <td>DESIGN</td>
-                      <td>II MECH</td>
-                    </tr>
-                    <tr>
-                      <td>SONALI SANKESHI</td>
-                      <td>DOCUMENTATION (CO-ORDINATOR)</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>NEERAJA PITLA</td>
-                      <td>DOCUMENTATION</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>BADDAM BHARGAVI</td>
-                      <td>DOCUMENTATION</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>ANUSHA ALAVALA</td>
-                      <td>DOCUMENTATION</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>D. KUMAR VARUN</td>
-                      <td>DOCUMENTATION</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>P V B JANAKI</td>
-                      <td>DOCUMENTATION</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>SUNEETH MANIKANTA</td>
-                      <td>OPERATIONS (CO-ORDINATOR)</td>
-                      <td>III EEE</td>
-                    </tr>
-                    <tr>
-                      <td>JAHNAVI MAHADASI</td>
-                      <td>OPERATIONS</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>KOTHA SUMA REDDY</td>
-                      <td>OPERATIONS</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>JUGAL KISHORE</td>
-                      <td>OPERATIONS</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>SUPRIYA LOKURTHY</td>
-                      <td>MARKETING (CO-ORDINATOR)</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>SUNNY KRISHNA</td>
-                      <td>MARKETING</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>SHYNI ANNAVARAPU</td>
-                      <td>MARKETING</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>PRIYANSHI SINGH</td>
-                      <td>MARKETING</td>
-                      <td>II CSE</td>
-                    </tr>
-                    <tr>
-                      <td>MUSKAN SINGH</td>
-                      <td>MARKETING</td>
-                      <td>II CSE</td>
-                    </tr>
-                    <tr>
-                      <td>SIRIPOTHULA RAHUL</td>
-                      <td>MARKETING</td>
-                      <td>II CSE</td>
-                    </tr>
-                    <tr>
-                      <td>PARAMESHWARI</td>
-                      <td>SOCIAL MEDIA PROMOTIONS (CO-ORDINATOR)</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>GADEM SAI RAM</td>
-                      <td>SOCIAL MEDIA PROMOTIONS</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>RUSHIKA MADIPEDDI</td>
-                      <td>MEDIA AND PUBLIC RELATIONS (CO-ORDINATOR)</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>CHARITHA</td>
-                      <td>MEDIA AND PUBLIC RELATIONS</td>
-                      <td>II IT</td>
-                    </tr>
-                    <tr>
-                      <td>BHANU PRAKASH</td>
-                      <td>SST (REPRESENTATIVE)</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>MANEESH BANKA</td>
-                      <td>SST (CO-ORDINATOR)</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>ANMISHA NANDURI</td>
-                      <td>SST</td>
-                      <td>III CSE</td>
-                    </tr>
-                    <tr>
-                      <td>NAONIT KUMAR GOUTAM</td>
-                      <td>SST</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>PRUDHVI TEJA</td>
-                      <td>SST</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>LONKA SAMBA RAJU</td>
-                      <td>SST</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>ZUHA SIDDIQUI</td>
-                      <td>SST</td>
-                      <td>II CSE</td>
-                    </tr>
-                    <tr>
-                      <td>HEMANTH MANDRA</td>
-                      <td>SST</td>
-                      <td>III ECE</td>
-                    </tr>
-                    <tr>
-                      <td>MADHAVAN RAO</td>
-                      <td>SST</td>
-                      <td>II MECH</td>
-                    </tr>
-                  </table><br>
+                  <a href="assets/documents/sowparnika-2024.pdf" class="btn" download
+                    style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                    <i class="bi bi-download"></i> Download
+                  </a>
+                </div>
 
-                  <section id="team" class="team section-bg"
-                    style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
-                    <div class="container" data-aos="fade-up">
+                <!-- PCB Designing Document -->
+                <div class="document-card" data-aos="fade-up" data-aos-delay="200"
+                  style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                  <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">PCB Designing
+                    Workshop</h3>
+                  <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Comprehensive
+                    guide and materials from PCB Design workshop - covering circuit design,
+                    layout, and prototyping.</p>
+                  <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
+                    <i class="bi bi-calendar"></i> 2024
+                  </div>
+                  <a href="assets/documents/pcb-design.docx" class="btn" download
+                    style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                    <i class="bi bi-download"></i> Download
+                  </a>
+                </div>
 
-                      <div class="section-title">
-                        <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k24-2k25</h2><br>
-                        <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-                          <h3>CORE-TEAM:</h3><br>
-                        </div>
-                        <table>
-                          <tr>
-                            <th>NAME</th>
-                            <th>DESIGNATION</th>
-                            <th>Year & Branch</th>
-                          </tr>
-                          <tr>
-                            <td>CHARITHA GUNDAMPATI</td>
-                            <td>CHAIR-PERSON</td>
-                            <td>IV IT</td>
-                          </tr>
-                          <tr>
-                            <td>ARIGE SAI YASHWANTH</td>
-                            <td>VICE CHAIR PERSON & DESIGN LEAD</td>
-                            <td>IV ECE</td>
-                          </tr>
-                          <tr>
-                            <td>BALARAMA KRISHNA GOPARAJU</td>
-                            <td>DIRECTOR SST</td>
-                            <td>III CSM</td>
-                          </tr>
-                          <tr>
-                            <td>KEERTHI UTTANOORU</td>
-                            <td>DEPUTY DIRECTOR SST</td>
-                            <td>IV CSE</td>
-                          </tr>
-                          <tr>
-                            <td>CHARAN BOLLAPALLY</td>
-                            <td>SECRETARY</td>
-                            <td>IV IT</td>
-                          </tr>
-                          <tr>
-                            <td>SIRIPURAM RAHUL</td>
-                            <td>IETE REPRESENTATIVE</td>
-                            <td>IV ECE</td>
-                          </tr>
-                          <tr>
-                            <td>MANIDEEP CHOWDARY</td>
-                            <td>TREASURER</td>
-                            <td>IV ECE</td>
-                          </tr>
-                          <tr>
-                            <td>GANDU SACHIN</td>
-                            <td>WEBDEVELOPMENT LEAD</td>
-                            <td>IV CSD</td>
-                          </tr>
-                          <tr>
-                            <td>DYAGA HARSHA VARDHAN</td>
-                            <td>OPERATIONS & SMP LEAD</td>
-                            <td>IV EEE</td>
-                          </tr>
-                          <tr>
-                            <td>MARREPALLY VINAY SAI</td>
-                            <td>MARKETING LEAD</td>
-                            <td>IV ECE</td>
-                          </tr>
-                        </table>
-                        <br><br>
-                        <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ;">
-                          EXE-COM TEAM:
-                        </H3><br>
-                        <table>
-                          <tr>
-                            <th>NAME</th>
-                            <th>DESIGNATION</th>
-                            <th>Year & Branch</th>
-                          </tr>
-                          <tr>
-                            <td>KALYAN RAM</td>
-                            <td>JOINT SECRETARY</td>
-                            <td>III CSE</td>
-                          </tr>
-                          <tr>
-                            <td>P. V. S. D. D. MALLIKARJUNA</td>
-                            <td>REPRESENTATIVE IETE</td>
-                            <td>III ECE</td>
-                          </tr>
-                          <tr>
-                            <td>KARTHIK REDDY KARAKALA</td>
-                            <td>TREASURY</td>
-                            <td>III CSD</td>
-                          </tr>
-                          <tr>
-                            <td>R. MEGHANA</td>
-                            <td>DOCUMENTATION (CO-ORDINATOR)</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>AFREEN</td>
-                            <td>DOCUMENTATION</td>
-                            <td>III CSD</td>
-                          </tr>
-                          <tr>
-                            <td>DHANUSHYM</td>
-                            <td>DOCUMENTATION</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>AKHIL SAMPATH VINAY</td>
-                            <td>DESIGN</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>VYSHNAVI</td>
-                            <td>DESIGN</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>RAMYA KOPUROTU</td>
-                            <td>DESIGN</td>
-                            <td>III CSM</td>
-                          </tr>
-                          <tr>
-                            <td>N. SRI ABHINAV</td>
-                            <td>OPERATIONS (CO-ORDINATOR)</td>
-                            <td>II CSE</td>
-                          </tr>
-                          <tr>
-                            <td>ANANYA NAYINI</td>
-                            <td>OPERATIONS</td>
-                            <td>III CSD</td>
-                          </tr>
-                          <tr>
-                            <td>SAHITHI PAKALA</td>
-                            <td>OPERATIONS</td>
-                            <td>III IT</td>
-                          </tr>
-                          <tr>
-                            <td>UDAY JALLAPURAM</td>
-                            <td>OPERATIONS</td>
-                            <td>II CSE</td>
-                          </tr>
-                          <tr>
-                            <td>B. REVANTH</td>
-                            <td>MARKETING (CO-ORDINATOR)</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>VIDHITHA REDDY PAISA</td>
-                            <td>MARKETING</td>
-                            <td>II CSD</td>
-                          </tr>
-                          <tr>
-                            <td>SNEHITH REDDY KONUGANTI</td>
-                            <td>SOCIAL MEDIA PROMOTIONS & MEDIA AND PUBLIC RELATIONS</td>
-                            <td>III CSE</td>
-                          </tr>
-                          <tr>
-                            <td>MARAPALLY ROHAN GUPTA</td>
-                            <td>SST REPRESENTATIVE</td>
-                            <td>II CSM</td>
-                          </tr>
-                          <tr>
-                            <td>NITHYA SRI</td>
-                            <td>RESEARCH CREW (CO-ORDINATOR)</td>
-                            <td>II CSE</td>
-                          </tr>
-                          <tr>
-                            <td>NIKHITHA GATTOGI</td>
-                            <td>RESEARCH CREW</td>
-                            <td>III CSM</td>
-                          </tr>
-                          <tr>
-                            <td>VISHNU PREETHI</td>
-                            <td>RESEARCH CREW</td>
-                            <td>III CSB</td>
-                          </tr>
-                          <tr>
-                            <td>JETHIN JENGITI</td>
-                            <td>RESEARCH CREW</td>
-                            <td>III CSM</td>
-                          </tr>
-                        </table><br>
-                  </section><!-- End Pricing Section -->
-                  <section id="team" class="team section-bg"
-                    style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
-                    <div class="container" data-aos="fade-up">
+                <!-- GenAI Spark Document -->
+                <div class="document-card" data-aos="fade-up" data-aos-delay="300"
+                  style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                  <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">GenAI Spark '25
+                  </h3>
+                  <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Workshop materials
+                    on Generative AI - covering ethical design, validation, and creative AI
+                    methodologies.</p>
+                  <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
+                    <i class="bi bi-calendar"></i> January 2025
+                  </div>
+                  <a href="assets/documents/genai-spark-2025.pdf" class="btn" download
+                    style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                    <i class="bi bi-download"></i> Download
+                  </a>
+                </div>
 
-                      <div class="section-title">
-                        <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k23-2k24</h2><br>
-                        <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-                          <h3>CORE-TEAM:</h3><br>
-                        </div>
-                        <table>
-                          <tr>
-                            <th>NAME</th>
-                            <th>DESIGNATION</th>
-                            <th>Year & Branch</th>
-                          </tr>
-                          <tr>
-                            <td>CHARITHA GUNDAMPATI</td>
-                            <td>CHAIR-PERSON</td>
-                            <td>IV IT</td>
-                          </tr>
-                          <tr>
-                            <td>ARIGE SAI YASHWANTH</td>
-                            <td>VICE CHAIR PERSON & DESIGN LEAD</td>
-                            <td>IV ECE</td>
-                          </tr>
-                          <tr>
-                            <td>BALARAMA KRISHNA GOPARAJU</td>
-                            <td>DIRECTOR SST</td>
-                            <td>III CSM</td>
-                          </tr>
-                          <tr>
-                            <td>KEERTHI UTTANOORU</td>
-                            <td>DEPUTY DIRECTOR SST</td>
-                            <td>IV CSE</td>
-                          </tr>
-                          <tr>
-                            <td>CHARAN BOLLAPALLY</td>
-                            <td>SECRETARY</td>
-                            <td>IV IT</td>
-                          </tr>
-                          <tr>
-                            <td>SIRIPURAM RAHUL</td>
-                            <td>IETE REPRESENTATIVE</td>
-                            <td>IV ECE</td>
-                          </tr>
-                          <tr>
-                            <td>MANIDEEP CHOWDARY</td>
-                            <td>TREASURER</td>
-                            <td>IV ECE</td>
-                          </tr>
-                          <tr>
-                            <td>SAHITHI NUKA</td>
-                            <td>DOCUMENTATION LEAD</td>
-                            <td>IV ECE</td>
-                          </tr>
-                          <tr>
-                            <td>DYAGA HARSHA VARDHAN</td>
-                            <td>OPERATIONS & SMP LEAD</td>
-                            <td>IV EEE</td>
-                          </tr>
-                          <tr>
-                            <td>MARREPALLY VINAY SAI</td>
-                            <td>MARKETING LEAD</td>
-                            <td>IV ECE</td>
-                          </tr>
-                        </table>
-                        <br><br>
-                        <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ;">
-                          EXE-COM TEAM:
-                        </H3><br>
-                        <table>
-                          <tr>
-                            <th>NAME</th>
-                            <th>DESIGNATION</th>
-                            <th>Year & Branch</th>
-                          </tr>
-                          <tr>
-                            <td>KALYAN RAM</td>
-                            <td>JOINT SECRETARY</td>
-                            <td>III CSE</td>
-                          </tr>
-                          <tr>
-                            <td>P. V. S. D. D. MALLIKARJUNA</td>
-                            <td>REPRESENTATIVE IETE</td>
-                            <td>III ECE</td>
-                          </tr>
-                          <tr>
-                            <td>KARTHIK REDDY KARAKALA</td>
-                            <td>TREASURY</td>
-                            <td>III CSD</td>
-                          </tr>
-                          <tr>
-                            <td>R. MEGHANA</td>
-                            <td>DOCUMENTATION (CO-ORDINATOR)</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>AFREEN</td>
-                            <td>DOCUMENTATION</td>
-                            <td>III CSD</td>
-                          </tr>
-                          <tr>
-                            <td>DHANUSHYM</td>
-                            <td>DOCUMENTATION</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>AKHIL SAMPATH VINAY</td>
-                            <td>DESIGN</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>VYSHNAVI</td>
-                            <td>DESIGN</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>RAMYA KOPUROTU</td>
-                            <td>DESIGN</td>
-                            <td>III CSM</td>
-                          </tr>
-                          <tr>
-                            <td>N. SRI ABHINAV</td>
-                            <td>OPERATIONS (CO-ORDINATOR)</td>
-                            <td>II CSE</td>
-                          </tr>
-                          <tr>
-                            <td>ANANYA NAYINI</td>
-                            <td>OPERATIONS</td>
-                            <td>III CSD</td>
-                          </tr>
-                          <tr>
-                            <td>SAHITHI PAKALA</td>
-                            <td>OPERATIONS</td>
-                            <td>III IT</td>
-                          </tr>
-                          <tr>
-                            <td>UDAY JALLAPURAM</td>
-                            <td>OPERATIONS</td>
-                            <td>II CSE</td>
-                          </tr>
-                          <tr>
-                            <td>B. REVANTH</td>
-                            <td>MARKETING (CO-ORDINATOR)</td>
-                            <td>III CSC</td>
-                          </tr>
-                          <tr>
-                            <td>VIDHITHA REDDY PAISA</td>
-                            <td>MARKETING</td>
-                            <td>II CSD</td>
-                          </tr>
-                          <tr>
-                            <td>SNEHITH REDDY KONUGANTI</td>
-                            <td>SOCIAL MEDIA PROMOTIONS & MEDIA AND PUBLIC RELATIONS</td>
-                            <td>III CSE</td>
-                          </tr>
-                          <tr>
-                            <td>MARAPALLY ROHAN GUPTA</td>
-                            <td>SST REPRESENTATIVE</td>
-                            <td>II CSM</td>
-                          </tr>
-                          <tr>
-                            <td>NITHYA SRI</td>
-                            <td>RESEARCH CREW (CO-ORDINATOR)</td>
-                            <td>II CSE</td>
-                          </tr>
-                          <tr>
-                            <td>NIKHITHA GATTOGI</td>
-                            <td>RESEARCH CREW</td>
-                            <td>III CSM</td>
-                          </tr>
-                          <tr>
-                            <td>VISHNU PREETHI</td>
-                            <td>RESEARCH CREW</td>
-                            <td>III CSB</td>
-                          </tr>
-                          <tr>
-                            <td>JETHIN JENGITI</td>
-                            <td>RESEARCH CREW</td>
-                            <td>III CSM</td>
-                          </tr>
-                        </table><br>
+                <!-- Space Fest Document -->
+                <div class="document-card" data-aos="fade-up" data-aos-delay="400"
+                  style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                  <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">The Space Fest
+                    2.0</h3>
+                  <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">SST wing flagship
+                    event - astronomy workshops, telescope observations, and space technology
+                    seminars.</p>
+                  <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
+                    <i class="bi bi-calendar"></i> 2024
+                  </div>
+                  <a href="assets/documents/space-fest-2024.pdf" class="btn" download
+                    style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                    <i class="bi bi-download"></i> Download
+                  </a>
+                </div>
 
-                        <section id="team" class="team section-bg"
-                          style="background:url('assets/img/picc.jpg'); top-center;background-size: cover;">
-                          <div class="container" data-aos="fade-up">
+                <!-- Tech Expo Document -->
+                <div class="document-card" data-aos="fade-up" data-aos-delay="500"
+                  style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                  <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">Tech Expo Report
+                  </h3>
+                  <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Industrial visit
+                    report to MIDHANI and BDL - exposure to practical working environments.</p>
+                  <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
+                    <i class="bi bi-calendar"></i> December 2024
+                  </div>
+                  <a href="assets/documents/tech-expo-2024.docx" class="btn" download
+                    style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                    <i class="bi bi-download"></i> Download
+                  </a>
+                </div>
 
-                            <div class="section-title">
-                              <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k22-2k23</h2><br>
-                              <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-                                <h3>CORE-TEAM:</h3><br>
-                              </div>
-                              <table>
-                                <tr>
-                                  <th>NAME</th>
-                                  <th>DESIGNATION</th>
-                                  <th>Year & Branch</th>
-                                </tr>
-                                <tr>
-                                  <td>VINISHA KASANAGOTTU</td>
-                                  <td>CHAIR-PERSON</td>
-                                  <td>IV EEE</td>
-                                </tr>
-                                <tr>
-                                  <td>JAHNAVI MAHADASI</td>
-                                  <td>VICE CHAIR PERSON</td>
-                                  <td>IV ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>MANEESH BANKA</td>
-                                  <td>DIRECTOR SST</td>
-                                  <td>IV ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>SUNNY KRISHNA</td>
-                                  <td>DEPUTY DIRECTOR SST</td>
-                                  <td>IV ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>SUPRIYA LOKURTHY</td>
-                                  <td>SECRETARY</td>
-                                  <td>IV ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>SAIRAM GADDEM</td>
-                                  <td>IETE REPRESENTATIVE</td>
-                                  <td>IV ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>JUGAL KISHORE</td>
-                                  <td>TREASURER</td>
-                                  <td>IV ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>NAVYA TIRUMANADHAM</td>
-                                  <td>DESIGN LEAD</td>
-                                  <td>IV EEE</td>
-                                </tr>
-                                <tr>
-                                  <td>P. V. B. JANAKI</td>
-                                  <td>DOCUMENTATION LEAD</td>
-                                  <td>IV ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>PALLUPU PARAMESHWARI</td>
-                                  <td>OPERATIONS LEAD</td>
-                                  <td>IV ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>V. HARSHA VARDHAN</td>
-                                  <td>MARKETING & SMP LEAD</td>
-                                  <td>IV MECH</td>
-                                </tr>
-                                <tr>
-                                  <td>KOTHA SUMA REDDY</td>
-                                  <td>WEB DESIGNING LEAD</td>
-                                  <td>IV CSE</td>
-                                </tr>
-                              </table>
-                              <br><br>
-                              <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ;">
-                                EXE-COM TEAM:
-                              </H3><br>
-                              <table>
-                                <tr>
-                                  <th>NAME</th>
-                                  <th>DESIGNATION</th>
-                                  <th>Year & Branch</th>
-                                </tr>
-                                <tr>
-                                  <td>CHARITHA GUNDAMPATI</td>
-                                  <td>JOINT SECRETARY</td>
-                                  <td>III IT</td>
-                                </tr>
-                                <tr>
-                                  <td>DHARAHAS SUDDALA</td>
-                                  <td>REPRESENTATIVE</td>
-                                  <td>III IT</td>
-                                </tr>
-                                <tr>
-                                  <td>MANIDEEP CHOWDARY</td>
-                                  <td>TREASURY</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>SAHITHI NUKA</td>
-                                  <td>DOCUMENTATION (CO-ORDINATOR)</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>SHIVADHAR GODUMALA</td>
-                                  <td>DOCUMENTATION</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>E. ANJAN KUMAR</td>
-                                  <td>DOCUMENTATION</td>
-                                  <td>III IT</td>
-                                </tr>
-                                <tr>
-                                  <td>P. SIVA TEJA</td>
-                                  <td>DESIGN</td>
-                                  <td>II CSM</td>
-                                </tr>
-                                <tr>
-                                  <td>RUKMINI</td>
-                                  <td>DESIGN</td>
-                                  <td>III CSD</td>
-                                </tr>
-                                <tr>
-                                  <td>CHARAN BOLLAPALLY</td>
-                                  <td>OPERATIONS</td>
-                                  <td>III IT</td>
-                                </tr>
-                                <tr>
-                                  <td>D. HARSHA VARDHAN</td>
-                                  <td>OPERATIONS</td>
-                                  <td>III EEE</td>
-                                </tr>
-                                <tr>
-                                  <td>AKHILA CHOWDARY</td>
-                                  <td>OPERATIONS</td>
-                                  <td>III CSD</td>
-                                </tr>
-                                <tr>
-                                  <td>HANSIKA GONE</td>
-                                  <td>OPERATIONS</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>SRINIVASA CHARY</td>
-                                  <td>MARKETING (CO-ORDINATOR)</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>SIRIPURAM RAHUL</td>
-                                  <td>MARKETING</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>MARREPALLY VINAY SAI</td>
-                                  <td>MARKETING</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>ARIGE SAI YASHWANTH</td>
-                                  <td>SOCIAL MEDIA PROMOTIONS</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>P. AMRUTH VARSH</td>
-                                  <td>MEDIA AND PUBLIC RELATIONS & RESEARCH CREW</td>
-                                  <td>II CSM</td>
-                                </tr>
-                                <tr>
-                                  <td>B. REVANTH</td>
-                                  <td>WEB DESIGNING</td>
-                                  <td>III CSC</td>
-                                </tr>
-                                <tr>
-                                  <td>KOLKURI SINDHUJA</td>
-                                  <td>SST (REPRESENTATIVE)</td>
-                                  <td>III ECE</td>
-                                </tr>
-                                <tr>
-                                  <td>BALARAMA KRISHNA GOPARAJU</td>
-                                  <td>SST (CO-ORDINATOR)</td>
-                                  <td>II CSM</td>
-                                </tr>
-                                <tr>
-                                  <td>UTTANOORU KEERTHI REDDY</td>
-                                  <td>SST</td>
-                                  <td>III CSE</td>
-                                </tr>
-                                <tr>
-                                  <td>CHITRA</td>
-                                  <td>SST</td>
-                                  <td>III CSE</td>
-                                </tr>
-                              </table><br>
+                <!-- Blockchain Workshop Document -->
+                <div class="document-card" data-aos="fade-up" data-aos-delay="600"
+                  style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                  <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">Blockchain
+                    Technology Workshop</h3>
+                  <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Industrial
+                    Revolution 4.0 workshop materials covering blockchain fundamentals and
+                    applications.</p>
+                  <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
+                    <i class="bi bi-calendar"></i> May 2021
+                  </div>
+                  <a href="assets/documents/blockchain-workshop.docx" class="btn" download
+                    style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                    <i class="bi bi-download"></i> Download
+                  </a>
+                </div>
 
-                              <div class="section-title">
-                                <h2 style="font-size:52px; margin-top: -30px;">TEAM 2k21-2k22</h2><br>
-                                <div class="righth2" style="text-align: left; color:rgba(5, 74, 133, 0.9);">
-                                  <h3>CORE-TEAM:</h3><br>
-                                </div>
-                                <table>
-                                  <tr>
-                                    <th>NAME</th>
-                                    <th>DESIGNATION</th>
-                                    <th>Year & Branch</th>
-                                  </tr>
-                                  <tr>
-                                    <td>KRITHIKA ENDRALA</td>
-                                    <td>CHAIR-PERSON</td>
-                                    <td>IV CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>NIKITHA PEDDI</td>
-                                    <td>VICE CHAIR PERSON</td>
-                                    <td>IV ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>SAI SUSMITHA</td>
-                                    <td>DIRECTOR SST</td>
-                                    <td>IV ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>VAISHNAVI</td>
-                                    <td>DEPUTY DIRECTOR SST</td>
-                                    <td>IV ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>SRINIVAS</td>
-                                    <td>SECRETARY</td>
-                                    <td>IV ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>M.B.BHANU TEJA</td>
-                                    <td>IETE REPRESENTATIVE</td>
-                                    <td>IV ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>MOKSHAGNA TEJA</td>
-                                    <td>TREASURER</td>
-                                    <td>IV CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>NIKHITHA TALLURI</td>
-                                    <td>DESIGN LEAD</td>
-                                    <td>III EEE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>MEGHANA AVVARI</td>
-                                    <td>DOCUMENTATION LEAD</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>INDHUJA KOTHAPALLY</td>
-                                    <td>OPERATIONS LEAD</td>
-                                    <td>IV CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>POOJITHA REDDY</td>
-                                    <td>MARKETING LEAD</td>
-                                    <td>IV ECE</td>
-                                  </tr>
-                                </table>
-                                <br><br>
-                                <H3 style="text-align: left; color:rgba(5, 74, 133, 0.9); ;">
-                                  EXE-COM TEAM:
-                                </H3><br>
-                                <table>
-                                  <tr>
-                                    <th>NAME</th>
-                                    <th>DESIGNATION</th>
-                                    <th>Year & Branch</th>
-                                  </tr>
-                                  <tr>
-                                    <td>VINISHA</td>
-                                    <td>JOINT SECRETARY</td>
-                                    <td>III EEE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>VEGESANA SANJANA</td>
-                                    <td>REPRESENTATIVE</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>TARUN REDDY</td>
-                                    <td>TREASURY</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>MOHAMMAD SAJID</td>
-                                    <td>TREASURY</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>NAVYA TIRUMANADHAM</td>
-                                    <td>DESIGN (CO-ORDINATOR)</td>
-                                    <td>III EEE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>UDAY KUMAR</td>
-                                    <td>DESIGN</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>HARSHA VARDHAN</td>
-                                    <td>DESIGN</td>
-                                    <td>III MECH</td>
-                                  </tr>
-                                  <tr>
-                                    <td>POLASANI JAYARAM</td>
-                                    <td>DESIGN</td>
-                                    <td>II ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>AKASH RAMAGIRI</td>
-                                    <td>DESIGN</td>
-                                    <td>II MECH</td>
-                                  </tr>
-                                  <tr>
-                                    <td>SONALI SANKESHI</td>
-                                    <td>DOCUMENTATION (CO-ORDINATOR)</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>NEERAJA PITLA</td>
-                                    <td>DOCUMENTATION</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>BADDAM BHARGAVI</td>
-                                    <td>DOCUMENTATION</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>ANUSHA ALAVALA</td>
-                                    <td>DOCUMENTATION</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>D. KUMAR VARUN</td>
-                                    <td>DOCUMENTATION</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>P V B JANAKI</td>
-                                    <td>DOCUMENTATION</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>SUNEETH MANIKANTA</td>
-                                    <td>OPERATIONS (CO-ORDINATOR)</td>
-                                    <td>III EEE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>JAHNAVI MAHADASI</td>
-                                    <td>OPERATIONS</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>KOTHA SUMA REDDY</td>
-                                    <td>OPERATIONS</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>JUGAL KISHORE</td>
-                                    <td>OPERATIONS</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>SUPRIYA LOKURTHY</td>
-                                    <td>MARKETING (CO-ORDINATOR)</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>SUNNY KRISHNA</td>
-                                    <td>MARKETING</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>SHYNI ANNAVARAPU</td>
-                                    <td>MARKETING</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>PRIYANSHI SINGH</td>
-                                    <td>MARKETING</td>
-                                    <td>II CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>MUSKAN SINGH</td>
-                                    <td>MARKETING</td>
-                                    <td>II CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>SIRIPOTHULA RAHUL</td>
-                                    <td>MARKETING</td>
-                                    <td>II CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>PARAMESHWARI</td>
-                                    <td>SOCIAL MEDIA PROMOTIONS (CO-ORDINATOR)</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>GADEM SAI RAM</td>
-                                    <td>SOCIAL MEDIA PROMOTIONS</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>RUSHIKA MADIPEDDI</td>
-                                    <td>MEDIA AND PUBLIC RELATIONS (CO-ORDINATOR)</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>CHARITHA</td>
-                                    <td>MEDIA AND PUBLIC RELATIONS</td>
-                                    <td>II IT</td>
-                                  </tr>
-                                  <tr>
-                                    <td>BHANU PRAKASH</td>
-                                    <td>SST (REPRESENTATIVE)</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>MANEESH BANKA</td>
-                                    <td>SST (CO-ORDINATOR)</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>ANMISHA NANDURI</td>
-                                    <td>SST</td>
-                                    <td>III CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>NAONIT KUMAR GOUTAM</td>
-                                    <td>SST</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>PRUDHVI TEJA</td>
-                                    <td>SST</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>LONKA SAMBA RAJU</td>
-                                    <td>SST</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>ZUHA SIDDIQUI</td>
-                                    <td>SST</td>
-                                    <td>II CSE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>HEMANTH MANDRA</td>
-                                    <td>SST</td>
-                                    <td>III ECE</td>
-                                  </tr>
-                                  <tr>
-                                    <td>MADHAVAN RAO</td>
-                                    <td>SST</td>
-                                    <td>II MECH</td>
-                                  </tr>
-                                </table><br>
+              </div>
+            </div>
+          </section>
+          <!-- End Technical Documents Section -->
 
-                                <!-- ======= Frequently Asked Questions Section ======= --><br><br>
+          <!-- ======= Newsletter Section ======= -->
+          <section id="newsletter" class="newsletter section-bg"
+            style="background:url('assets/img/picc.jpg'); top-center;background-size: cover; padding: 60px 0; margin-top: 25px;">
+            <div class="container" data-aos="fade-up">
+              <div class="section-title">
+                <h2 style="font-size:52px; margin-top: -30px; color: #054a85;">NEWSLETTERS</h2>
+                <p style="color: rgba(5, 74, 133, 0.9); font-size: 1.2rem;">Latest updates,
+                  events, and achievements from IETE-ISF VBIT</p>
+              </div>
 
+              <!-- Newsletter Grid with added container styles -->
+              <div class="newsletter-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; align-items: stretch;">
 
-                                <!-- ======= Technical Documents Section ======= -->
-                                <section id="documents" class="resources section-bg"
-                                  style="background:url('assets/img/picc.jpg'); top-center;background-size: cover; padding: 60px 0;">
-                                  <div class="container" data-aos="fade-up">
+                <!-- Newsletter 2025 -->
+                <div class="newsletter-card" data-aos="fade-up" data-aos-delay="100"
+                  style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 3px 15px rgba(5, 74, 133, 0.08); border: 1px solid #e6eff7; display: flex; flex-direction: column; height: 100%;">
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                      <h3 style="color: #054a85; font-size: 1.25rem; margin: 0 0 5px; font-weight: 600;">
+                        IETE Newsletter - January 2025</h3>
+                      <p style="color: #4a6fa5; font-size: 0.9rem; margin: 0; line-height: 1.5;">
+                        Latest updates, events, and achievements from IETE-ISF VBIT</p>
+                    </div>
+                    <div style="background: #f0f7ff; padding: 10px; border-radius: 8px;">
+                      <i class="bi bi-newspaper" style="font-size: 1.2rem; color: #054a85;"></i>
+                    </div>
+                  </div>
 
-                                    <div class="section-title">
-                                      <h2 style="font-size:52px; color: #054a85;">TECHNICAL DOCUMENTS</h2>
-                                      <p style="color: rgba(5, 74, 133, 0.9); font-size: 1.2rem;">Download event reports
-                                        and technical documentation</p>
-                                    </div>
+                  <!-- Quick Highlights -->
+                  <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">GenAI
+                      Workshop</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">500+
+                      Members</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">12
+                      Events</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">15
+                      Partners</span>
+                  </div>
 
-                                    <div class="row"
-                                      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                  <!-- Spacer to push content up -->
+                  <div style="flex-grow: 1;"></div>
 
-                                      <!-- Sowparnika Document -->
-                                      <div class="document-card" data-aos="fade-up" data-aos-delay="100"
-                                        style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; ">
-                                        <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">Sowparnika 2k24
-                                        </h3>
-                                        <p style="color: #666; margin-bottom: 15px; font-size: 1rem; ">Complete report
-                                          of Sowparnika 2k24 - flagship technical event with working models,
-                                          presentations, and competitions.</p>
-                                        <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
-                                          <i class="bi bi-calendar"></i> August 2024
-                                        </div>
-                                        <a href="assets/documents/sowparnika-2024.pdf" class="btn" download
-                                          style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
-                                          <i class="bi bi-download"></i> Download
-                                        </a>
-                                      </div>
+                  <!-- Footer - Fixed button alignment -->
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #e6eff7; margin-top: auto;">
+                    <div style="display: flex; gap: 20px;">
+                      <span style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                        <i class="bi bi-calendar3" style="color: #054a85;"></i> Jan 2025
+                      </span>
+                      <span style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                        <i class="bi bi-file-earmark-pdf" style="color: #054a85;"></i> 2.5 MB
+                      </span>
+                    </div>
+                    <a href="assets/documents/iete-newsletter-jan-2025.pdf" download
+                      style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #054a85; color: white; padding: 9px 24px; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease; min-width: 110px; height: 36px; box-sizing: border-box;">
+                      <i class="bi bi-download"></i> Download
+                    </a>
+                  </div>
+                </div>
 
-                                      <!-- PCB Designing Document -->
-                                      <div class="document-card" data-aos="fade-up" data-aos-delay="200"
-                                        style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                                        <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">PCB Designing
-                                          Workshop</h3>
-                                        <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Comprehensive
-                                          guide and materials from PCB Design workshop - covering circuit design,
-                                          layout, and prototyping.</p>
-                                        <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
-                                          <i class="bi bi-calendar"></i> 2024
-                                        </div>
-                                        <a href="assets/documents/pcb-design.docx" class="btn" download
-                                          style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
-                                          <i class="bi bi-download"></i> Download
-                                        </a>
-                                      </div>
+                <!-- Newsletter 2024 -->
+                <div class="newsletter-card" data-aos="fade-up" data-aos-delay="150"
+                  style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 3px 15px rgba(5, 74, 133, 0.08); border: 1px solid #e6eff7; display: flex; flex-direction: column; height: 100%;">
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                      <h3 style="color: #054a85; font-size: 1.25rem; margin: 0 0 5px; font-weight: 600;">
+                        IETE Newsletter - December 2024</h3>
+                      <p style="color: #4a6fa5; font-size: 0.9rem; margin: 0; line-height: 1.5;">
+                        Year-end special edition with annual achievements and future plans</p>
+                    </div>
+                    <div style="background: #f0f7ff; padding: 10px; border-radius: 8px;">
+                      <i class="bi bi-calendar-event" style="font-size: 1.2rem; color: #054a85;"></i>
+                    </div>
+                  </div>
 
-                                      <!-- GenAI Spark Document -->
-                                      <div class="document-card" data-aos="fade-up" data-aos-delay="300"
-                                        style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                                        <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">GenAI Spark '25
-                                        </h3>
-                                        <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Workshop materials
-                                          on Generative AI - covering ethical design, validation, and creative AI
-                                          methodologies.</p>
-                                        <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
-                                          <i class="bi bi-calendar"></i> January 2025
-                                        </div>
-                                        <a href="assets/documents/genai-spark-2025.pdf" class="btn" download
-                                          style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
-                                          <i class="bi bi-download"></i> Download
-                                        </a>
-                                      </div>
+                  <!-- Quick Highlights -->
+                  <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">Annual
+                      Review</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">1000+
+                      Students</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">25
+                      Workshops</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">New
+                      Partners</span>
+                  </div>
 
-                                      <!-- Space Fest Document -->
-                                      <div class="document-card" data-aos="fade-up" data-aos-delay="400"
-                                        style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                                        <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">The Space Fest
-                                          2.0</h3>
-                                        <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">SST wing flagship
-                                          event - astronomy workshops, telescope observations, and space technology
-                                          seminars.</p>
-                                        <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
-                                          <i class="bi bi-calendar"></i> 2024
-                                        </div>
-                                        <a href="assets/documents/space-fest-2024.pdf" class="btn" download
-                                          style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
-                                          <i class="bi bi-download"></i> Download
-                                        </a>
-                                      </div>
+                  <!-- Spacer to push content up -->
+                  <div style="flex-grow: 1;"></div>
 
-                                      <!-- Tech Expo Document -->
-                                      <div class="document-card" data-aos="fade-up" data-aos-delay="500"
-                                        style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                                        <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">Tech Expo Report
-                                        </h3>
-                                        <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Industrial visit
-                                          report to MIDHANI and BDL - exposure to practical working environments.</p>
-                                        <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
-                                          <i class="bi bi-calendar"></i> December 2024
-                                        </div>
-                                        <a href="assets/documents/tech-expo-2024.docx" class="btn" download
-                                          style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
-                                          <i class="bi bi-download"></i> Download
-                                        </a>
-                                      </div>
+                  <!-- Footer - Fixed button alignment -->
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #e6eff7; margin-top: auto;">
+                    <div style="display: flex; gap: 20px;">
+                      <span style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                        <i class="bi bi-calendar3" style="color: #054a85;"></i> Dec 2024
+                      </span>
+                      <span style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                        <i class="bi bi-file-earmark-pdf" style="color: #054a85;"></i> 3.0 MB
+                      </span>
+                    </div>
+                    <a href="assets/documents/iete-newsletter-dec-2024.pdf" download
+                      style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: white; color: #054a85; padding: 8px 24px; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem; border: 1px solid #054a85; transition: all 0.3s ease; min-width: 110px; height: 36px; box-sizing: border-box;">
+                      <i class="bi bi-download"></i> Download
+                    </a>
+                  </div>
+                </div>
 
-                                      <!-- Blockchain Workshop Document -->
-                                      <div class="document-card" data-aos="fade-up" data-aos-delay="600"
-                                        style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                                        <h3 style="color: #054a85; margin: 15px 0; font-size: 1.5rem;">Blockchain
-                                          Technology Workshop</h3>
-                                        <p style="color: #666; margin-bottom: 15px; font-size: 1rem;">Industrial
-                                          Revolution 4.0 workshop materials covering blockchain fundamentals and
-                                          applications.</p>
-                                        <div style="color: #999; font-size: 0.9rem; margin-bottom: 20px;">
-                                          <i class="bi bi-calendar"></i> May 2021
-                                        </div>
-                                        <a href="assets/documents/blockchain-workshop.docx" class="btn" download
-                                          style="display: inline-block; background: linear-gradient(135deg, #054a85 0%, #0872d9 100%); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
-                                          <i class="bi bi-download"></i> Download
-                                        </a>
-                                      </div>
+                <!-- SST Newsletter -->
+                <div class="newsletter-card" data-aos="fade-up" data-aos-delay="200"
+                  style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 3px 15px rgba(5, 74, 133, 0.08); border: 1px solid #e6eff7; display: flex; flex-direction: column; height: 100%;">
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                      <h3 style="color: #054a85; font-size: 1.25rem; margin: 0 0 5px; font-weight: 600;">
+                        SST Wing Newsletter - 2024</h3>
+                      <p style="color: #4a6fa5; font-size: 0.9rem; margin: 0; line-height: 1.5;">
+                        Space Sciences and Technology updates and achievements</p>
+                    </div>
+                    <div style="background: #f0f7ff; padding: 10px; border-radius: 8px;">
+                      <i class="bi bi-rocket" style="font-size: 1.2rem; color: #054a85;"></i>
+                    </div>
+                  </div>
 
-                                    </div>
-                                  </div>
-                                </section>
-                                <!-- End Technical Documents Section -->
+                  <!-- Quick Highlights -->
+                  <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">Space
+                      Fest 2.0</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">ISRO
+                      Collab</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">Astronomy</span>
+                    <span
+                      style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">Research</span>
+                  </div>
 
-                                <!-- ======= Newsletter Section ======= -->
-                                <section id="newsletter" class="newsletter section-bg"
-                                  style="background:url('assets/img/picc.jpg'); top-center;background-size: cover; padding: 60px 0; margin-top: 25px;">
-                                  <div class="container" data-aos="fade-up">
-                                    <div class="section-title">
-                                      <h2 style="font-size:52px; margin-top: -30px; color: #054a85;">NEWSLETTERS</h2>
-                                      <p style="color: rgba(5, 74, 133, 0.9); font-size: 1.2rem;">Latest updates,
-                                        events, and achievements from IETE-ISF VBIT</p>
-                                    </div>
+                  <!-- Spacer to push content up -->
+                  <div style="flex-grow: 1;"></div>
 
-                                    <!-- Newsletter Grid with added container styles -->
-                                    <div class="newsletter-grid"
-                                      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; align-items: stretch;">
+                  <!-- Footer - Fixed button alignment -->
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #e6eff7; margin-top: auto;">
+                    <div style="display: flex; gap: 20px;">
+                      <span style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                        <i class="bi bi-calendar3" style="color: #054a85;"></i> 2024
+                      </span>
+                      <span style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
+                        <i class="bi bi-file-earmark-pdf" style="color: #054a85;"></i> 3.5 MB
+                      </span>
+                    </div>
+                    <a href="assets/documents/sst-newsletter-2024.pdf" download
+                      style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #054a85; color: white; padding: 9px 24px; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease; min-width: 110px; height: 36px; box-sizing: border-box;">
+                      <i class="bi bi-download"></i> Download
+                    </a>
+                  </div>
+                </div>
 
-                                      <!-- Newsletter 2025 -->
-                                      <div class="newsletter-card" data-aos="fade-up" data-aos-delay="100"
-                                        style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 3px 15px rgba(5, 74, 133, 0.08); border: 1px solid #e6eff7; display: flex; flex-direction: column; height: 100%;">
-                                        <div
-                                          style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                                          <div>
-                                            <h3
-                                              style="color: #054a85; font-size: 1.25rem; margin: 0 0 5px; font-weight: 600;">
-                                              IETE Newsletter - January 2025</h3>
-                                            <p style="color: #4a6fa5; font-size: 0.9rem; margin: 0; line-height: 1.5;">
-                                              Latest updates, events, and achievements from IETE-ISF VBIT</p>
-                                          </div>
-                                          <div style="background: #f0f7ff; padding: 10px; border-radius: 8px;">
-                                            <i class="bi bi-newspaper" style="font-size: 1.2rem; color: #054a85;"></i>
-                                          </div>
-                                        </div>
+              </div>
 
-                                        <!-- Quick Highlights -->
-                                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">GenAI
-                                            Workshop</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">500+
-                                            Members</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">12
-                                            Events</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">15
-                                            Partners</span>
-                                        </div>
+            </div>
+          </section>
 
-                                        <!-- Spacer to push content up -->
-                                        <div style="flex-grow: 1;"></div>
+          <!-- End Resources Section -->
+          <section id="faq" class="faq section-bg"
+            style="background:url('assets/img/picc.jpg'); top-center;background-size: cover; margin-top: 25px; ">
+            <div class="container" data-aos="fade-up">
+              <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+              </div>
+              <div class="faq-list">
+                <ul>
+                  <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
+                    <a data-bs-toggle="collapse" data-bs-target="#faq-list-1" class="collapsed">How is this event
+                      benificial to me?<i class="bx bx-chevron-down icon-show"></i><i
+                        class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="faq-list-1" class="collapse" data-bs-parent=".faq-list">
+                      <p>
+                        IETE makes people to participate various activities like IETE MEMBERSHIP
+                        Free Personal Subscription to News letter, Technical Review. Invitation to
+                        attend and participate in numerous local/national/international technical
+                        programmes at concessional rates
+                        Participation in meeting with R & D/Industry leader and other to discuss
+                        scientific/technical/professional issues;
+                      </p>
+                    </div>
+                  </li>
+                  <li data-aos="fade-up" data-aos-delay="200">
+                    <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">How can i extend my
+                      knowledge in this pcb designing in the
+                      future?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                      <p>
+                        PCB brings many advantages to the electronic industry: Compact Design;
+                        The ability to mount all components neatly on a PCB leads to a compact
+                        design.
+                        The PCB designer can experiment with the placement of components on the
+                        PCB and their interconnections until they reach an optimum layout that
+                        offers the minimum possible size.
+                      </p>
+                    </div>
+                  </li>
 
-                                        <!-- Footer - Fixed button alignment -->
-                                        <div
-                                          style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #e6eff7; margin-top: auto;">
-                                          <div style="display: flex; gap: 20px;">
-                                            <span
-                                              style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                                              <i class="bi bi-calendar3" style="color: #054a85;"></i> Jan 2025
-                                            </span>
-                                            <span
-                                              style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                                              <i class="bi bi-file-earmark-pdf" style="color: #054a85;"></i> 2.5 MB
-                                            </span>
-                                          </div>
-                                          <a href="assets/documents/iete-newsletter-jan-2025.pdf" download
-                                            style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #054a85; color: white; padding: 9px 24px; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease; min-width: 110px; height: 36px; box-sizing: border-box;">
-                                            <i class="bi bi-download"></i> Download
-                                          </a>
-                                        </div>
-                                      </div>
-
-                                      <!-- Newsletter 2024 -->
-                                      <div class="newsletter-card" data-aos="fade-up" data-aos-delay="150"
-                                        style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 3px 15px rgba(5, 74, 133, 0.08); border: 1px solid #e6eff7; display: flex; flex-direction: column; height: 100%;">
-                                        <div
-                                          style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                                          <div>
-                                            <h3
-                                              style="color: #054a85; font-size: 1.25rem; margin: 0 0 5px; font-weight: 600;">
-                                              IETE Newsletter - December 2024</h3>
-                                            <p style="color: #4a6fa5; font-size: 0.9rem; margin: 0; line-height: 1.5;">
-                                              Year-end special edition with annual achievements and future plans</p>
-                                          </div>
-                                          <div style="background: #f0f7ff; padding: 10px; border-radius: 8px;">
-                                            <i class="bi bi-calendar-event"
-                                              style="font-size: 1.2rem; color: #054a85;"></i>
-                                          </div>
-                                        </div>
-
-                                        <!-- Quick Highlights -->
-                                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">Annual
-                                            Review</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">1000+
-                                            Students</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">25
-                                            Workshops</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">New
-                                            Partners</span>
-                                        </div>
-
-                                        <!-- Spacer to push content up -->
-                                        <div style="flex-grow: 1;"></div>
-
-                                        <!-- Footer - Fixed button alignment -->
-                                        <div
-                                          style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #e6eff7; margin-top: auto;">
-                                          <div style="display: flex; gap: 20px;">
-                                            <span
-                                              style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                                              <i class="bi bi-calendar3" style="color: #054a85;"></i> Dec 2024
-                                            </span>
-                                            <span
-                                              style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                                              <i class="bi bi-file-earmark-pdf" style="color: #054a85;"></i> 3.0 MB
-                                            </span>
-                                          </div>
-                                          <a href="assets/documents/iete-newsletter-dec-2024.pdf" download
-                                            style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: white; color: #054a85; padding: 8px 24px; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem; border: 1px solid #054a85; transition: all 0.3s ease; min-width: 110px; height: 36px; box-sizing: border-box;">
-                                            <i class="bi bi-download"></i> Download
-                                          </a>
-                                        </div>
-                                      </div>
-
-                                      <!-- SST Newsletter -->
-                                      <div class="newsletter-card" data-aos="fade-up" data-aos-delay="200"
-                                        style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 3px 15px rgba(5, 74, 133, 0.08); border: 1px solid #e6eff7; display: flex; flex-direction: column; height: 100%;">
-                                        <div
-                                          style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                                          <div>
-                                            <h3
-                                              style="color: #054a85; font-size: 1.25rem; margin: 0 0 5px; font-weight: 600;">
-                                              SST Wing Newsletter - 2024</h3>
-                                            <p style="color: #4a6fa5; font-size: 0.9rem; margin: 0; line-height: 1.5;">
-                                              Space Sciences and Technology updates and achievements</p>
-                                          </div>
-                                          <div style="background: #f0f7ff; padding: 10px; border-radius: 8px;">
-                                            <i class="bi bi-rocket" style="font-size: 1.2rem; color: #054a85;"></i>
-                                          </div>
-                                        </div>
-
-                                        <!-- Quick Highlights -->
-                                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px;">
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">Space
-                                            Fest 2.0</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">ISRO
-                                            Collab</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">Astronomy</span>
-                                          <span
-                                            style="background: #e6f2ff; color: #054a85; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0e3ff;">Research</span>
-                                        </div>
-
-                                        <!-- Spacer to push content up -->
-                                        <div style="flex-grow: 1;"></div>
-
-                                        <!-- Footer - Fixed button alignment -->
-                                        <div
-                                          style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #e6eff7; margin-top: auto;">
-                                          <div style="display: flex; gap: 20px;">
-                                            <span
-                                              style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                                              <i class="bi bi-calendar3" style="color: #054a85;"></i> 2024
-                                            </span>
-                                            <span
-                                              style="color: #6b8cbc; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;">
-                                              <i class="bi bi-file-earmark-pdf" style="color: #054a85;"></i> 3.5 MB
-                                            </span>
-                                          </div>
-                                          <a href="assets/documents/sst-newsletter-2024.pdf" download
-                                            style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #054a85; color: white; padding: 9px 24px; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease; min-width: 110px; height: 36px; box-sizing: border-box;">
-                                            <i class="bi bi-download"></i> Download
-                                          </a>
-                                        </div>
-                                      </div>
-
-                                    </div>
-
-                                  </div>
-                                </section>
-
-                                <!-- End Resources Section -->
-                                <section id="faq" class="faq section-bg"
-                                  style="background:url('assets/img/picc.jpg'); top-center;background-size: cover; margin-top: 25px; ">
-                                  <div class="container" data-aos="fade-up">
-                                    <div class="section-title">
-                                      <h2>Frequently Asked Questions</h2>
-                                    </div>
-                                    <div class="faq-list">
-                                      <ul>
-                                        <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-                                          <a data-bs-toggle="collapse" data-bs-target="#faq-list-1"
-                                            class="collapsed">How is this event benificial to me?<i
-                                              class="bx bx-chevron-down icon-show"></i><i
-                                              class="bx bx-chevron-up icon-close"></i></a>
-                                          <div id="faq-list-1" class="collapse" data-bs-parent=".faq-list">
-                                            <p>
-                                              IETE makes people to participate various activities like IETE MEMBERSHIP
-                                              Free Personal Subscription to News letter, Technical Review. Invitation to
-                                              attend and participate in numerous local/national/international technical
-                                              programmes at concessional rates
-                                              Participation in meeting with R & D/Industry leader and other to discuss
-                                              scientific/technical/professional issues;
-                                            </p>
-                                          </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-delay="200">
-                                          <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
-                                            class="collapsed">How can i extend my knowledge in this pcb designing in the
-                                            future?<i class="bx bx-chevron-down icon-show"></i><i
-                                              class="bx bx-chevron-up icon-close"></i></a>
-                                          <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                                            <p>
-                                              PCB brings many advantages to the electronic industry: Compact Design;
-                                              The ability to mount all components neatly on a PCB leads to a compact
-                                              design.
-                                              The PCB designer can experiment with the placement of components on the
-                                              PCB and their interconnections until they reach an optimum layout that
-                                              offers the minimum possible size.
-                                            </p>
-                                          </div>
-                                        </li>
-
-                                        <li data-aos="fade-up" data-aos-delay="300">
-                                          <a data-bs-toggle="collapse" data-bs-target="#faq-list-3"
-                                            class="collapsed">what is the benefit to join IETE membership?<i
-                                              class="bx bx-chevron-down icon-show"></i><i
-                                              class="bx bx-chevron-up icon-close"></i></a>
-                                          <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                                            <p>
-                                              IETE membership which get chance to attend free personal subscription to
-                                              newsletters,technical review etc.
-                                            </p>
-                                          </div>
-                                        </li>
+                  <li data-aos="fade-up" data-aos-delay="300">
+                    <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">what is the benefit to
+                      join IETE membership?<i class="bx bx-chevron-down icon-show"></i><i
+                        class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                      <p>
+                        IETE membership which get chance to attend free personal subscription to
+                        newsletters,technical review etc.
+                      </p>
+                    </div>
+                  </li>
 
 
 
-                                        <li data-aos="fade-up" data-aos-delay="500"> <a data-bs-toggle="collapse"
-                                            data-bs-target="#faq-list-5" class="collapsed">what is SST wing? <i
-                                              class="bx bx-chevron-down icon-show"></i><i
-                                              class="bx bx-chevron-up icon-close"></i></a>
-                                          <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                                            <p>
-                                              This wing contributes to promote space science, astronomy and related
-                                              technologies,
-                                              by establishing different outreach programs empowering researchers and to
-                                              promote the pursuit of excellence and innovation through a unique learning
-                                              environment
-                                            </p>
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
+                  <li data-aos="fade-up" data-aos-delay="500"> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
+                      class="collapsed">what is SST wing? <i class="bx bx-chevron-down icon-show"></i><i
+                        class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                      <p>
+                        This wing contributes to promote space science, astronomy and related
+                        technologies,
+                        by establishing different outreach programs empowering researchers and to
+                        promote the pursuit of excellence and innovation through a unique learning
+                        environment
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
 
-                                  </div>
-                                </section>
-                                <div
-                                  style="min-height:100vh;display:flex;justify-content:center;align-items:center;background:transparent;padding:0;margin:0; margin-bottom: -60px;">
+            </div>
+          </section>
+          <section id="faq" class="faq section-bg"
+            style="background:url('assets/img/picc.jpg'); top-center;background-size: cover; margin-top: 25px; ">
+            <div
+              style="min-height:100vh;display:flex;justify-content:center;align-items:center;padding:0;margin:0; margin-bottom: -60px;">
 
-                                  <div
-                                    style="width:100%;max-width:100vw;overflow:hidden;display:flex;justify-content:center;">
+              <div style="width:100%;max-width:100vw;overflow:hidden;display:flex;justify-content:center;">
 
-                                    <div
-                                      style="width:100%;padding:30px;box-sizing:border-box; max-width: 600px; margin: 0 auto;">
+                <div style="width:100%;padding:30px;box-sizing:border-box; max-width: 600px; margin: 0 auto;">
 
-                                      <!-- Title -->
-                                      <h2
-                                        style="color:#054a85;margin-top:0;font-size:2rem;margin-bottom:25px;text-align:center;font-weight:700;">
-                                        Have a Query?
-                                      </h2>
+                  <!-- Title -->
+                  <h2
+                    style="color:#054a85;margin-top:0;font-size:2rem;margin-bottom:25px;text-align:center;font-weight:700;">
+                    Have a Query?
+                  </h2>
 
-                                      <form id="contactForm"
-                                        style="width:100%; display: flex; flex-direction: column; justify-content: center;"
-                                        action="https://api.web3forms.com/submit" method="POST">
-                                        <input type="hidden" name="access_key"
-                                          value="8a607e3f-09b8-41e6-8c92-58ab393e2e71">
-                                        <!-- Name -->
-                                        <div style="margin-bottom:20px;">
-                                          <label for="name"
-                                            style="display:flex;align-items:center;margin-bottom:8px;color:#555;font-weight:600;">
-                                            <i class="fas fa-user" style="margin-right:8px;color:#6e8efb;"></i>
-                                            Your Name
-                                          </label>
+                  <form id="contactForm"
+                    style="width:100%; display: flex; flex-direction: column; justify-content: center;"
+                    action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8a607e3f-09b8-41e6-8c92-58ab393e2e71">
+                    <!-- Name -->
+                    <div style="margin-bottom:20px;">
+                      <label for="name"
+                        style="display:flex;align-items:center;margin-bottom:8px;color:#555;font-weight:600;">
+                        <i class="fas fa-user" style="margin-right:8px;color:#6e8efb;"></i>
+                        Your Name
+                      </label>
 
-                                          <div style="position:relative;width: 100%;">
-                                            <input type="text" id="name" name="name" required
-                                              placeholder="Enter your full name"
-                                              style="width:100%;padding:14px 14px 14px 44px;border:2px solid #e1e1e1;border-radius:8px;font-size:16px;box-sizing:border-box;outline:none;" />
-                                            <i class="fas fa-user"
-                                              style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#a777e3;"></i>
-                                          </div>
-                                        </div>
+                      <div style="position:relative;width: 100%;">
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name"
+                          style="width:100%;padding:14px 14px 14px 44px;border:2px solid #e1e1e1;border-radius:8px;font-size:16px;box-sizing:border-box;outline:none;" />
+                        <i class="fas fa-user"
+                          style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#a777e3;"></i>
+                      </div>
+                    </div>
 
-                                        <!-- Email -->
-                                        <div style="margin-bottom:20px;">
-                                          <label for="email"
-                                            style="display:flex;align-items:center;margin-bottom:8px;color:#555;font-weight:600;">
-                                            <i class="fas fa-envelope" style="margin-right:8px;color:#6e8efb;"></i>
-                                            Your Email
-                                          </label>
+                    <!-- Email -->
+                    <div style="margin-bottom:20px;">
+                      <label for="email"
+                        style="display:flex;align-items:center;margin-bottom:8px;color:#555;font-weight:600;">
+                        <i class="fas fa-envelope" style="margin-right:8px;color:#6e8efb;"></i>
+                        Your Email
+                      </label>
 
-                                          <div style="position:relative; width: 100%;">
-                                            <input type="email" id="email" name="email" required
-                                              placeholder="Enter your email address"
-                                              style="width:100%;padding:14px 14px 14px 44px;border:2px solid #e1e1e1;border-radius:8px;font-size:16px;box-sizing:border-box;outline:none;" />
-                                            <i class="fas fa-envelope"
-                                              style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#a777e3;"></i>
-                                          </div>
-                                        </div>
+                      <div style="position:relative; width: 100%;">
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address"
+                          style="width:100%;padding:14px 14px 14px 44px;border:2px solid #e1e1e1;border-radius:8px;font-size:16px;box-sizing:border-box;outline:none;" />
+                        <i class="fas fa-envelope"
+                          style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#a777e3;"></i>
+                      </div>
+                    </div>
 
-                                        <!-- Message -->
-                                        <div style="margin-bottom:25px;">
-                                          <label for="message"
-                                            style="display:flex;align-items:center;margin-bottom:8px;color:#555;font-weight:600;">
-                                            <i class="fas fa-comment-dots" style="margin-right:8px;color:#6e8efb;"></i>
-                                            Your Message
-                                          </label>
+                    <!-- Message -->
+                    <div style="margin-bottom:25px;">
+                      <label for="message"
+                        style="display:flex;align-items:center;margin-bottom:8px;color:#555;font-weight:600;">
+                        <i class="fas fa-comment-dots" style="margin-right:8px;color:#6e8efb;"></i>
+                        Your Message
+                      </label>
 
-                                          <div style="position:relative;width: 100%;">
-                                            <textarea id="message" name="message" rows="4" required
-                                              placeholder="Enter your message here..."
-                                              style="width:100%;padding:14px 14px 14px 44px;border:2px solid #e1e1e1;border-radius:8px;font-size:16px;box-sizing:border-box;resize:vertical;font-family:inherit;outline:none;"></textarea>
-                                            <i class="fas fa-comment-dots"
-                                              style="position:absolute;left:14px;top:14px;color:#a777e3;"></i>
-                                          </div>
-                                        </div>
+                      <div style="position:relative;width: 100%;">
+                        <textarea id="message" name="message" rows="4" required placeholder="Enter your message here..."
+                          style="width:100%;padding:14px 14px 14px 44px;border:2px solid #e1e1e1;border-radius:8px;font-size:16px;box-sizing:border-box;resize:vertical;font-family:inherit;outline:none;"></textarea>
+                        <i class="fas fa-comment-dots" style="position:absolute;left:14px;top:14px;color:#a777e3;"></i>
+                      </div>
+                    </div>
 
-                                        <!-- Button -->
-                                        <button type="submit"
-                                          style="width:100%;background-color:rgba(23,97,163,1);color:#fff;border:none;padding:15px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;">
-                                          <i class="fas fa-paper-plane"></i>
-                                          Send Message
-                                        </button>
+                    <!-- Button -->
+                    <button type="submit"
+                      style="width:100%;background-color:rgba(23,97,163,1);color:#fff;border:none;padding:15px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;">
+                      <i class="fas fa-paper-plane"></i>
+                      Send Message
+                    </button>
 
-                                        <!-- Success Message -->
-                                        <div id="successMessage"
-                                          style="display:none;margin-top:15px;background:#d4edda;color:#155724;padding:12px;border-radius:8px;text-align:center;font-weight:500;">
-                                          <i class="fas fa-check-circle" style="margin-right:8px;"></i>
-                                          Your message has been sent successfully!
-                                        </div>
+                    <!-- Success Message -->
+                    <div id="successMessage"
+                      style="display:none;margin-top:15px;background:#d4edda;color:#155724;padding:12px;border-radius:8px;text-align:center;font-weight:500;">
+                      <i class="fas fa-check-circle" style="margin-right:8px;"></i>
+                      Your message has been sent successfully!
+                    </div>
 
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- End Frequently Asked Questions Section -->
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Frequently Asked Questions Section -->
 
-                                <!-- ======= Contact Section ======= 
+          <!-- ======= Contact Section ======= 
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
@@ -3520,7 +1611,7 @@
         </div>
 
       </div> -->
-                        </section><!-- End Contact Section -->
+    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 

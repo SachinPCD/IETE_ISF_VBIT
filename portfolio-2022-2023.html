@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>TEAM 2k22-2k23 | IETE-ISF VBIT</title>
+    <meta content="TEAM 2k22-2k23 Portfolio - IETE-ISF VBIT" name="description">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Barlow', sans-serif;
+            background:#acdaf5;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* Header/Navbar like the example */
+        #header {
+            background: #054a85;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(224, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(5, 74, 133, 0.4);
+            max-height: 5rem;
+        }
+
+        .iete-logo {
+            height: 80px;
+        }
+
+        .sst-logo {
+            width: 65px !important;
+            height: 65px !important;
+        }
+
+        .iet-logo {
+            width: 155px !important;
+            height: 155px !important;
+            margin-left: -22px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-top: -2rem;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logos img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logos img:hover {
+            transform: scale(1.05);
+        }
+
+        .header-center h1 {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .close-button-nav {
+            background: rgba(224, 255, 255, 0.1);
+            border: 2px solid rgba(224, 255, 255, 0.2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .close-button-nav {
+            background: rgba(224, 255, 255, 0.1);
+            border: 2px solid rgba(224, 255, 255, 0.2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .close-button-nav:hover {
+            background: rgba(224, 255, 255, 0.2);
+            transform: rotate(90deg);
+            box-shadow: 0 0 15px rgba(224, 255, 255, 0.3);
+        }
+
+        /* Main Content */
+        .portfolio-content {
+            padding: 120px 40px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-subtitle {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #054a85;
+            font-size: 18px;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: 60px;
+        }
+
+        .team-section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #0880e8;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #0880e8;
+            padding-bottom: 15px;
+        }
+
+        /* Table Styles - Updated to match 2023-2024 */
+        .team-table-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        thead {
+            background: #054a85;
+        }
+
+        th {
+            color: white;
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        tbody tr:nth-child(odd) td {
+            color: rgba(0, 0, 0, 0.85) !important;
+        }
+
+        tbody tr:nth-child(odd) td:nth-child(1) {
+            color: rgba(0, 0, 0, 0.95) !important;
+        }
+
+        tbody tr:nth-child(even) {
+            background: linear-gradient(135deg, rgba(227, 242, 253, 0.3), rgba(224, 255, 255, 0.3));
+        }
+
+        tbody tr:nth-child(even) td {
+            color: rgba(0, 0, 0, 0.85) !important;
+        }
+
+        tbody tr:nth-child(even) td:nth-child(1) {
+            color: rgba(0, 0, 0, 0.95) !important;
+        }
+
+        tbody tr:hover {
+            background: rgba(8, 128, 232, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 16px 20px;
+            color: rgba(0, 0, 0, 0.85);
+            font-size: 15px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        td:last-child {
+            border-right: none;
+        }
+
+        /* Column-specific styling */
+        td:nth-child(1) { /* NAME column */
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.95);
+        }
+
+        td:nth-child(2) { /* DESIGNATION column */
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.85);
+        }
+
+        td:nth-child(3) { /* Year & Branch column */
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Footer */
+        .portfolio-footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #054a85;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .logos {
+                order: 1;
+            }
+            
+            .header-center {
+                order: 2;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .close-button-nav {
+                order: 3;
+            }
+            
+            .portfolio-content {
+                padding: 100px 20px 40px;
+            }
+
+            .team-section-title {
+                font-size: 28px;
+            }
+
+            table {
+                min-width: 700px;
+            }
+
+            th,
+            td {
+                padding: 14px 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-table-container {
+                border-radius: 8px;
+            }
+            
+            table {
+                min-width: 600px;
+            }
+            
+            th,
+            td {
+                padding: 12px 14px;
+                font-size: 14px;
+            }
+            
+            .team-section-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            #header {
+                padding: 10px 15px;
+            }
+            
+            .logos img {
+                height: 32px;
+            }
+            
+            .header-center h1 {
+                font-size: 18px;
+            }
+            
+            .portfolio-content {
+                padding: 90px 15px 30px;
+            }
+            
+            .team-section-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+            
+            table {
+                min-width: 500px;
+            }
+            
+            th,
+            td {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            .portfolio-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .team-section-title {
+                font-size: 20px;
+            }
+            
+            th,
+            td {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header like the first file -->
+    <header id="header" class="fixed-top" style="background-color:#054a85;">
+        <div class="container">
+            <div class="header-content" style="display: flex;">
+
+                <div class="logos" data-aos="fade-right" data-aos-duration="800">
+                    <a href="index.html" class="d-inline-block">
+                        <img src="Logo.png" alt="IETE Logo" class="iete-logo" />
+                    </a>
+                    <a href="index.html" class="d-inline-block">
+                        <img src="SST LOGO.png" alt="SST Logo" class="sst-logo" />
+                    </a>
+                    <a href="index.html" class="d-inline-block">
+                        <img src="iet_logo1.png" alt="IET Logo" class="iet-logo" />
+                    </a>
+                </div>
+
+                <div class="header-center" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+                    <h1>TEAM 2k22-2k23</h1>
+                </div>
+
+                <button class="close-button-nav" onclick="window.location.href='index.html'" aria-label="Close"
+                    data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="portfolio-content">
+        <p class="portfolio-subtitle" data-aos="fade-up" data-aos-delay="400">Meet our dedicated team members for the year 2022-2023</p>
+
+        <!-- CORE TEAM -->
+        <div class="team-section" data-aos="fade-up" data-aos-delay="500">
+            <h2 class="team-section-title">Core Team</h2>
+            <div class="team-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>DESIGNATION</th>
+                            <th>Year & Branch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VINISHA KASANAGOTTU</td>
+                            <td>CHAIR-PERSON</td>
+                            <td>IV EEE</td>
+                        </tr>
+                <tr>
+                    <td>JAHNAVI MAHADASI</td>
+                    <td>VICE CHAIR PERSON</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>MANEESH BANKA</td>
+                    <td>DIRECTOR SST</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>SUNNY KRISHNA</td>
+                    <td>DEPUTY DIRECTOR SST</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>SUPRIYA LOKURTHY</td>
+                    <td>SECRETARY</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>SAIRAM GADDEM</td>
+                    <td>IETE REPRESENTATIVE</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>JUGAL KISHORE</td>
+                    <td>TREASURER</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>NAVYA TIRUMANADHAM</td>
+                    <td>DESIGN LEAD</td>
+                    <td>IV EEE</td>
+                </tr>
+                <tr>
+                    <td>P. V. B. JANAKI</td>
+                    <td>DOCUMENTATION LEAD</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>PALLUPU PARAMESHWARI</td>
+                    <td>OPERATIONS LEAD</td>
+                    <td>IV ECE</td>
+                </tr>
+                <tr>
+                    <td>V. HARSHA VARDHAN</td>
+                    <td>MARKETING & SMP LEAD</td>
+                    <td>IV MECH</td>
+                </tr>
+                <tr>
+                    <td>KOTHA SUMA REDDY</td>
+                    <td>WEB DESIGNING LEAD</td>
+                    <td>IV CSE</td>
+                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- EXE-COM TEAM -->
+        <div class="team-section" data-aos="fade-up" data-aos-delay="600">
+            <h2 class="team-section-title">Exe-Com Team</h2>
+            <div class="team-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>DESIGNATION</th>
+                            <th>Year & Branch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CHARITHA GUNDAMPATI</td>
+                            <td>JOINT SECRETARY</td>
+                            <td>III IT</td>
+                        </tr>
+                <tr>
+                    <td>DHARAHAS SUDDALA</td>
+                    <td>REPRESENTATIVE</td>
+                    <td>III IT</td>
+                </tr>
+                <tr>
+                    <td>MANIDEEP CHOWDARY</td>
+                    <td>TREASURY</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>SAHITHI NUKA</td>
+                    <td>DOCUMENTATION (CO-ORDINATOR)</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>SHIVADHAR GODUMALA</td>
+                    <td>DOCUMENTATION</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>E. ANJAN KUMAR</td>
+                    <td>DOCUMENTATION</td>
+                    <td>III IT</td>
+                </tr>
+                <tr>
+                    <td>P. SIVA TEJA</td>
+                    <td>DESIGN</td>
+                    <td>II CSM</td>
+                </tr>
+                <tr>
+                    <td>RUKMINI</td>
+                    <td>DESIGN</td>
+                    <td>III CSD</td>
+                </tr>
+                <tr>
+                    <td>CHARAN BOLLAPALLY</td>
+                    <td>OPERATIONS</td>
+                    <td>III IT</td>
+                </tr>
+                <tr>
+                    <td>D. HARSHA VARDHAN</td>
+                    <td>OPERATIONS</td>
+                    <td>III EEE</td>
+                </tr>
+                <tr>
+                    <td>AKHILA CHOWDARY</td>
+                    <td>OPERATIONS</td>
+                    <td>III CSD</td>
+                </tr>
+                <tr>
+                    <td>HANSIKA GONE</td>
+                    <td>OPERATIONS</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>SRINIVASA CHARY</td>
+                    <td>MARKETING (CO-ORDINATOR)</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>SIRIPURAM RAHUL</td>
+                    <td>MARKETING</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>MARREPALLY VINAY SAI</td>
+                    <td>MARKETING</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>ARIGE SAI YASHWANTH</td>
+                    <td>SOCIAL MEDIA PROMOTIONS</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>P. AMRUTH VARSH</td>
+                    <td>MEDIA AND PUBLIC RELATIONS & RESEARCH CREW</td>
+                    <td>II CSM</td>
+                </tr>
+                <tr>
+                    <td>B. REVANTH</td>
+                    <td>WEB DESIGNING</td>
+                    <td>III CSC</td>
+                </tr>
+                <tr>
+                    <td>KOLKURI SINDHUJA</td>
+                    <td>SST (REPRESENTATIVE)</td>
+                    <td>III ECE</td>
+                </tr>
+                <tr>
+                    <td>BALARAMA KRISHNA GOPARAJU</td>
+                    <td>SST (CO-ORDINATOR)</td>
+                    <td>II CSM</td>
+                </tr>
+                <tr>
+                    <td>UTTANOORU KEERTHI REDDY</td>
+                    <td>SST</td>
+                    <td>III CSE</td>
+                </tr>
+                <tr>
+                    <td>CHITRA</td>
+                    <td>SST</td>
+                    <td>III CSE</td>
+                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="portfolio-footer" data-aos="fade-up" data-aos-delay="700">
+            <p>© 2025 IETE-ISF VBIT | Team 2022-2023</p>
+            <p>All Rights Reserved | 32 Dedicated Members</p>
+        </footer>
+    </main>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 100
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 8px 30px rgba(5, 74, 133, 0.6)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(5, 74, 133, 0.4)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -18,6 +18,9 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Vendor CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,71 +35,103 @@
 
         body {
             font-family: 'Inter', 'Barlow', sans-serif;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
+        background: #e0ffff;
             min-height: 100vh;
-            color: #fff;
+            color: #333;
         }
 
         /* Header */
-        .gallery-header {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
-            padding: 20px 40px;
+       #header {
+            background: #054a85;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(224, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(5, 74, 133, 0.4);
+            max-height: 5rem;
+        }
+
+        .iete-logo {
+            height: 80px;
+        }
+
+        .sst-logo {
+            width: 65px !important;
+            height: 65px !important;
+        }
+
+        .iet-logo {
+            width: 155px !important;
+            height: 155px !important;
+            margin-left: -22px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-top: -2rem;
+        }
+
+        .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            backdrop-filter: blur(10px);
         }
 
-        .back-btn {
+        .logos {
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
+            gap: 15px;
+        }
+
+        .logos img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logos img:hover {
+            transform: scale(1.05);
+        }
+
+        .header-center h1 {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .close-button-nav {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
         }
 
-        .back-btn:hover {
-            background: #0880e8;
-            color: #fff;
-            transform: translateX(-5px);
+        .close-button-nav:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
         }
 
-        .gallery-title {
-            font-size: 32px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            background: linear-gradient(135deg, #0880e8, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .photo-count {
-            background: rgba(8, 128, 232, 0.2);
-            color: #00d4ff;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            border: 1px solid rgba(8, 128, 232, 0.3);
+        .material-icons {
+            font-size: 24px;
         }
 
         /* Main Content */
         .gallery-content {
-            padding: 120px 40px 60px;
+            padding: 140px 40px 60px;
             max-width: 1600px;
             margin: 0 auto;
         }
@@ -104,8 +139,9 @@
         .gallery-subtitle {
             text-align: center;
             margin-bottom: 50px;
-            color: rgba(255, 255, 255, 0.7);
+            color: #666;
             font-size: 18px;
+            font-weight: 500;
         }
 
         /* Photo Grid */
@@ -117,34 +153,20 @@
 
         .photo-item {
             position: relative;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
             cursor: pointer;
             aspect-ratio: 4/3;
-            background: #1a1a3e;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .photo-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(5, 74, 133, 0.1);
         }
 
         .photo-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow:
-                0 25px 60px rgba(8, 128, 232, 0.3),
-                0 0 0 2px rgba(8, 128, 232, 0.5);
-        }
-
-        .photo-item:hover::before {
-            opacity: 1;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(5, 74, 133, 0.2);
+            border-color: #054a85;
         }
 
         .photo-item img {
@@ -155,7 +177,7 @@
         }
 
         .photo-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .photo-item .zoom-icon {
@@ -163,17 +185,17 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
-            width: 60px;
-            height: 60px;
-            background: rgba(8, 128, 232, 0.9);
+            width: 50px;
+            height: 50px;
+            background: #054a85;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            font-size: 24px;
+            color: white;
+            font-size: 20px;
             z-index: 2;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .photo-item:hover .zoom-icon {
@@ -184,11 +206,11 @@
             position: absolute;
             bottom: 15px;
             left: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
+            background: rgba(5, 74, 133, 0.9);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
             font-weight: 600;
             z-index: 2;
             opacity: 0;
@@ -226,8 +248,8 @@
         .lightbox-content img {
             max-width: 100%;
             max-height: 85vh;
-            border-radius: 12px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .lightbox-close {
@@ -239,7 +261,7 @@
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            color: #fff;
+            color: white;
             font-size: 20px;
             cursor: pointer;
             display: flex;
@@ -249,8 +271,8 @@
         }
 
         .lightbox-close:hover {
-            background: #0880e8;
-            border-color: #0880e8;
+            background: #054a85;
+            border-color: #054a85;
             transform: rotate(90deg);
         }
 
@@ -258,13 +280,13 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            color: #fff;
-            font-size: 22px;
+            color: white;
+            font-size: 20px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -273,16 +295,16 @@
         }
 
         .lightbox-nav:hover {
-            background: #0880e8;
-            border-color: #0880e8;
+            background: #054a85;
+            border-color: #054a85;
         }
 
         .lightbox-prev {
-            left: -80px;
+            left: -70px;
         }
 
         .lightbox-next {
-            right: -80px;
+            right: -70px;
         }
 
         .lightbox-counter {
@@ -290,47 +312,68 @@
             bottom: -45px;
             left: 50%;
             transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 14px;
             font-weight: 500;
         }
 
         /* Responsive */
         @media (max-width: 992px) {
-            .gallery-header {
-                padding: 15px 20px;
-            }
-
-            .gallery-title {
-                font-size: 20px;
-                letter-spacing: 1px;
-            }
-
-            .photo-count {
-                display: none;
-            }
-
             .gallery-content {
-                padding: 100px 20px 40px;
+                padding: 120px 20px 40px;
             }
 
             .photo-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                 gap: 15px;
             }
+
+            .header-center h1 {
+                font-size: 20px;
+            }
+
+            .logos img {
+                height: 35px;
+            }
+
+            .close-button-nav {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .header-center {
+                order: 3;
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            .header-left {
+                order: 1;
+            }
+            
+            .navbar {
+                order: 2;
+            }
+            
+            .logos {
+                gap: 10px;
+            }
+            
+            .logos img {
+                height: 30px;
+            }
         }
 
         @media (max-width: 576px) {
-            .back-btn span {
-                display: none;
-            }
-
-            .back-btn {
-                padding: 12px;
-            }
-
-            .gallery-title {
-                font-size: 16px;
+            .gallery-content {
+                padding: 130px 15px 30px;
             }
 
             .photo-grid {
@@ -339,7 +382,7 @@
             }
 
             .photo-item {
-                border-radius: 10px;
+                border-radius: 8px;
             }
 
             .lightbox-prev {
@@ -351,8 +394,12 @@
             }
 
             .lightbox-nav {
-                width: 45px;
-                height: 45px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .header-center h1 {
                 font-size: 18px;
             }
         }
@@ -361,13 +408,32 @@
 
 <body>
     <!-- Header -->
-    <header class="gallery-header">
-        <a href="index.html#gallery" class="back-btn">
-            <i class="fas fa-arrow-left"></i>
-            <span>Back to Gallery</span>
-        </a>
-        <h1 class="gallery-title">CYBER-ELITE</h1>
-        <span class="photo-count"><i class="fas fa-images"></i> 3 Photos</span>
+     <header id="header" class="fixed-top" style="background-color:#054a85;">
+        <div class="container">
+            <div class="header-content" style="display: flex;">
+
+                <div class="logos" data-aos="fade-right" data-aos-duration="800">
+                    <a href="index.html" class="d-inline-block">
+                        <img src="Logo.png" alt="IETE Logo" class="iete-logo" />
+                    </a>
+                    <a href="index.html" class="d-inline-block">
+                        <img src="SST LOGO.png" alt="SST Logo" class="sst-logo" />
+                    </a>
+                    <a href="index.html" class="d-inline-block">
+                        <img src="iet_logo1.png" alt="IET Logo" class="iet-logo" />
+                    </a>
+                </div>
+
+                <div class="header-center" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+                    <h1>CYBER-ELITE GALLERY</h1>
+                </div>
+
+                <button class="close-button-nav" onclick="window.location.href='index.html'" aria-label="Close"
+                    data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -484,5 +550,4 @@
         });
     </script>
 </body>
-
 </html>
