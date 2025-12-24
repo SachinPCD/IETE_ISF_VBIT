@@ -816,8 +816,8 @@
    .chatbot-welcome-container {
      bottom: 15px;
      right: 15px;
-     flex-direction: column-reverse;
-     align-items: flex-end;
+     flex-direction: row;
+     align-items: center;
      gap: 10px;
    }
 
@@ -834,13 +834,13 @@
    }
 
    .chatbot-welcome-text::after {
-     right: 50%;
-     top: -8px;
-     transform: translateX(50%);
-     border-left: 8px solid transparent;
-     border-right: 8px solid transparent;
+     right: -8px;
+     top: 50%;
+     transform: translateY(-50%);
+     border-top: 8px solid transparent;
      border-bottom: 8px solid transparent;
-     border-top: 8px solid #4f46e5;
+     border-left: 8px solid #4f46e5;
+     border-right: none;
    }
 
    .chatbot-header {

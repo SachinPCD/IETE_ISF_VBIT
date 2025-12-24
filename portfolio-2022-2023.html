@@ -319,6 +319,41 @@
         }
 
         @media (max-width: 768px) {
+            /* Hide logos on mobile */
+            .logos {
+                display: none !important;
+            }
+            
+            /* Fix container margin for mobile */
+            .container {
+                margin-top: 0 !important;
+            }
+            
+            /* Adjust header layout */
+            .header-content {
+                justify-content: space-between;
+                padding: 15px 10px;
+            }
+            
+            /* Center the title */
+            .header-center {
+                flex: 1;
+                text-align: center;
+            }
+            
+            .header-center h1 {
+                font-size: 20px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            /* Adjust close button */
+            .close-button-nav {
+                width: 40px;
+                height: 40px;
+            }
+            
             .team-table-container {
                 border-radius: 8px;
             }

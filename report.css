@@ -258,3 +258,71 @@ body {
     margin-left: -4rem; /* Adjust this value as needed */
     margin-right: -1rem; /* Adjust this value as needed */
 }
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .reports-container {
+        padding: 30px 20px;
+    }
+
+    .reports-header h1 {
+        font-size: 32px;
+    }
+}
+.back-container {
+    text-align: center;
+    margin: 0px 0;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #0e589b;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px rgb(14, 88, 155);
+    transition: all 0.3s ease;
+}
+.back-btn .arrow {
+    font-size: 45px;
+    transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+
+  /* Hide logos in header */
+  .header-left {
+    display: none !important;
+  }
+
+  /* Center the title properly */
+  .header-center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .header-center h1 {
+    font-size: 20px;
+  }
+
+  /* Center report cards */
+  .reports-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .report-card {
+    width: 90%;
+    margin: 15px auto;
+  }
+}
+@media (max-width: 768px) {
+  .header-left,
+  .logos {
+    display: none !important;
+  }
+}

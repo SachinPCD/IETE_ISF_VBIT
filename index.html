@@ -85,7 +85,31 @@
       background: #072e53;
       color: #dee0e2;
     }
+  
     
+/* Desktop hover dropdown */
+@media (min-width: 769px) {
+  .navbar .dropdown:hover ul {
+    display: block;
+  }
+}
+
+/* Mobile dropdown default hidden */
+@media (max-width: 768px) {
+  .navbar .dropdown ul {
+    display: none;
+    position: static;
+    width: 100%;
+    min-width: 100%;
+    box-shadow: none;
+    background: #e0e7f0;
+  }
+
+  .navbar .dropdown.active ul {
+    display: block;
+  }
+}
+
   </style>
 
   <!-- =======================================================
@@ -125,16 +149,16 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto " href="#hero"><b><strong>HOME</strong></b></a></li>
-          <li class="dropdown"> <a href="#Report"><b><strong>REPORTS</strong></b> <i class="bi bi-chevron-down"></i>
+          <li class="dropdown mobile-dropdown">
+            <a href="#Report">
+              <b><strong>REPORT</strong></b>
+              <i class="bi bi-chevron-down"></i>
             </a>
             <ul>
-              <li><a href="Sreport_2k24.html">Sowparnika 2K24</a></li>
-              <li><a href="Sreport_2k23.html">Sowparnika 2K23</a></li>
-              <li><a href="Sreport_2k21.html">Sowparnika 2K21</a></li>
               <li><a href="Greport.html">Gen AI Spark</a></li>
               <li><a href="Creport.html">CYBER-ELITE</a></li>
             </ul>
-          </li>
+            </li>
           <li><a class="nav-link scrollto" href="#about"><b><strong>ABOUT</strong></b></a></li>
           <li><a class="nav-link scrollto" href="#events"><b><strong>EVENTS</strong></b></a></li>
           <li><a class="nav-link scrollto " href="#gallery"><b><strong>GALLERY</strong></b></a></li>

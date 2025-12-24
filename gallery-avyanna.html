@@ -317,7 +317,47 @@
             font-weight: 500;
         }
 
-        /* Responsive */
+        /* Responsive - ONLY MOBILE CHANGES HERE */
+        @media (max-width: 768px) {
+            /* Hide logos on mobile only */
+            .logos {
+                display: none !important;
+            }
+            
+            /* Adjust header layout for mobile */
+            .header-content {
+                justify-content: space-between;
+                padding: 0 10px;
+            }
+            
+            /* Center the title on mobile */
+            .header-center {
+                flex: 1;
+                text-align: center;
+                margin-left: 0;
+            }
+            
+            .header-center h1 {
+                font-size: 20px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            /* Adjust close button for mobile */
+            .close-button-nav {
+                width: 40px;
+                height: 40px;
+                margin-left: auto;
+            }
+            
+            /* Adjust container for mobile */
+            .container {
+                padding: 0 10px;
+                margin-top: 0;
+            }
+        }
+
         @media (max-width: 992px) {
             .gallery-content {
                 padding: 120px 20px 40px;
@@ -329,11 +369,11 @@
             }
 
             .header-center h1 {
-                font-size: 20px;
+                font-size: 32px;
             }
 
             .logos img {
-                height: 35px;
+                height: 70px;
             }
 
             .close-button-nav {
@@ -342,38 +382,9 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .container {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .header-center {
-                order: 3;
-                width: 100%;
-                margin-top: 10px;
-            }
-            
-            .header-left {
-                order: 1;
-            }
-            
-            .navbar {
-                order: 2;
-            }
-            
-            .logos {
-                gap: 10px;
-            }
-            
-            .logos img {
-                height: 30px;
-            }
-        }
-
         @media (max-width: 576px) {
             .gallery-content {
-                padding: 130px 15px 30px;
+                padding: 100px 15px 30px;
             }
 
             .photo-grid {
@@ -401,6 +412,11 @@
 
             .header-center h1 {
                 font-size: 18px;
+            }
+            
+            .close-button-nav {
+                width: 36px;
+                height: 36px;
             }
         }
     </style>

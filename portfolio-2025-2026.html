@@ -269,6 +269,7 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
+            object-position: center center;
             border-bottom: 1px solid rgba(224, 255, 255, 0.1);
             transition: transform 0.5s ease;
         }
@@ -365,6 +366,41 @@
         }
 
         @media (max-width: 768px) {
+            /* Hide logos on mobile */
+            .logos {
+                display: none !important;
+            }
+            
+            /* Fix container margin for mobile */
+            .container {
+                margin-top: 0 !important;
+            }
+            
+            /* Adjust header layout */
+            .header-content {
+                justify-content: space-between;
+                padding: 15px 10px;
+            }
+            
+            /* Center the title */
+            .header-center {
+                flex: 1;
+                text-align: center;
+            }
+            
+            .header-center h1 {
+                font-size: 20px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            /* Adjust close button */
+            .close-button-nav {
+                width: 40px;
+                height: 40px;
+            }
+            
             .portfolio-content {
                 padding: 100px 15px 40px;
             }
@@ -393,6 +429,12 @@
 
             .member-name {
                 font-size: 18px;
+            }
+
+            /* Mobile-specific image positioning to show heads */
+            .member-image {
+                object-position: center top;
+                height: 280px;
             }
         }
 
@@ -437,7 +479,8 @@
             }
 
             .member-image {
-                height: 220px;
+                height: 250px;
+                object-position: center top;
             }
         }
 
@@ -527,7 +570,7 @@
             <div class="team-grid">
                 <!-- Chair Person -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="2k25-2k26_team_images/Rohan.jpg" alt="Marapally Rohan Gupta" class="member-image">
+                    <img src="2k25-2k26_team_images/Rohan.jpeg" alt="Marapally Rohan Gupta" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">MARAPALLY ROHAN GUPTA</h3>
                         <div class="member-role">CHAIR-PERSON</div>
@@ -540,7 +583,7 @@
 
                 <!-- Vice Chair Person -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="150">
-                    <img src="https://drive.google.com/uc?export=view&id=1SPbQql3Mb79TSnY2E1alWq21M2hvXsfF"
+                    <img src="2k25-2k26_team_images/Neelam Sreeja.jpeg"
                         alt="Neelam Sreeja" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">NEELAM SREEJA</h3>
@@ -554,7 +597,7 @@
 
                 <!-- Director -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=G.VARSHITH" alt="G. Varshith"
+                    <img src="2k25-2k26_team_images/G. Varshith.jpeg" alt="G. Varshith"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">G. VARSHITH</h3>
@@ -568,7 +611,7 @@
 
                 <!-- Deputy Director -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="250">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=U.SAI+CHARAN" alt="U. Sai Charan"
+                    <img src="2k25-2k26_team_images/U. Sai Charan.jpeg" alt="U. Sai Charan"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">U. SAI CHARAN</h3>
@@ -582,7 +625,7 @@
 
                 <!-- Secretary -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=SAI+TEJA+JINDE"
+                    <img src="2k25-2k26_team_images/Sai Teja Jinde.jpeg"
                         alt="Sai Teja Jinde" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">SAI TEJA JINDE</h3>
@@ -596,7 +639,7 @@
 
                 <!-- IETE Representative & Treasury Lead -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="350">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MANGA+SUMANTH" alt="Manga Sumanth"
+                    <img src="2k25-2k26_team_images/anga Sumanth.jpeg" alt="Manga Sumanth"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">MANGA SUMANTH</h3>
@@ -610,7 +653,7 @@
 
                 <!-- Documentation Lead -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=A+THRIBHUVANAASHRITHA"
+                    <img src="2k25-2k26_team_images/A Thribhuvanaashritha.jpeg"
                         alt="A Thribhuvanaashritha" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">A THRIBHUVANAASHRITHA</h3>
@@ -624,7 +667,7 @@
 
                 <!-- Graphic Designing Lead -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="450">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=GAYATHRI+JEEGURU"
+                    <img src="2k25-2k26_team_images/Gayathri Jeeguru.jpeg"
                         alt="Gayathri Jeeguru" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">GAYATHRI JEEGURU</h3>
@@ -638,7 +681,7 @@
 
                 <!-- Marketing & IETE Membership Lead -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MANTHENA+DEEPAK"
+                    <img src="2k25-2k26_team_images/Manthena Deepak.jpeg"
                         alt="Manthena Deepak" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">MANTHENA DEEPAK</h3>
@@ -652,7 +695,7 @@
 
                 <!-- Social Media Promotions Lead -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="550">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=T.NAMRUTHA" alt="T. Namrutha"
+                    <img src="2k25-2k26_team_images/T. Namrutha.jpeg" alt="T. Namrutha"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">T. NAMRUTHA</h3>
@@ -666,7 +709,7 @@
 
                 <!-- Operations Lead -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAVYA" alt="Navya"
+                    <img src="2k25-2k26_team_images/Navya.jpeg" alt="Navya"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">NAVYA</h3>
@@ -680,7 +723,7 @@
 
                 <!-- Web Development Lead -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="650">
-                    <img src="https://drive.google.com/thumbnail?id=" alt="Gandu Sachin" class="member-image">
+                    <img src="2k25-2k26_team_images/Gandu Sachin.jpeg" alt="Gandu Sachin" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">GANDU SACHIN</h3>
                         <div class="member-role">WEB DEVELOPMENT LEAD</div>
@@ -693,7 +736,7 @@
 
                 <!-- IET Lead -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="700">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=RAJ+MEHATHA" alt="Raj Mehatha"
+                    <img src="2k25-2k26_team_images/Raj Mehatha.jpeg" alt="Raj Mehatha"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">RAJ MEHATHA</h3>
@@ -715,7 +758,7 @@
                 <!-- Joint Secretary -->
                 <!-- Joint Secretary -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=KRISHNA+TEJA" alt="Krishna Teja"
+                    <img src="2k25-2k26_team_images/Krishna Teja.jpeg" alt="Krishna Teja"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">KRISHNA TEJA</h3>
@@ -729,7 +772,7 @@
 
                 <!-- IETE Representative -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="150">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=B.+ROHINI" alt="B. Rohini"
+                    <img src="2k25-2k26_team_images/B. Rohini.jpeg" alt="B. Rohini"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">B. ROHINI</h3>
@@ -743,7 +786,7 @@
 
                 <!-- Treasury -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=ADNAN+ULLAH+KARAMALI"
+                    <img src="2k25-2k26_team_images/Adnan Ullah Karamali.jpeg"
                         alt="Adnan Ullah Karamali" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">ADNAN ULLAH KARAMALI</h3>
@@ -757,7 +800,7 @@
 
                 <!-- Treasury -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="250">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=KOTHA+MANI+KUMAR"
+                    <img src="2k25-2k26_team_images/Kotha Mani Kumar.jpeg"
                         alt="Kotha Mani Kumar" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">KOTHA MANI KUMAR</h3>
@@ -771,7 +814,7 @@
 
                 <!-- Documentation -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=G+NEHASRI" alt="G Nehasri"
+                    <img src="2k25-2k26_team_images/G. Nehasri.jpeg" alt="G Nehasri"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">G NEHASRI</h3>
@@ -785,7 +828,7 @@
 
                 <!-- Documentation -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="350">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=KAMMARI+SAIKIRAN"
+                    <img src="2k25-2k26_team_images/Kammari Saikiran.jpeg"
                         alt="Kammari Saikiran" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">KAMMARI SAIKIRAN</h3>
@@ -799,7 +842,7 @@
 
                 <!-- Documentation -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAGA+MANASWINI"
+                    <img src="2k25-2k26_team_images/Naga Manaswini.jpeg"
                         alt="Naga Manaswini" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">NAGA MANASWINI</h3>
@@ -813,7 +856,7 @@
 
                 <!-- Documentation -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="450">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=VISHNUPRIYA" alt="Vishnupriya"
+                    <img src="2k25-2k26_team_images/Vishnupriya.jpeg" alt="Vishnupriya"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">VISHNUPRIYA</h3>
@@ -827,7 +870,7 @@
 
                 <!-- Design -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAMPALLY+VIGNESH"
+                    <img src="2k25-2k26_team_images/Nampally Vignesh.jpeg"
                         alt="Nampally Vignesh" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">NAMPALLY VIGNESH</h3>
@@ -841,7 +884,7 @@
 
                 <!-- Design -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="550">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=ROHINI+MUPPALA"
+                    <img src="2k25-2k26_team_images/Rohini Muppala.jpeg"
                         alt="Rohini Muppala" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">ROHINI MUPPALA</h3>
@@ -855,7 +898,7 @@
 
                 <!-- Design -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=VARUN+KUMAR" alt="Varun Kumar"
+                    <img src="2k25-2k26_team_images/Varun Kumar.jpeg" alt="Varun Kumar"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">VARUN KUMAR</h3>
@@ -869,7 +912,7 @@
 
                 <!-- Design -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="650">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=DEEPAK+SANGALA"
+                    <img src="2k25-2k26_team_images/Deepak Sangala.jpeg"
                         alt="Deepak Sangala" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">DEEPAK SANGALA</h3>
@@ -883,7 +926,7 @@
 
                 <!-- Operations -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="700">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=SPOORTHY+RAO" alt="Spoorthy Rao"
+                    <img src="2k25-2k26_team_images/Spoorthy Rao.jpeg" alt="Spoorthy Rao"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">SPOORTHY RAO</h3>
@@ -897,7 +940,7 @@
 
                 <!-- Operations -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="750">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=VANGALA+MANASA+REDDY"
+                    <img src="2k25-2k26_team_images/Vangala Manasa Reddy.jpeg"
                         alt="Vangala Manasa Reddy" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">VANGALA MANASA REDDY</h3>
@@ -911,7 +954,7 @@
 
                 <!-- Marketing -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="800">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=ERUKU+KAVYA" alt="Eruku Kavya"
+                    <img src="2k25-2k26_team_images/Eruku Kavya.jpeg" alt="Eruku Kavya"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">ERUKU KAVYA</h3>
@@ -925,7 +968,7 @@
 
                 <!-- Marketing -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="850">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=JAHNAVI+P" alt="Jahnavi P"
+                    <img src="2k25-2k26_team_images/Jahnavi P.jpeg" alt="Jahnavi P"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">JAHNAVI P</h3>
@@ -939,7 +982,7 @@
 
                 <!-- Marketing -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="900">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=N+SANDEEP+GOUD"
+                    <img src="2k25-2k26_team_images/N Sandeep Goud.jpeg"
                         alt="N Sandeep Goud" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">N SANDEEP GOUD</h3>
@@ -953,7 +996,7 @@
 
                 <!-- Marketing -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="950">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=SREENIDHI+ANANTHULA"
+                    <img src="2k25-2k26_team_images/Sreenidhi Ananthula.jpeg"
                         alt="Sreenidhi Ananthula" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">SREENIDHI ANANTHULA</h3>
@@ -967,7 +1010,7 @@
 
                 <!-- Social Media Promotions -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1000">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=G+SRAVYA" alt="G Sravya"
+                    <img src="2k25-2k26_team_images/G Sravya.jpeg" alt="G Sravya"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">G SRAVYA</h3>
@@ -981,7 +1024,7 @@
 
                 <!-- Social Media Promotions -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1050">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAVYA+SRIRAMULA"
+                    <img src="2k25-2k26_team_images/Navya Sriramula.jpeg"
                         alt="Navya Sriramula" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">NAVYA SRIRAMULA</h3>
@@ -995,7 +1038,7 @@
 
                 <!-- IETE Representative -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1100">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=P+KALPANA+GOUD"
+                    <img src="2k25-2k26_team_images/P Kalpana Goud.jpeg"
                         alt="P Kalpana Goud" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">P KALPANA GOUD</h3>
@@ -1009,7 +1052,7 @@
 
                 <!-- IETE Representative -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1150">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=S+JYOSTHSNA" alt="S Jyosthsna"
+                    <img src="2k25-2k26_team_images/S Jyosthsna.jpeg" alt="S Jyosthsna"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">S JYOSTHSNA</h3>
@@ -1023,7 +1066,7 @@
 
                 <!-- SST Representative -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1200">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=DEEPTHI+AMUDALA"
+                    <img src="2k25-2k26_team_images/Deepthi Amudala.jpeg"
                         alt="Deepthi Amudala" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">DEEPTHI AMUDALA</h3>
@@ -1037,7 +1080,7 @@
 
                 <!-- Research Crew -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1250">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=R+VENKATESHWARI"
+                    <img src="2k25-2k26_team_images/R Venkateshwari.jpeg"
                         alt="R Venkateshwari" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">R VENKATESHWARI</h3>
@@ -1051,7 +1094,7 @@
 
                 <!-- Research Crew -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1300">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=B+MANOJ+KUMAR" alt="B Manoj Kumar"
+                    <img src="2k25-2k26_team_images/B Manoj Kumar.jpeg" alt="B Manoj Kumar"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">B MANOJ KUMAR</h3>
@@ -1065,7 +1108,7 @@
 
                 <!-- Research Crew -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1350">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=LAKSH+BHUTADA" alt="Laksh Bhutada"
+                    <img src="2k25-2k26_team_images/Laksh Bhutada.jpeg" alt="Laksh Bhutada"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">LAKSH BHUTADA</h3>
@@ -1079,7 +1122,7 @@
 
                 <!-- Research Crew -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1400">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=VENUDHAR+REDDY"
+                    <img src="2k25-2k26_team_images/Venudhar Reddy.jpeg"
                         alt="Venudhar Reddy" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">VENUDHAR REDDY</h3>
@@ -1093,7 +1136,7 @@
 
                 <!-- IET Representative -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1450">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MOGULLA+MOSES" alt="Mogulla Moses"
+                    <img src="2k25-2k26_team_images/Mogulla Moses.jpeg" alt="Mogulla Moses"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">MOGULLA MOSES</h3>
@@ -1107,7 +1150,7 @@
 
                 <!-- Data Crafters -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1500">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=NAVYA+ANGALA" alt="Navya Angala"
+                    <img src="2k25-2k26_team_images/Navya Angala.jpeg" alt="Navya Angala"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">NAVYA ANGALA</h3>
@@ -1121,7 +1164,7 @@
 
                 <!-- Data Apprentice -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1550">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MANOOR+LAXMI+PRAGNITHA"
+                    <img src="2k25-2k26_team_images/Manoor Laxmi Pragnitha.jpeg"
                         alt="Manoor Laxmi Pragnitha" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">MANOOR LAXMI PRAGNITHA</h3>
@@ -1135,7 +1178,7 @@
 
                 <!-- Data Apprentice -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1600">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=REVANTH+KUMAR+ADIMULAM"
+                    <img src="2k25-2k26_team_images/Revanth Kumar Adimulam.jpeg"
                         alt="Revanth Kumar Adimulam" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">REVANTH KUMAR ADIMULAM</h3>
@@ -1149,7 +1192,7 @@
 
                 <!-- ML Engineer -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1650">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=THADUKA+AKSHITH"
+                    <img src="2k25-2k26_team_images/Thaduka Akshith.jpeg"
                         alt="Thaduka Akshith" class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">THADUKA AKSHITH</h3>
@@ -1163,7 +1206,7 @@
 
                 <!-- Web Development -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1700">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=PUJITHA" alt="Pujitha"
+                    <img src="2k25-2k26_team_images/Pujitha.jpeg" alt="Pujitha"
                         class="member-image">
                     <div class="member-info">
                         <h3 class="member-name">PUJITHA</h3>
@@ -1177,10 +1220,10 @@
 
                 <!-- Web Development -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1750">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=MANIKANTH+REDDY+VANGETI"
-                        alt="Manikanth Reddy Vangeti" class="member-image">
+                    <img src="2k25-2k26_team_images/Vaishnavi.jpeg"
+                        alt="Vaishnavi" class="member-image">
                     <div class="member-info">
-                        <h3 class="member-name">MANIKANTH REDDY VANGETI</h3>
+                        <h3 class="member-name">Vaishnavi</h3>
                         <div class="member-role">WEB DEVELOPMENT</div>
                         <div class="member-details">
                             <i class="fas fa-graduation-cap"></i>
@@ -1191,10 +1234,10 @@
 
                 <!-- Web Development -->
                 <div class="team-card" data-aos="fade-up" data-aos-delay="1800">
-                    <img src="https://via.placeholder.com/400x250/054a85/e0ffff?text=SAMSON+MATHE" alt="Samson Mathe"
+                    <img src="2k25-2k26_team_images/VIKRANTH.jpeg" alt="VIKRANTH"
                         class="member-image">
                     <div class="member-info">
-                        <h3 class="member-name">SAMSON MATHE</h3>
+                        <h3 class="member-name">VIKRANTH</h3>
                         <div class="member-role">WEB DEVELOPMENT</div>
                         <div class="member-details">
                             <i class="fas fa-graduation-cap"></i>
@@ -1202,7 +1245,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Add more execom team members as needed -->
             </div>
         </div>
