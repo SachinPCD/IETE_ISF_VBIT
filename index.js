@@ -1,4 +1,212 @@
- // ========== COMPLETE TEAM DATA OBJECTS - ALL PORTFOLIO DETAILS ==========
+// ========== CONTACT FORM VALIDATION AND SUBMISSION ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    
+    // Check if form exists on this page
+    if (!form) return;
+    
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successMessage = document.getElementById('successMessage');
+    
+    // Create error message elements if they don't exist
+    function createErrorElements() {
+        const inputs = [nameInput, emailInput, messageInput];
+        inputs.forEach(input => {
+            if (!document.getElementById(input.id + 'Error')) {
+                const errorElement = document.createElement('div');
+                errorElement.id = input.id + 'Error';
+                errorElement.className = 'form-error';
+                errorElement.style.cssText = 'color: #e74c3c; font-size: 12px; margin-top: 5px; display: none;';
+                // Find the parent div to append error message
+                const inputContainer = input.parentNode;
+                if (inputContainer) {
+                    inputContainer.parentNode.appendChild(errorElement);
+                }
+            }
+        });
+    }
+    
+    createErrorElements();
+    
+    // Input focus effects
+    const inputs = [nameInput, emailInput, messageInput];
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.style.borderColor = '#6e8efb';
+            this.style.boxShadow = '0 0 0 3px rgba(110, 142, 251, 0.1)';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.style.borderColor = '#e1e1e1';
+            this.style.boxShadow = 'none';
+            validateField(this);
+        });
+        
+        // Clear error when user starts typing
+        input.addEventListener('input', function() {
+            const errorElement = document.getElementById(this.id + 'Error');
+            if (errorElement) {
+                errorElement.style.display = 'none';
+            }
+            this.style.borderColor = '#e1e1e1';
+        });
+    });
+    
+    // Field validation
+    function validateField(field) {
+        const errorElement = document.getElementById(field.id + 'Error');
+        
+        if (field.value.trim() === '') {
+            showError(field, errorElement, 'This field is required');
+            return false;
+        }
+        
+        if (field.type === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value)) {
+                showError(field, errorElement, 'Please enter a valid email address');
+                return false;
+            }
+        }
+        
+        if (field.id === 'name' && field.value.trim().length < 2) {
+            showError(field, errorElement, 'Name must be at least 2 characters');
+            return false;
+        }
+        
+        if (field.id === 'message' && field.value.trim().length < 10) {
+            showError(field, errorElement, 'Message must be at least 10 characters');
+            return false;
+        }
+        
+        // If valid
+        hideError(field, errorElement);
+        return true;
+    }
+    
+    function showError(field, errorElement, message) {
+        field.style.borderColor = '#e74c3c';
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+    }
+    
+    function hideError(field, errorElement) {
+        field.style.borderColor = '#2ecc71';
+        if (errorElement) {
+            errorElement.style.display = 'none';
+        }
+    }
+    
+    // Form submission - prevent default and handle with web3forms
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        console.log("Form submission started...");
+        
+        // Validate all fields
+        const isNameValid = validateField(nameInput);
+        const isEmailValid = validateField(emailInput);
+        const isMessageValid = validateField(messageInput);
+        
+        if (!isNameValid || !isEmailValid || !isMessageValid) {
+            console.log("Form validation failed");
+            // Scroll to first error
+            const firstError = document.querySelector('.form-error[style*="display: block"]');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+        
+        // Change button text to show loading
+        const originalButtonText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Prepare form data
+        const formData = new FormData(form);
+        
+        console.log("Submitting to web3forms...");
+        
+        // Submit to web3forms
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            console.log("Response received:", response);
+            return response.json();
+        })
+        .then(data => {
+            console.log("Web3forms response:", data);
+            
+            if (data.success) {
+                // Show success message
+                successMessage.style.display = 'block';
+                console.log("Form submitted successfully!");
+                
+                // RESET FORM FIELDS - This is the fix
+                form.reset();
+                console.log("Form fields reset");
+                
+                // Reset all input borders
+                inputs.forEach(input => {
+                    input.style.borderColor = '#e1e1e1';
+                    const errorElement = document.getElementById(input.id + 'Error');
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                    }
+                });
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    console.log("Success message hidden");
+                }, 5000);
+                
+                // Scroll to show success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                // Show error message
+                alert('There was an error sending your message. Please try again.');
+                console.error("Web3forms error:", data);
+            }
+        })
+        .catch(error => {
+            console.error('Fetch Error:', error);
+            alert('There was an error sending your message. Please try again.');
+        })
+        .finally(() => {
+            // Reset button
+            submitBtn.innerHTML = originalButtonText;
+            submitBtn.disabled = false;
+            console.log("Submit button reset");
+        });
+    });
+    
+    // Button hover effect
+    if (submitBtn) {
+        submitBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 7px 15px rgba(110, 142, 251, 0.3)';
+        });
+        
+        submitBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+        });
+    }
+});
+
+// ========== COMPLETE TEAM DATA OBJECTS - ALL PORTFOLIO DETAILS ==========
 
   // Utility functions to work with team data
   function getTeamMembersByYear(year) {
@@ -98,7 +306,7 @@ const teamData = {
             { name: 'N SANDEEP GOUD', designation: 'MARKETING', yearBranch: 'II ECE', img: 'assets/images/sandeep-goud-n.jpeg'  },
             { name: 'SREENIDHI ANANTHULA', designation: 'MARKETING', yearBranch: 'II EEE', img: 'assets/images/sreenidhi-ananthula.jpeg'  },
             { name: 'G SRAVYA', designation: 'SOCIAL MEDIA PROMOTIONS', yearBranch: 'III CSD', img: 'assets/images/sravya-g.jpeg'  },
-            { name: 'NAVYA SRIRAMULA', designation: 'SOCIAL MEDIA PROMOTIONS', yearBranch: 'III CSM', img: 'assets/images/navya-sriramula.jpeg'  },
+            { name: 'NAVYA SRIRAMULA', designation: 'SOCIAL MEDIA PROMOTions', yearBranch: 'III CSM', img: 'assets/images/navya-sriramula.jpeg'  },
             { name: 'P KALPANA GOUD', designation: 'IETE REPRESENTATIVE', yearBranch: 'III CSC', img: 'assets/images/kalpana-goud-p.jpeg'  },
             { name: 'S JYOSTHSNA', designation: 'IETE REPRESENTATIVE', yearBranch: 'III CSM', img: 'assets/images/jyosthsna-s.jpeg'  },
             { name: 'DEEPTHI AMUDALA', designation: 'SST REPRESENTATIVE', yearBranch: 'II ECE', img: 'assets/images/deepthi-amudala.jpeg'  },
@@ -861,115 +1069,6 @@ setTimeout(() => {
     console.log("Event handlers initialized successfully");
     console.log("Current localStorage state:");
     console.log("- ietePopupShown:", localStorage.getItem('ietePopupShown'));
-  });
-
-  // ========== CONTACT FORM VALIDATION AND SUBMISSION ==========
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contactForm');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-    const submitBtn = document.getElementById('submitBtn');
-    const successMessage = document.getElementById('successMessage');
-    
-    // Input focus effects
-    const inputs = [nameInput, emailInput, messageInput];
-    inputs.forEach(input => {
-      input.addEventListener('focus', function() {
-        this.style.borderColor = '#6e8efb';
-        this.style.boxShadow = '0 0 0 3px rgba(110, 142, 251, 0.1)';
-      });
-      
-      input.addEventListener('blur', function() {
-        this.style.borderColor = '#e1e1e1';
-        this.style.boxShadow = 'none';
-        validateField(this);
-      });
-    });
-    
-    // Field validation
-    function validateField(field) {
-      const errorElement = document.getElementById(field.id + 'Error');
-      
-      if (field.value.trim() === '') {
-        showError(field, errorElement, 'This field is required');
-        return false;
-      }
-      
-      if (field.type === 'email') {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(field.value)) {
-          showError(field, errorElement, 'Please enter a valid email address');
-          return false;
-        }
-      }
-      
-      if (field.id === 'name' && field.value.trim().length < 2) {
-        showError(field, errorElement, 'Name must be at least 2 characters');
-        return false;
-      }
-      
-      if (field.id === 'message' && field.value.trim().length < 10) {
-        showError(field, errorElement, 'Message must be at least 10 characters');
-        return false;
-      }
-      
-      // If valid
-      hideError(field, errorElement);
-      return true;
-    }
-    
-    function showError(field, errorElement, message) {
-      field.style.borderColor = '#e74c3c';
-      errorElement.textContent = message;
-      errorElement.style.display = 'block';
-    }
-    
-    function hideError(field, errorElement) {
-      field.style.borderColor = '#2ecc71';
-      errorElement.style.display = 'none';
-    }
-    
-    // Form submission
-    form.addEventListener('submit', function(e) {
-      // Validate all fields
-      const isNameValid = validateField(nameInput);
-      const isEmailValid = validateField(emailInput);
-      const isMessageValid = validateField(messageInput);
-      
-      if (isNameValid && isEmailValid && isMessageValid) {
-        // Simulate form submission
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-        
-        // Simulate API call delay
-        setTimeout(() => {
-          successMessage.style.display = 'block';
-          submitBtn.innerHTML = '<i class="fas fa-paper-plane" style="margin-right: 10px;"></i> Send Message';
-          submitBtn.disabled = false;
-          
-          // Reset form after 5 seconds
-          setTimeout(() => {
-            form.reset();
-            successMessage.style.display = 'none';
-            inputs.forEach(input => {
-              input.style.borderColor = '#e1e1e1';
-            });
-          }, 5000);
-        }, 1500);
-      }
-    });
-    
-    // Button hover effect
-    submitBtn.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-2px)';
-      this.style.boxShadow = '0 7px 15px rgba(110, 142, 251, 0.3)';
-    });
-    
-    submitBtn.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
-      this.style.boxShadow = 'none';
-    });
   });
 
   // ========== INTERACTIVE GALLERY CAROUSEL ==========
