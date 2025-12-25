@@ -767,16 +767,25 @@ async function sendChatbotMessage() {
         'Authorization': 'Bearer cwk-ac828e11f5f16f83ee14e2a398bee2993ff654d23c97ee98fb64065e45cc451e'
       },
       body: JSON.stringify({
-        message: message,
-        conversation_history: chatbotHistory.slice(0, -1)
+        message: "Respond in maximum 3 short sentences: " + message,
+        conversation_history: chatbotHistory.slice(0, -1),
+        max_tokens: 80
       })
     });
     
     const data = await response.json();
     
-    // Add assistant response
+    // Add assistant response - limit to 3 sentences
     setTimeout(() => {
-      addChatbotMessage('assistant', data.response || "I'm here to help with IETE-related questions! For specific queries, email: ieteisfvbit2k25.26@gmail.com");
+      let botResponse = data.response || "I'm here to help with IETE-related questions! For specific queries, email: ieteisfvbit2k25.26@gmail.com";
+      
+      // Keep only first 3 sentences
+      const sentences = botResponse.match(/[^.!?]+[.!?]+/g) || [botResponse];
+      if (sentences.length > 3) {
+        botResponse = sentences.slice(0, 3).join(' ');
+      }
+      
+      addChatbotMessage('assistant', botResponse);
     }, 500);
     
   } catch (error) {
