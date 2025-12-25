@@ -133,10 +133,45 @@
     font-size: clamp(14px, 3.5vw, 20px) !important;
   }
 
-  /* Section Titles - Responsive */
-  .section-title h2 {
-    font-size: clamp(28px, 6vw, 52px) !important;
+  /* CONSISTENT SECTION HEADINGS & DESCRIPTIONS - ALL SECTIONS */
+  .section-title h2,
+  #events .section-title h2,
+  #gallery .section-title h2,
+  #portfolio .section-title h2,
+  #documents .section-title h2,
+  #newsletter .section-title h2,
+  #faq h2[style*="font-size"],
+  h2[style*="font-size:52px"],
+  h2[style*="font-size: 52px"] {
+    font-size: clamp(30px, 7vw, 52px) !important;
     margin-top: -20px !important;
+  }
+
+  .section-title p,
+  #portfolio .section-title p,
+  #documents .section-title p,
+  #newsletter .section-title p,
+  p[style*="font-size: 1.2rem"] {
+    font-size: clamp(14px, 3.5vw, 1.2rem) !important;
+  }
+
+  /* About Section Headings */
+  #about h2 {
+    font-size: clamp(30px, 7vw, 52px) !important;
+    margin-top: -20px !important;
+  }
+
+  /* Events Section */
+  #events h2 {
+    font-size: clamp(30px, 7vw, 52px) !important;
+  }
+
+  #events h4 {
+    font-size: clamp(18px, 4.5vw, 25px) !important;
+  }
+
+  #events p {
+    font-size: clamp(13px, 3vw, 17px) !important;
   }
 
   /* Icon Box Titles and Descriptions */
@@ -148,19 +183,11 @@
     font-size: clamp(13px, 3vw, 17px) !important;
   }
 
-  /* About Section Headings */
-  #about h2 {
-    font-size: clamp(28px, 6vw, 52px) !important;
+  /* Faculty Coordinator Section Title */
+  section .section-title h2[style*="Faculty"],
+  h2[style*="Faculty CO-ORDINATOR"] {
+    font-size: clamp(30px, 7vw, 52px) !important;
     margin-top: -20px !important;
-  }
-
-  /* Events Section */
-  #events h4 {
-    font-size: clamp(18px, 4.5vw, 25px) !important;
-  }
-
-  #events p {
-    font-size: clamp(13px, 3vw, 17px) !important;
   }
 
   /* Faculty Coordinator Mobile Styles */
@@ -195,11 +222,18 @@
 
   /* Portfolio Section */
   #portfolio h2 {
-    font-size: clamp(28px, 6vw, 52px) !important;
+    font-size: clamp(30px, 7vw, 52px) !important;
   }
 
-  #portfolio p {
-    font-size: clamp(13px, 3.5vw, 1.2rem) !important;
+  #portfolio .section-title p,
+  #portfolio p[style*="font-size: 1.2rem"] {
+    font-size: clamp(14px, 3.5vw, 1.2rem) !important;
+  }
+
+  /* Gallery Section */
+  #gallery h2,
+  #gallery .section-title h2 {
+    font-size: clamp(30px, 7vw, 52px) !important;
   }
 
   /* Technical Documents Section */
@@ -207,12 +241,14 @@
     padding: 30px 0 !important;
   }
 
-  #documents .section-title h2 {
-    font-size: clamp(32px, 8vw, 52px) !important;
+  #documents .section-title h2,
+  #documents h2[style*="font-size"] {
+    font-size: clamp(30px, 7vw, 52px) !important;
   }
 
-  #documents .section-title p {
-    font-size: clamp(14px, 4vw, 1.2rem) !important;
+  #documents .section-title p,
+  #documents p[style*="font-size: 1.2rem"] {
+    font-size: clamp(14px, 3.5vw, 1.2rem) !important;
   }
 
   /* Document Cards Grid - Mobile Friendly */
@@ -243,6 +279,16 @@
   .document-card div[style*="font-size: 0.9rem"] {
     font-size: clamp(12px, 3vw, 0.9rem) !important;
     margin-bottom: 15px !important;
+  }
+
+  #newsletter .section-title h2,
+  #newsletter h2[style*="font-size"] {
+    font-size: clamp(30px, 7vw, 52px) !important;
+  }
+
+  #newsletter .section-title p,
+  #newsletter p[style*="font-size: 1.2rem"] {
+    font-size: clamp(14px, 3.5vw, 1.2rem) !important;
   }
 
   .document-card .btn,
@@ -289,7 +335,11 @@
     width: 95% !important;
     padding: 20px 10px !important;
   }
+h1 {
+    font-size: clamp(26px, 6.5vw, 48px) !important;
+  }
 
+  .why-us .content 
   /* Why-us Section - Remove layered background on mobile */
   .why-us {
     background: transparent !important;
@@ -309,8 +359,10 @@
     margin-bottom: 20px !important;
   }
 
-  /* Gallery Section */
-  #gallery h2 {
+  /* Gall,
+  #faq h2[style*="font-size:3rem"],
+  #faq h2[style*="font-size: 3rem"] {
+    font-size: clamp(30
     font-size: clamp(28px, 6vw, 52px) !important;
   }
 
