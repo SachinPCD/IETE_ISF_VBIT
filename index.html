@@ -107,6 +107,246 @@
   .navbar .dropdown.active ul {
     display: block;
   }
+
+  /* Logo Sizes - Mobile Responsive */
+  .iete-logo {
+    height: 70px !important;
+  }
+
+  .sst-logo {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  .iet-logo {
+    width: 135px !important;
+    height: 135px !important;
+    margin-left: -15px !important;
+  }
+
+  /* Hero Section - Responsive Font Sizes */
+  .carousel-container h2 {
+    font-size: clamp(32px, 8vw, 90px) !important;
+  }
+
+  .carousel-container p {
+    font-size: clamp(14px, 3.5vw, 20px) !important;
+  }
+
+  /* Section Titles - Responsive */
+  .section-title h2 {
+    font-size: clamp(28px, 6vw, 52px) !important;
+    margin-top: -20px !important;
+  }
+
+  /* Icon Box Titles and Descriptions */
+  .icon-box h4, .icon-box .title {
+    font-size: clamp(16px, 4vw, 23px) !important;
+  }
+
+  .icon-box p, .icon-box .description {
+    font-size: clamp(13px, 3vw, 17px) !important;
+  }
+
+  /* About Section Headings */
+  #about h2 {
+    font-size: clamp(28px, 6vw, 52px) !important;
+    margin-top: -20px !important;
+  }
+
+  /* Events Section */
+  #events h4 {
+    font-size: clamp(18px, 4.5vw, 25px) !important;
+  }
+
+  #events p {
+    font-size: clamp(13px, 3vw, 17px) !important;
+  }
+
+  /* Faculty Coordinator Mobile Styles */
+  .member.d-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .member .pic {
+    margin-bottom: 20px;
+  }
+
+  .member .pic img {
+    max-width: 250px;
+    height: auto !important;
+    width: auto !important;
+  }
+
+  .member .member-info {
+    width: 100%;
+  }
+
+  .member .member-info h4 {
+    font-size: clamp(20px, 5vw, 28px) !important;
+  }
+
+  .member .member-info p {
+    font-size: clamp(14px, 3vw, 18px) !important;
+    width: 100% !important;
+  }
+
+  /* Portfolio Section */
+  #portfolio h2 {
+    font-size: clamp(28px, 6vw, 52px) !important;
+  }
+
+  #portfolio p {
+    font-size: clamp(13px, 3.5vw, 1.2rem) !important;
+  }
+
+  /* Technical Documents Section */
+  #documents {
+    padding: 30px 0 !important;
+  }
+
+  #documents .section-title h2 {
+    font-size: clamp(32px, 8vw, 52px) !important;
+  }
+
+  #documents .section-title p {
+    font-size: clamp(14px, 4vw, 1.2rem) !important;
+  }
+
+  /* Document Cards Grid - Mobile Friendly */
+  #documents .row[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 15px !important;
+    max-width: 100% !important;
+  }
+
+  /* Document Cards */
+  .document-card {
+    padding: 20px !important;
+    margin: 0 auto !important;
+    max-width: 90% !important;
+  }
+
+  .document-card h3 {
+    font-size: clamp(18px, 5vw, 1.5rem) !important;
+    margin: 10px 0 !important;
+  }
+
+  .document-card p {
+    font-size: clamp(13px, 3.5vw, 1rem) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .document-card div[style*="font-size: 0.9rem"] {
+    font-size: clamp(12px, 3vw, 0.9rem) !important;
+    margin-bottom: 15px !important;
+  }
+
+  .document-card .btn,
+  .document-card a[style*="padding: 12px 30px"] {
+    padding: 10px 20px !important;
+    font-size: clamp(13px, 3.5vw, 14px) !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Newsletters Section */
+  [style*="grid-template-columns"] {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 15px !important;
+  }
+
+  /* Newsletter Cards */
+  [style*="background: white; border-radius: 10px"] h3 {
+    font-size: clamp(16px, 4vw, 1.25rem) !important;
+  }
+
+  [style*="background: white; border-radius: 10px"] p {
+    font-size: clamp(12px, 3vw, 0.9rem) !important;
+  }
+
+  /* Buttons - Make them more touch-friendly */
+  .btn-get-started {
+    padding: 10px 25px !important;
+    font-size: clamp(12px, 3vw, 16px) !important;
+  }
+
+  [style*="padding: 12px 30px"] {
+    padding: 10px 20px !important;
+    font-size: clamp(12px, 3vw, 14px) !important;
+  }
+
+  /* Container Padding - Reduce for mobile */
+  .container[style*="padding: 60px"] {
+    padding: 30px 15px !important;
+  }
+
+  /* Why-us Section Width */
+  #why-us[style*="width: 80%"] {
+    width: 95% !important;
+    padding: 20px 10px !important;
+  }
+
+  /* Why-us Section - Remove layered background on mobile */
+  .why-us {
+    background: transparent !important;
+    margin-top: 0 !important;
+  }
+
+  .why-us .content {
+    padding: 30px 20px 0 20px !important;
+  }
+
+  .why-us .accordion-list {
+    padding: 0 20px 30px 20px !important;
+  }
+
+  .why-us .video-box {
+    min-height: 250px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Gallery Section */
+  #gallery h2 {
+    font-size: clamp(28px, 6vw, 52px) !important;
+  }
+
+  /* Have a Query Section - Contact Form */
+  #faq {
+    margin-top: 10px !important;
+  }
+
+  #faq h2[style*="font-size:3rem"] {
+    font-size: clamp(24px, 7vw, 3rem) !important;
+    margin-bottom: 20px !important;
+  }
+
+  #faq [style*="max-width: 600px"] {
+    padding: 20px !important;
+  }
+
+  #faq input,
+  #faq textarea {
+    font-size: 14px !important;
+    padding: 12px 12px 12px 40px !important;
+  }
+
+  #faq label {
+    font-size: 14px !important;
+  }
+
+  #faq button[type="submit"] {
+    font-size: 15px !important;
+    padding: 12px !important;
+  }
+
+  #faq [style*="min-height:100vh"] {
+    padding: 30px 0 !important;
+    min-height: auto !important;
+  }
 }
 
   </style>
