@@ -18,21 +18,21 @@
         }
 
         :root {
-            --primary: #1a5276;
-            --primary-dark: #0d3a5c;
-            --secondary: #2980b9;
-            --accent: #3498db;
-            --bg-light: #b8d4e8;
-            --bg-lighter: #d4e6f1;
+            --primary: #0e589b;
+            --primary-dark: #072e53;
+            --secondary: #0e589b;
+            --accent: #5dade2;
+            --bg-light: #e0ffff;
+            --bg-lighter: #f0ffff;
             --card-bg: #ffffff;
-            --text-dark: #1a5276;
+            --text-dark: #0e589b;
             --text-light: #5d6d7e;
         }
 
         body {
             font-family: 'Open Sans', sans-serif;
             min-height: 100vh;
-            background: linear-gradient(180deg, #a9cce3 0%, #85c1e9 50%, #5dade2 100%);
+            background: #e0ffff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -217,9 +217,9 @@
         }
 
         .error-alert {
-            background: #fdeaea;
-            border: 1px solid #f5c6cb;
-            color: #c0392b;
+            background: #e0ffff;
+            border: 1px solid #0e589b;
+            color: #0e589b;
             padding: 12px 16px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -338,8 +338,8 @@
             </form>
 
             <div class="back-link">
-                <a href="reports.html">
-                    <i class="bi bi-arrow-left"></i>View Public Reports
+                <a href="#" onclick="window.history.back(); return false;" style="text-decoration: none; color: var(--text-light); font-weight: 600;">
+                    <i class="bi bi-arrow-left"></i> back
                 </a>
             </div>
         </div>
@@ -347,7 +347,7 @@
 
     <script>
         const ADMIN_USERNAME = 'admin';
-        const ADMIN_PASSWORD = 'iete@2024';
+        const ADMIN_PASSWORD = 'iete@2026';
 
         const loginForm = document.getElementById('loginForm');
         const usernameInput = document.getElementById('username');

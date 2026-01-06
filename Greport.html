@@ -16,6 +16,29 @@
     <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .nav-icon-button {
+            background: transparent;
+            border: none;
+            color: white;
+            margin-right: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .nav-icon-button:hover {
+            transform: translateY(-5px);
+            color: #5dade2;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        .nav-icon-button .material-icons {
+            font-size: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,6 +66,17 @@
             </div>
             <!-- Navbar -->
             <nav id="navbar" class="navbar">
+                <!-- Upload Button -->
+                <button 
+                    class="nav-icon-button"
+                    onclick="window.location.href='Firebase_storage_Reports-main/Firebase_storage_Reports-main/admin.html'"
+                    aria-label="Admin Upload"
+                    data-aos="fade-left" 
+                    data-aos-duration="800"
+                    data-aos-delay="300"
+                >
+                    <span class="material-icons">cloud_upload</span>
+                </button>
                 <!-- New Close Button -->
                 <button 
                     class="close-button-nav"
@@ -70,59 +104,91 @@
     </section>
 
     <!-- DOCUMENTS -->
-    <section class="reports-container">
-        <div class="report-card" 
-             style="background:url('assets/img/s1.jpg'); background-position: center; background-size: cover;"
-             data-aos="zoom-in" 
-             data-aos-duration="800"
-             data-aos-delay="200">
-            <div class="icon">
-                <i class="fa-solid fa-file-pdf"></i>
-            </div>
-            <h3>Event Report</h3>
-            <p>The report covers the event proceedings and key highlights.</p><br><br>
-            <a href="Greport.pdf" target="_blank">View</a>
-        </div>
-
-        <div class="report-card"
-             style="background:url('assets/img/s1.jpg'); background-position: center; background-size: cover;"
-             data-aos="zoom-in" 
-             data-aos-duration="800"
-             data-aos-delay="300">
-            <div class="icon">
-                <i class="fa-solid fa-user-group"></i>
-            </div>
-            <h3>Enrollment Count</h3>
-            <p>The enrolment count indicates good participation.</p><br><br>
-            <a href="docs/2k24/schedule.pdf" target="_blank">View</a>
-        </div>
-
-        <div class="report-card"
-             style="background:url('assets/img/s1.jpg'); background-position: center; background-size: cover;"
-             data-aos="zoom-in" 
-             data-aos-duration="800"
-             data-aos-delay="400">
-            <div class="icon">
-                <i class="fa-solid fa-user-check"></i>
-            </div>
-            <h3>Participant Count</h3>
-            <p>The programme recorded a satisfactory participant count.</p><br><br>
-            <a href="docs/2k24/winners.pdf" target="_blank">View</a>
-        </div>
-
-        <div class="report-card"
-             style="background:url('assets/img/s1.jpg'); background-position: center; background-size: cover;"
-             data-aos="zoom-in" 
-             data-aos-duration="800"
-             data-aos-delay="500">
-            <div class="icon">
-                <i class="fa-solid fa-trophy"></i>
-            </div>
-            <h3>Awardees</h3>
-            <p>The report includes the list of awardees</p><br><br>
-            <a href="gallery_2k24.html">View</a>
+    <section class="reports-container" id="reports-container">
+        <div style="text-align: center; color: #072e53; font-size: 1.2rem; width: 100%; padding: 40px;">
+            <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 10px;"></i>
+            <p>Loading reports...</p>
         </div>
     </section>
+
+    <!-- Fetch Reports Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+             const API_URL = 'https://firebase-storage-project.onrender.com/api/reports';
+             const TARGET_EVENT = 'Gen AI Spark'; // Event name to match
+             const container = document.getElementById('reports-container');
+
+             try {
+                 const response = await fetch(API_URL);
+                 if (!response.ok) throw new Error('Failed to fetch reports');
+                 
+                 const json = await response.json();
+                 let reports = [];
+                 if (Array.isArray(json)) reports = json;
+                 else if (json.data && Array.isArray(json.data)) reports = json.data;
+                 else if (json.success && Array.isArray(json.data)) reports = json.data;
+
+                 // Filter by event name
+                 const filteredReports = reports.filter(r => 
+                     r.eventName && r.eventName.toLowerCase() === TARGET_EVENT.toLowerCase()
+                 );
+
+                 container.innerHTML = ''; // Clear loading
+
+                 if (filteredReports.length === 0) {
+                     container.innerHTML = `
+                        <div style="text-align: center; color: #072e53; width: 100%; padding: 40px;">
+                            <p>No reports found for ${TARGET_EVENT}.</p>
+                            <p style="font-size: 0.9em; margin-top: 10px;">(Admin: Upload reports with event name "${TARGET_EVENT}" in the portal)</p>
+                        </div>`;
+                     return;
+                 }
+
+                 filteredReports.forEach((report, index) => {
+                     const card = document.createElement('div');
+                     card.className = 'report-card';
+                     // Maintain original styling context
+                     card.style.background = "url('assets/img/s1.jpg')";
+                     card.style.backgroundPosition = "center";
+                     card.style.backgroundSize = "cover";
+                     
+                     // AOS Animation
+                     card.setAttribute('data-aos', 'zoom-in');
+                     card.setAttribute('data-aos-duration', '800');
+                     card.setAttribute('data-aos-delay', (200 + (index * 100)).toString());
+
+                     // Determine icon
+                     let iconClass = 'fa-file-pdf';
+                     if (report.fileType) {
+                         if (report.fileType.includes('image')) iconClass = 'fa-image';
+                         else if (report.fileType.includes('word')) iconClass = 'fa-file-word';
+                         else if (report.fileType.includes('sheet') || report.fileType.includes('excel')) iconClass = 'fa-file-excel';
+                     }
+
+                     card.innerHTML = `
+                        <div class="icon">
+                            <i class="fa-solid ${iconClass}"></i>
+                        </div>
+                        <h3>${report.title || 'Untitled Report'}</h3>
+                        <p>${report.description || ''}</p><br><br>
+                        <a href="${report.fileUrl}" target="_blank">View</a>
+                     `;
+                     container.appendChild(card);
+                 });
+
+                 // Re-init AOS for new elements if possible, or assume simple CSS transition handles it for now.
+                 // Ideally we call AOS.refresh() if it's available.
+                 if(typeof AOS !== 'undefined') AOS.refresh();
+
+             } catch (error) {
+                 console.error('Error:', error);
+                 container.innerHTML = `
+                    <div style="text-align: center; color: red; width: 100%; padding: 40px;">
+                        <p>Error loading reports. Please try again later.</p>
+                    </div>`;
+             }
+        });
+    </script>
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
