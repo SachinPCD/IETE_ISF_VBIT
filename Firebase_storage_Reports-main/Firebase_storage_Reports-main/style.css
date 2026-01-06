@@ -1,0 +1,108 @@
+/* Custom Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    padding: 1rem 1.5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 1.25rem 0;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.btn-group-sm .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* File type colors */
+.file-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.pdf-icon { color: #dc3545; }
+.image-icon { color: #198754; }
+.word-icon { color: #0d6efd; }
+.excel-icon { color: #198754; }
+.video-icon { color: #ffc107; }
+.other-icon { color: #6c757d; }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.report-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Event Header Styles */
+.event-header {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.event-header h5 {
+    font-weight: 600;
+}
+
+.event-header hr {
+    border-top: 2px solid #dee2e6;
+    opacity: 0.5;
+}
+
+/* File Viewer Modal */
+#fileViewerModal .modal-content {
+    max-height: 90vh;
+}
+
+#fileViewerContent {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fileViewerContent iframe {
+    background-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    #fileViewerModal .modal-dialog {
+        margin: 0.5rem;
+    }
+}

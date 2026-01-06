@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - IETE ISF VBIT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a5276;
+            --primary-dark: #0d3a5c;
+            --secondary: #2980b9;
+            --accent: #3498db;
+            --success: #27ae60;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --bg-light: #b8d4e8;
+            --card-bg: #ffffff;
+            --text-dark: #1a5276;
+            --text-light: #5d6d7e;
+            --border-color: #e8eef2;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #a9cce3 0%, #85c1e9 50%, #5dade2 100%);
+            background-attachment: fixed;
+            color: var(--text-dark);
+        }
+
+        /* Decorative pattern overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background: var(--primary);
+            padding: 12px 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+        }
+
+        .logout-btn {
+            background: var(--danger);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-container {
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .page-subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Cards */
+        .dashboard-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header-custom {
+            background: var(--primary);
+            padding: 20px 25px;
+            border-bottom: none;
+            color: white;
+        }
+
+        .card-header-custom.success {
+            background: var(--success);
+        }
+
+        .card-header-custom h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-body-custom {
+            padding: 25px;
+        }
+
+        /* Form Styles */
+        .form-label {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .form-control,
+        .form-select {
+            background: #f8f9fa;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-dark);
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: #95a5a6;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background: #fff;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
+            color: var(--text-dark);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-text {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-top: 6px;
+        }
+
+        /* File Input */
+        .file-input-wrapper {
+            position: relative;
+            background: #f8f9fa;
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input-wrapper:hover {
+            border-color: var(--accent);
+            background: #eaf4fc;
+        }
+
+        .file-input-wrapper.dragover {
+            border-color: var(--accent);
+            background: #d4edfc;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-input-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .file-input-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .file-input-text span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .file-name {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #e8f8f0;
+            border-radius: 8px;
+            color: var(--success);
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .file-name.show {
+            display: block;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .progress-container.show {
+            display: block;
+        }
+
+        .progress {
+            height: 8px;
+            background: #e8eef2;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(26, 82, 118, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Alerts */
+        .alert-custom {
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .alert-custom.show {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-success-custom {
+            background: #e8f8f0;
+            border: 1px solid #a9dfbf;
+            color: var(--success);
+        }
+
+        .alert-danger-custom {
+            background: #fdeaea;
+            border: 1px solid #f5c6cb;
+            color: var(--danger);
+        }
+
+        /* Reports List */
+        .reports-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .reports-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .reports-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .reports-list::-webkit-scrollbar-thumb {
+            background: #bdc3c7;
+            border-radius: 3px;
+        }
+
+        .report-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .report-item:hover {
+            background: #fff;
+            border-color: var(--accent);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .report-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .report-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-right: 15px;
+        }
+
+        .report-icon.pdf {
+            background: #fdeaea;
+            color: #e74c3c;
+        }
+
+        .report-icon.image {
+            background: #e8f8f0;
+            color: #27ae60;
+        }
+
+        .report-icon.word {
+            background: #e8f0fc;
+            color: #3498db;
+        }
+
+        .report-icon.excel {
+            background: #e8f8f0;
+            color: #27ae60;
+        }
+
+        .report-icon.default {
+            background: #f0f0f0;
+            color: #7f8c8d;
+        }
+
+        .report-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: var(--text-dark);
+        }
+
+        .report-description {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .report-meta {
+            font-size: 0.8rem;
+            color: #95a5a6;
+        }
+
+        .report-meta i {
+            margin-right: 4px;
+        }
+
+        .report-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: #f8f9fa;
+            color: var(--text-dark);
+        }
+
+        .action-btn.delete:hover {
+            background: #fdeaea;
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .action-btn.view:hover {
+            background: #e8f0fc;
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Event Group Header */
+        .event-group {
+            margin-bottom: 25px;
+        }
+
+        .event-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .event-header h5 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .event-badge {
+            background: #e8f0fc;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+        }
+
+        .empty-state p {
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #e8eef2;
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Report Count Badge */
+        .report-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            background: white;
+            border: none;
+            border-radius: 16px;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 25px;
+            background: var(--primary);
+            color: white;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .modal-title {
+            font-weight: 600;
+        }
+
+        .btn-close {
+            filter: invert(1);
+            opacity: 0.8;
+        }
+
+        .btn-close:hover {
+            opacity: 1;
+        }
+
+        .modal-body {
+            padding: 25px;
+            color: var(--text-dark);
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--border-color);
+            padding: 15px 25px;
+        }
+
+        /* File Viewer Modal */
+        #fileViewerContent {
+            background: #f8f9fa;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #fileViewerContent img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+
+        #fileViewerContent iframe {
+            width: 100%;
+            height: 70vh;
+            border: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-container {
+                padding: 20px;
+            }
+
+            .page-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand span {
+                display: none;
+            }
+
+            .dashboard-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="brand-icon">
+                    <i class="bi bi-speedometer2"></i>
+                </div>
+                <span>Admin Dashboard</span>
+            </a>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="reports.html" class="nav-link">
+                    <i class="bi bi-file-earmark-text me-1"></i>View Reports
+                </a>
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="bi bi-box-arrow-right me-2"></i>Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="page-header">
+            <h1 class="page-title">Upload & Manage Reports</h1>
+            <p class="page-subtitle">Upload new reports that will be visible to all users on the public reports page</p>
+        </div>
+
+        <div class="row">
+            <!-- Upload Form -->
+            <div class="col-lg-5 mb-4">
+                <div class="dashboard-card">
+                    <div class="card-header-custom">
+                        <h3><i class="bi bi-cloud-upload"></i> Upload New Report</h3>
+                    </div>
+                    <div class="card-body-custom">
+                        <div id="errorAlert" class="alert-custom alert-danger-custom">
+                            <i class="bi bi-exclamation-circle"></i>
+                            <span id="errorMessage"></span>
+                        </div>
+
+                        <div id="successAlert" class="alert-custom alert-success-custom">
+                            <i class="bi bi-check-circle"></i>
+                            <span id="successMessage"></span>
+                        </div>
+
+                        <form id="uploadForm">
+                            <div class="mb-3">
+                                <label class="form-label">Event Name *</label>
+                                <input type="text" class="form-control" id="eventName"
+                                    placeholder="e.g., Sowpernika, Workshop 2024" required>
+                                <div class="form-text">Enter the event or category name for this report</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Report Title *</label>
+                                <input type="text" class="form-control" id="title"
+                                    placeholder="e.g., Attendance Letter, Help Desk Letter" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Description *</label>
+                                <textarea class="form-control" id="description" rows="3"
+                                    placeholder="Brief description of the report..." required></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">File * (Max: 10MB)</label>
+                                <div class="file-input-wrapper" id="dropZone">
+                                    <input type="file" id="fileInput" required>
+                                    <div class="file-input-icon">
+                                        <i class="bi bi-cloud-arrow-up"></i>
+                                    </div>
+                                    <p class="file-input-text">
+                                        Drag & drop or <span>browse</span>
+                                    </p>
+                                    <small class="text-muted">PDF, Images, Documents</small>
+                                </div>
+                                <div class="file-name" id="fileName">
+                                    <i class="bi bi-file-earmark-check me-2"></i>
+                                    <span id="fileNameText"></span>
+                                </div>
+                            </div>
+
+                            <div class="progress-container" id="progressContainer">
+                                <div class="progress-text">
+                                    <span>Uploading...</span>
+                                    <span id="progressPercentage">0%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn mt-3" id="submitBtn">
+                                <i class="bi bi-upload me-2"></i>Upload Report
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports List -->
+            <div class="col-lg-7">
+                <div class="dashboard-card">
+                    <div class="card-header-custom success d-flex justify-content-between align-items-center">
+                        <h3><i class="bi bi-files"></i> Uploaded Reports</h3>
+                        <span class="report-count" id="reportCount">0 reports</span>
+                    </div>
+                    <div class="card-body-custom">
+                        <!-- Loading -->
+                        <div class="loading-spinner" id="loadingSpinner">
+                            <div class="spinner"></div>
+                            <p style="color: var(--text-light);">Loading reports...</p>
+                        </div>
+
+                        <!-- Reports List -->
+                        <div class="reports-list" id="reportsContainer"></div>
+
+                        <!-- Empty State -->
+                        <div class="empty-state d-none" id="emptyState">
+                            <i class="bi bi-folder-x"></i>
+                            <p>No reports uploaded yet</p>
+                            <p><small>Upload a file to get started</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Viewer Modal -->
+    <div class="modal fade" id="fileViewerModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fileViewerTitle">View File</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="fileViewerContent"></div>
+                </div>
+                <div class="modal-footer">
+                    <a id="downloadFileBtn" href="#" download class="btn btn-success">
+                        <i class="bi bi-download me-2"></i>Download
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: var(--danger);">
+                    <h5 class="modal-title"><i class="bi bi-exclamation-triangle me-2"></i>Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this report? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+                        <i class="bi bi-trash me-2"></i>Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-storage.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAn3XosRZvI7bEefJtqQOgVIxlhmFEv9aQ",
+            authDomain: "iete-isf-vbit.firebaseapp.com",
+            projectId: "iete-isf-vbit",
+            storageBucket: "iete-isf-vbit.firebasestorage.app",
+            messagingSenderId: "866895390666",
+            appId: "1:866895390666:web:6e50b6822e997861b79133",
+            measurementId: "G-YB6C8LXBN3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const storage = getStorage(app);
+
+        window.firebaseStorage = { storage, ref, uploadBytesResumable, getDownloadURL };
+    </script>
+
+    <script>
+        // Check authentication
+        (function checkAuth() {
+            const isLoggedIn = sessionStorage.getItem('adminLoggedIn');
+            const loginTime = parseInt(sessionStorage.getItem('adminLoginTime') || '0');
+            const hourInMs = 60 * 60 * 1000;
+
+            if (isLoggedIn !== 'true' || (Date.now() - loginTime > hourInMs)) {
+                sessionStorage.removeItem('adminLoggedIn');
+                sessionStorage.removeItem('adminLoginTime');
+                window.location.href = 'admin.html';
+            }
+        })();
+
+        const API_BASE_URL = 'https://firebase-storage-project.onrender.com/api';
+        let reports = [];
+        let reportToDelete = null;
+
+        const uploadForm = document.getElementById('uploadForm');
+        const eventNameInput = document.getElementById('eventName');
+        const titleInput = document.getElementById('title');
+        const descriptionInput = document.getElementById('description');
+        const fileInput = document.getElementById('fileInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressPercentage = document.getElementById('progressPercentage');
+        const errorAlert = document.getElementById('errorAlert');
+        const errorMessage = document.getElementById('errorMessage');
+        const successAlert = document.getElementById('successAlert');
+        const successMessage = document.getElementById('successMessage');
+        const reportsContainer = document.getElementById('reportsContainer');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const emptyState = document.getElementById('emptyState');
+        const reportCount = document.getElementById('reportCount');
+        const fileName = document.getElementById('fileName');
+        const fileNameText = document.getElementById('fileNameText');
+        const dropZone = document.getElementById('dropZone');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+        const fileViewerModal = new bootstrap.Modal(document.getElementById('fileViewerModal'));
+        const fileViewerContent = document.getElementById('fileViewerContent');
+        const fileViewerTitle = document.getElementById('fileViewerTitle');
+        const downloadFileBtn = document.getElementById('downloadFileBtn');
+        const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadReports();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            uploadForm.addEventListener('submit', handleFileUpload);
+            fileInput.addEventListener('change', handleFileSelect);
+
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
+
+            dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length) {
+                    fileInput.files = files;
+                    handleFileSelect();
+                }
+            });
+
+            logoutBtn.addEventListener('click', () => {
+                sessionStorage.removeItem('adminLoggedIn');
+                sessionStorage.removeItem('adminLoginTime');
+                window.location.href = 'admin.html';
+            });
+
+            confirmDeleteBtn.addEventListener('click', deleteReport);
+        }
+
+        function handleFileSelect() {
+            const file = fileInput.files[0];
+            if (file) {
+                if (file.size > 10 * 1024 * 1024) {
+                    showError('File size must be less than 10MB');
+                    fileInput.value = '';
+                    fileName.classList.remove('show');
+                    return;
+                }
+                fileNameText.textContent = file.name;
+                fileName.classList.add('show');
+            } else {
+                fileName.classList.remove('show');
+            }
+        }
+
+        async function loadReports() {
+            try {
+                showLoading();
+                const response = await fetch(`${API_BASE_URL}/reports`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                const data = await response.json();
+                if (Array.isArray(data)) reports = data;
+                else if (data?.data && Array.isArray(data.data)) reports = data.data;
+                else if (data?.success) reports = data.data || [];
+                else reports = [];
+
+                displayReports();
+                updateReportCount();
+            } catch (error) {
+                console.error('Error loading reports:', error);
+                showErrorInReports('Failed to load reports. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+
+        function displayReports() {
+            reportsContainer.innerHTML = '';
+
+            if (reports.length === 0) {
+                emptyState.classList.remove('d-none');
+                reportsContainer.classList.add('d-none');
+                return;
+            }
+
+            emptyState.classList.add('d-none');
+            reportsContainer.classList.remove('d-none');
+
+            const grouped = {};
+            reports.forEach(report => {
+                const eventName = report.eventName || 'Uncategorized';
+                if (!grouped[eventName]) grouped[eventName] = [];
+                grouped[eventName].push(report);
+            });
+
+            Object.keys(grouped).sort().forEach(eventName => {
+                const eventGroup = document.createElement('div');
+                eventGroup.className = 'event-group';
+
+                const count = grouped[eventName].length;
+                eventGroup.innerHTML = `
+                    <div class="event-header">
+                        <i class="bi bi-folder-fill" style="color: var(--primary);"></i>
+                        <h5>${escapeHtml(eventName)}</h5>
+                        <span class="event-badge">${count} report${count !== 1 ? 's' : ''}</span>
+                    </div>
+                `;
+
+                grouped[eventName].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+                    .forEach(report => eventGroup.appendChild(createReportElement(report)));
+
+                reportsContainer.appendChild(eventGroup);
+            });
+        }
+
+        function createReportElement(report) {
+            const div = document.createElement('div');
+            div.className = 'report-item d-flex align-items-start';
+
+            const iconClass = getFileIconClass(report.fileType);
+            const icon = getFileIcon(report.fileType, report.fileName);
+
+            div.innerHTML = `
+                <div class="report-icon ${iconClass}">${icon}</div>
+                <div class="flex-grow-1">
+                    <div class="report-title">${escapeHtml(report.title)}</div>
+                    <div class="report-description">${escapeHtml(report.description)}</div>
+                    <div class="report-meta">
+                        <i class="bi bi-calendar"></i>${formatDate(report.createdAt)}
+                        ${report.fileSize ? `<span class="ms-3"><i class="bi bi-hdd"></i>${formatFileSize(report.fileSize)}</span>` : ''}
+                    </div>
+                </div>
+                <div class="report-actions">
+                    <button class="action-btn view" title="View" data-url="${report.fileUrl}" data-type="${report.fileType}" data-name="${report.fileName}">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                    <a href="${report.fileUrl}" download="${report.fileName || 'download'}" class="action-btn" title="Download">
+                        <i class="bi bi-download"></i>
+                    </a>
+                    <button class="action-btn delete" title="Delete" data-id="${report._id}">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            `;
+
+            div.querySelector('.view').addEventListener('click', function () {
+                openFileViewer(this.dataset.url, this.dataset.type, this.dataset.name);
+            });
+
+            div.querySelector('.delete').addEventListener('click', function () {
+                showDeleteModal(this.dataset.id);
+            });
+
+            return div;
+        }
+
+        async function handleFileUpload(e) {
+            e.preventDefault();
+
+            const eventName = eventNameInput.value.trim();
+            const title = titleInput.value.trim();
+            const description = descriptionInput.value.trim();
+            const file = fileInput.files[0];
+
+            if (!eventName || !title || !description || !file) {
+                showError('Please fill all required fields');
+                return;
+            }
+
+            if (file.size > 10 * 1024 * 1024) {
+                showError('File size must be less than 10MB');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner" style="width:20px;height:20px;border-width:2px;display:inline-block;margin-right:8px;"></span>Uploading...';
+            hideAlerts();
+
+            try {
+                const fileUrl = await uploadToFirebase(file);
+                await saveReportToBackend({ eventName, title, description, fileUrl, fileName: file.name, fileType: file.type, fileSize: file.size });
+                showSuccess('Report uploaded successfully!');
+                uploadForm.reset();
+                fileName.classList.remove('show');
+                await loadReports();
+            } catch (error) {
+                console.error('Upload error:', error);
+                showError(`Upload failed: ${error.message}`);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="bi bi-upload me-2"></i>Upload Report';
+                progressContainer.classList.remove('show');
+            }
+        }
+
+        function uploadToFirebase(file) {
+            return new Promise((resolve, reject) => {
+                try {
+                    const timestamp = Date.now();
+                    const ext = file.name.split('.').pop();
+                    const uniqueName = `${timestamp}_${Math.random().toString(36).substr(2, 9)}.${ext}`;
+                    const storageRef = window.firebaseStorage.ref(window.firebaseStorage.storage, `uploads/${uniqueName}`);
+
+                    progressContainer.classList.add('show');
+                    const uploadTask = window.firebaseStorage.uploadBytesResumable(storageRef, file);
+
+                    uploadTask.on('state_changed',
+                        (snapshot) => {
+                            const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                            progressBar.style.width = `${progress}%`;
+                            progressPercentage.textContent = `${progress}%`;
+                        },
+                        (error) => reject(new Error(`Firebase upload failed: ${error.message}`)),
+                        async () => {
+                            try {
+                                const url = await window.firebaseStorage.getDownloadURL(uploadTask.snapshot.ref);
+                                resolve(url);
+                            } catch (error) {
+                                reject(new Error(`Failed to get download URL: ${error.message}`));
+                            }
+                        }
+                    );
+                } catch (error) {
+                    reject(error);
+                }
+            });
+        }
+
+        async function saveReportToBackend(reportData) {
+            const response = await fetch(`${API_BASE_URL}/reports`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(reportData)
+            });
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+            }
+            return await response.json();
+        }
+
+        function openFileViewer(fileUrl, fileType, fileName) {
+            fileViewerTitle.textContent = fileName || 'View File';
+            downloadFileBtn.href = fileUrl;
+            downloadFileBtn.download = fileName || 'download';
+            fileViewerContent.innerHTML = '';
+
+            if (fileType?.includes('image')) {
+                fileViewerContent.innerHTML = `<img src="${fileUrl}" alt="${fileName}">`;
+            } else if (fileType?.includes('pdf')) {
+                fileViewerContent.innerHTML = `<iframe src="${fileUrl}#toolbar=0"></iframe>`;
+            } else if (fileType?.includes('video')) {
+                fileViewerContent.innerHTML = `<video controls style="max-width:100%;max-height:70vh;"><source src="${fileUrl}" type="${fileType}"></video>`;
+            } else {
+                fileViewerContent.innerHTML = `
+                    <div class="text-center p-5">
+                        <i class="bi bi-file-earmark" style="font-size:4rem;color:#bdc3c7;"></i>
+                        <h5 class="mt-3" style="color:var(--text-dark);">${fileName}</h5>
+                        <p style="color:var(--text-light);">Preview not available</p>
+                        <a href="${fileUrl}" download="${fileName}" class="btn btn-success mt-2"><i class="bi bi-download me-2"></i>Download</a>
+                    </div>
+                `;
+            }
+            fileViewerModal.show();
+        }
+
+        function showDeleteModal(id) { reportToDelete = id; deleteModal.show(); }
+
+        async function deleteReport() {
+            if (!reportToDelete) return;
+            try {
+                const response = await fetch(`${API_BASE_URL}/reports/${reportToDelete}`, { method: 'DELETE' });
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                reports = reports.filter(r => r._id !== reportToDelete);
+                displayReports();
+                updateReportCount();
+                showSuccess('Report deleted successfully!');
+            } catch (error) {
+                console.error('Error deleting:', error);
+                showError('Failed to delete report');
+            } finally {
+                deleteModal.hide();
+                reportToDelete = null;
+            }
+        }
+
+        function showError(msg) { errorMessage.textContent = msg; errorAlert.classList.add('show'); successAlert.classList.remove('show'); setTimeout(() => errorAlert.classList.remove('show'), 5000); }
+        function showSuccess(msg) { successMessage.textContent = msg; successAlert.classList.add('show'); errorAlert.classList.remove('show'); setTimeout(() => successAlert.classList.remove('show'), 5000); }
+        function hideAlerts() { errorAlert.classList.remove('show'); successAlert.classList.remove('show'); }
+        function showLoading() { loadingSpinner.classList.remove('d-none'); reportsContainer.classList.add('d-none'); emptyState.classList.add('d-none'); }
+        function hideLoading() { loadingSpinner.classList.add('d-none'); }
+        function showErrorInReports(msg) { reportsContainer.innerHTML = `<div class="empty-state"><i class="bi bi-exclamation-triangle text-danger"></i><p class="text-danger">${msg}</p></div>`; reportsContainer.classList.remove('d-none'); loadingSpinner.classList.add('d-none'); }
+        function updateReportCount() { reportCount.textContent = `${reports.length} report${reports.length !== 1 ? 's' : ''}`; }
+        function getFileIcon(fileType, fileName) { if (fileType?.includes('pdf')) return '<i class="bi bi-file-pdf"></i>'; if (fileType?.includes('image')) return '<i class="bi bi-file-image"></i>'; if (fileType?.includes('word') || fileName?.match(/\.docx?$/)) return '<i class="bi bi-file-word"></i>'; if (fileType?.includes('excel') || fileName?.match(/\.xlsx?$/)) return '<i class="bi bi-file-excel"></i>'; return '<i class="bi bi-file-earmark"></i>'; }
+        function getFileIconClass(fileType) { if (fileType?.includes('pdf')) return 'pdf'; if (fileType?.includes('image')) return 'image'; if (fileType?.includes('word')) return 'word'; if (fileType?.includes('excel')) return 'excel'; return 'default'; }
+        function formatFileSize(bytes) { if (!bytes) return 'N/A'; const k = 1024; const sizes = ['Bytes', 'KB', 'MB', 'GB']; const i = Math.floor(Math.log(bytes) / Math.log(k)); return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]; }
+        function formatDate(dateString) { return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }); }
+        function escapeHtml(text) { if (!text) return ''; const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
+    </script>
+</body>
+
+</html>
