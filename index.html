@@ -405,7 +405,106 @@
         min-height: auto !important;
       }
     }
+  @media (max-width: 768px) {
+
+  /* Mobile navbar wrapper */
+  .navbar-mobile {
+    overflow-y: auto;
+  }
+
+  /* MORE dropdown */
+  .navbar-mobile .dropdown > ul {
+    position: static !important;
+    display: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    height: auto !important;
+  }
+
+  .navbar-mobile .dropdown.dropdown-active > ul {
+    display: block;
+  }
+
+  /* REPORTS submenu — KEY FIX */
+  .navbar-mobile .dropdown ul ul {
+    position: static !important;
+    display: none;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .navbar-mobile .dropdown ul .dropdown-active > ul {
+    display: block;
+    height: auto !important;
+  }
+
+  /* Remove any forced gaps */
+  .navbar-mobile li {
+    margin: 0 !important;
+  }
+}
+
+
+
+  .logo-item {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.logo-iete img {
+width: 55px;
+height: 55px;
+margin-left: 10px ;
+}
+/* Circular logo – has more white space */
+.logo-sst img {
+width: 50px;
+height: 45px;
+margin-bottom: 7px;
+} 
+/* Text logo – needs slightly more width */
+.logo-iet img {
+width: 88px;
+height: 110px;
+margin-bottom: 5px;
+}
+
+@media (max-width: 480px) {
+.logo-item {
+width: 48px;
+height: 48px;
+gap: 8px;
+}
+
+.logo-iete img { width: 32px; height: 32px; margin-left: 3px; }
+.logo-sst img { width: 36px; height: 36px; margin-bottom: 2px; }
+.logo-iet img { width: 35px; height: 28px; margin-bottom: 2px; }
+}
+
   </style>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll(".navbar .dropdown > a").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle("dropdown-active");
+      }
+    });
+  });
+
+});
+</script>
+
 
   <!-- =======================================================
   * Template Name: Anyar - v4.7.0
@@ -421,48 +520,71 @@
 
 
   <!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-between">
 
-  <header id="header" class="fixed-top d-flex align-items-right ">
+  <div class="logos d-flex align-items-center">
+  <a href="index.html" class="logo-item logo-iete">
+    <img src="Logo.png" alt="IETE Logo">
+  </a>
 
-    <div class="container d-flex align-items-center justify-content-between">
+  <a href="index.html" class="logo-item logo-sst">
+    <img src="SST LOGO.png" alt="SST Logo">
+  </a>
 
-      <!-- <h1 class="logo"><a href="index.html"><img src="logo-final.png" style="   margin-top: 10px; "><a href="index.html"><img src=""></a></h1> -->
-
-      <!-- Logo group (left-aligned) -->
-      <div class="header-left d-flex align-items-center">
-        <div class="logos d-flex align-items-center">
-          <a href="index.html" class="d-inline-block me-3" data-aos="fade-right" data-aos-delay="100"><img
-              src="Logo.png" alt="IETE Logo" class="iete-logo" /></a>
-          <a href="index.html" class="d-inline-block me-3" data-aos="fade-right" data-aos-delay="200"><img
-              src="SST LOGO.png" alt="SST Logo" class="sst-logo" /></a>
-          <a href="index.html" class="d-inline-block" data-aos="fade-right" data-aos-delay="300"><img
-              src="iet_logo1.png" alt="IET Logo" id="iet_logo" class="iet-logo" /></a>
-        </div>
-      </div>
+  <a href="index.html" class="logo-item logo-iet">
+    <img src="iet_logo1.png" alt="IET Logo">
+  </a>
+</div>
 
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto " href="#hero"><b><strong>HOME</strong></b></a></li>
-          <li class="dropdown mobile-dropdown">
-            <a href="#Report">
-              <b><strong>REPORT</strong></b>
-              <i class="bi bi-chevron-down"></i>
-            </a>
-            <ul>
-              <li><a href="Greport.html">Gen AI Spark</a></li>
-              <li><a href="Creport.html">CYBER-ELITE</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#about"><b><strong>ABOUT</strong></b></a></li>
-          <li><a class="nav-link scrollto" href="#events"><b><strong>EVENTS</strong></b></a></li>
-          <li><a class="nav-link scrollto " href="#gallery"><b><strong>GALLERY</strong></b></a></li>
-          <li><a class="nav-link scrollto" href="#portfolio"><b><strong>PORTFOLIO</strong></b></a></li>
-          <li><a class="nav-link" href="Quiz/main.html"><b><strong>QUIZ</strong></b></a></li>
-          <li><a class="nav-link scrollto" href="#CONTACT"><b><strong>CONTACT</strong></b></a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+
+
+<nav id="navbar" class="navbar">
+  <ul>
+    <li>
+      <a class="nav-link scrollto" href="#hero"><b><strong>HOME</strong></b></a>
+    </li>
+
+    <li>
+      <a class="nav-link scrollto" href="#about"><b><strong>ABOUT</strong></b></a>
+    </li>
+
+    <li>
+      <a class="nav-link" href="Quiz/main.html"><b><strong>QUIZ</strong></b></a>
+    </li>
+
+    <li>
+      <a class="nav-link scrollto" href="#CONTACT"><b><strong>CONTACT</strong></b></a>
+    </li>
+
+    <!-- Dropdown AFTER CONTACT -->
+    <li class="dropdown mobile-dropdown">
+      <a href="#">
+        <b><strong>MORE</strong></b>
+        <i class="bi bi-chevron-down"></i>
+      </a>
+      <ul>
+        <li class="dropdown">
+          <a href="#Report">
+            <strong>REPORTS</strong>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+          <ul>
+            <li><a href="Greport.html">Gen AI Spark</a></li>
+            <li><a href="Creport.html">CYBER-ELITE</a></li>
+          </ul>
+        </li>
+        <li><a href="#events">EVENTS</a></li>
+        <li><a href="#gallery">GALLERY</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <i class="bi bi-list mobile-nav-toggle"></i>
+</nav>
+
 
     </div>
   </header><!-- End Header -->

@@ -38,28 +38,64 @@
         .nav-icon-button .material-icons {
             font-size: 30px;
         }
+   
+  .logo-item {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.logo-iete img {
+width: 54px;
+height: 54px;
+}
+/* Circular logo – has more white space */
+.logo-sst img {
+width: 55px;
+height: 40px;
+} 
+/* Text logo – needs slightly more width */
+.logo-iet img {
+width: 88px;
+height: 110px;
+}
+
+@media (max-width: 480px) {
+.logo-item {
+width: 48px;
+height: 48px;
+gap: 8px;
+}
+
+.logo-iete img { width: 32px; height: 32px; margin-left: 3px; }
+.logo-sst img { width: 36px; height: 36px; margin-bottom: 2px; }
+.logo-iet img { width: 35px; height: 28px; margin-bottom: 2px; }
+}
+
     </style>
 </head>
 
 <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-right" style="background-color:#0e589b; padding:12px 20px;">
-        <div class="container d-flex align-items-center justify-content-between">
+    <header id="header" class="fixed-top d-flex align-items-right"style="background-color:#0e589b; padding:12px 20px;">
+        <div class="container d-flex align-items-center justify-content-between">       
 
-            <!-- Logos -->
-            <div class="header-left d-flex align-items-center" data-aos="fade-right" data-aos-duration="800">
-                <div class="logos d-flex align-items-center">
-                    <a href="index.html" class="d-inline-block me-3">
-                        <img src="Logo.png" alt="IETE Logo" class="iete-logo" />
-                    </a>
-                    <a href="index.html" class="d-inline-block me-3">
-                        <img src="SST LOGO.png" alt="SST Logo" class="sst-logo" />
-                    </a>
-                    <a href="index.html" class="d-inline-block">
-                        <img src="iet_logo1.png" alt="IET Logo" class="iet-logo" />
-                    </a>
-                </div>
-            </div>
+          <div class="logos d-flex align-items-center">
+           <a href="index.html" class="logo-item logo-iete">
+            <img src="Logo.png" alt="IETE Logo">
+            </a>
+
+          <a href="index.html" class="logo-item logo-sst">
+             <img src="SST LOGO.png" alt="SST Logo">
+          </a>
+
+              <a href="index.html" class="logo-item logo-iet">
+              <img src="iet_logo1.png" alt="IET Logo">
+              </a>
+        </div>
             <!-- Center: Title -->
             <div class="header-center" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
                 <h1>GEN AI SPARK</h1>
