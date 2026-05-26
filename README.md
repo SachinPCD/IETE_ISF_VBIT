@@ -13,7 +13,4 @@ This repository contains the source for the official IETE–ISF website for Vign
 
 ---
 
-## License
-This repository currently does not include a license file. Add `LICENSE` or insert a header in files if you want to declare a license.
-
 ---
